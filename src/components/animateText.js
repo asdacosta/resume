@@ -38,6 +38,9 @@ const animateText = function () {
             const updatedStr = strArray.join("");
             getNodes().emailInput.placeholder = updatedStr;
           }
+          await new Promise((resolve) => {
+            setTimeout(resolve, 500);
+          });
         };
 
         const removeAppended = (async function () {
@@ -56,9 +59,9 @@ const animateText = function () {
       };
 
       animateLocalName(0);
-      animateLocalName(1);
-      animateLocalName(2);
-      animateLocalName(3);
+      //   animateLocalName(1);
+      //   animateLocalName(2);
+      //   animateLocalName(3);
     })();
   })();
 };
