@@ -60,7 +60,7 @@ function App() {
                   type="email"
                   name="mail"
                   id="mail"
-                  placeholder="ever24@gmail.com"
+                  placeholder="ever@example.com"
                   required
                 />
               </div>
