@@ -22,15 +22,22 @@ const animateText = function () {
       const domainNames = ["yahoo", "outlook", "icloud", "aol", "university.edu"];
       const placeholder = getNodes().emailInput.placeholder;
 
-      const animateMail = function (names, localIndex, stopChar, ifNoLastThenUse = null) {
+      const animateMail = function (
+        names,
+        localIndex,
+        stopChar,
+        stopCharIsLastIndex = true,
+      ) {
+        let name = names[localIndex];
+
         const append = async function () {
-          for (const char of names[localIndex]) {
+          for (const char of name) {
             let alteredPlaceholder = getNodes().emailInput.placeholder;
             await new Promise((resolve) => {
               setTimeout(resolve, 150);
             });
             const strArray = alteredPlaceholder.split("");
-            if (ifNoLastThenUse === null) {
+            if (stopCharIsLastIndex === true) {
               strArray.splice(strArray.lastIndexOf(stopChar), 0, char);
             } else {
               strArray.splice(strArray.length, 0, char);
@@ -45,13 +52,17 @@ const animateText = function () {
 
         const erase = (async function () {
           await append();
-          for (const char of names[localIndex]) {
+          if (names === domainNames && localIndex === 3) {
+            name = "aol.com";
+            stopCharIsLastIndex = false;
+          }
+          for (const char of name) {
             let alteredPlaceholder = getNodes().emailInput.placeholder;
             await new Promise((resolve) => {
               setTimeout(resolve, 150);
             });
             const strArray = alteredPlaceholder.split("");
-            if (ifNoLastThenUse === null) {
+            if (stopCharIsLastIndex === true) {
               strArray.splice(strArray.lastIndexOf(stopChar) - 1, 1);
             } else {
               strArray.splice(strArray.length - 1, 1);
@@ -88,55 +99,22 @@ const animateText = function () {
           setTimeout(resolve, 1400);
         });
 
-        const animateSomeDomainNames = async function (index, timer, stop) {
+        const animateSomeDomainNames = async function (
+          index,
+          timer,
+          stopChar,
+          stopCharIsLastIndex = true,
+        ) {
           await new Promise((resolve) => {
-            animateMail(domainNames, index, stop);
+            animateMail(domainNames, index, stopChar, stopCharIsLastIndex);
             setTimeout(resolve, timer);
           });
         };
         await animateSomeDomainNames(0, 2400, ".");
         await animateSomeDomainNames(1, 2800, ".");
         await animateSomeDomainNames(2, 2600, ".");
-
-        await new Promise((resolve) => {
-          const append = (async function () {
-            for (const char of "aol") {
-              let alteredPlaceholder = getNodes().emailInput.placeholder;
-              await new Promise((resolve) => {
-                setTimeout(resolve, 150);
-              });
-              const strArray = alteredPlaceholder.split("");
-              strArray.splice(strArray.lastIndexOf("."), 0, char);
-              const updatedStr = strArray.join("");
-              getNodes().emailInput.placeholder = updatedStr;
-            }
-            await new Promise((resolve) => {
-              setTimeout(resolve, 500);
-            });
-          })();
-          setTimeout(resolve, 1200);
-        });
-
-        await new Promise((resolve) => {
-          const erase = (async function () {
-            for (const char of "aol.com") {
-              let alteredPlaceholder = getNodes().emailInput.placeholder;
-              await new Promise((resolve) => {
-                setTimeout(resolve, 150);
-              });
-              const strArray = alteredPlaceholder.split("");
-              strArray.splice(strArray.lastIndexOf("m"), 1);
-              const updatedStr = strArray.join("");
-              getNodes().emailInput.placeholder = updatedStr;
-            }
-          })();
-          setTimeout(resolve, 1800);
-        });
-
-        await new Promise((resolve) => {
-          animateMail(domainNames, 4, "@", 1);
-          setTimeout(resolve, 4800);
-        });
+        await animateSomeDomainNames(3, 2800, ".");
+        await animateSomeDomainNames(4, 5000, "@", false);
 
         await new Promise((resolve) => {
           const append = (async function () {
