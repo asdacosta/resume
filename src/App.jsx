@@ -70,23 +70,23 @@ function App() {
                 </label>
                 <input
                   type="tel"
-                  name="last-name"
-                  id="last-name"
+                  name="phone"
+                  id="phone"
                   placeholder="+233 ●●● ●●● ●●●"
                   required
                 />
               </div>
               <div className="field">
-                <label for="country">
+                <label for="country-personal">
                   Country <span className="optional">Optional</span>
                 </label>
-                <input type="text" name="country" id="country" />
+                <input type="text" name="country-personal" id="country-personal" />
               </div>
               <div className="field">
-                <label for="city">
+                <label for="city-personal">
                   City <span className="optional">Optional</span>
                 </label>
-                <input type="text" name="city" id="city" />
+                <input type="text" name="city-personal" id="city-personal" />
               </div>
               <div className="field">
                 <label for="address">
@@ -94,8 +94,8 @@ function App() {
                 </label>
                 <input
                   type="text"
-                  name="last-name"
-                  id="last-name"
+                  name="address"
+                  id="address"
                   placeholder="A24/12 Hell Street"
                 />
               </div>
@@ -147,26 +147,30 @@ function App() {
                 <input type="text" name="honors" id="honors" placeholder="First Class" />
               </div>
               <div className="field">
-                <label for="start-date">
+                <label for="start-date-education">
                   Start Date <span className="optional">Optional</span>
                 </label>
-                <input type="date" name="start-date" id="start-date" />
+                <input
+                  type="date"
+                  name="start-date-education"
+                  id="start-date-education"
+                />
               </div>
               <div className="field">
-                <label for="end-date">End Date</label>
-                <input type="date" name="end-date" id="end-date" />
+                <label for="end-date-education">End Date</label>
+                <input type="date" name="end-date-education" id="end-date-education" />
               </div>
               <div className="field">
-                <label for="country">
+                <label for="country-education">
                   Country <span className="optional">Optional</span>
                 </label>
-                <input type="text" name="country" id="country" />
+                <input type="text" name="country-education" id="country-education" />
               </div>
               <div className="field">
-                <label for="city">
+                <label for="city-education">
                   City <span className="optional">Optional</span>
                 </label>
-                <input type="text" name="city" id="city" />
+                <input type="text" name="city-education" id="city-education" />
               </div>
               <div className="field-footer">
                 <span>
@@ -212,26 +216,38 @@ function App() {
                 />
               </div>
               <div className="field">
-                <label for="start-date">
+                <label for="start-date-professional">
                   Start Date <span className="optional">Optional</span>
                 </label>
-                <input type="date" name="start-date" id="start-date" />
+                <input
+                  type="date"
+                  name="start-date-professional"
+                  id="start-date-professional"
+                />
               </div>
               <div className="field">
-                <label for="end-date">End Date</label>
-                <input type="date" name="end-date" id="end-date" />
+                <label for="end-date-professional">End Date</label>
+                <input
+                  type="date"
+                  name="end-date-professional"
+                  id="end-date-professional"
+                />
               </div>
               <div className="field">
-                <label for="country">
+                <label for="country-professional">
                   Country <span className="optional">Optional</span>
                 </label>
-                <input type="text" name="country" id="country" />
+                <input
+                  type="text"
+                  name="country-professional"
+                  id="country-professional"
+                />
               </div>
               <div className="field">
-                <label for="city">
+                <label for="city-professional">
                   City <span className="optional">Optional</span>
                 </label>
-                <input type="text" name="city" id="city" />
+                <input type="text" name="city-professional" id="city-professional" />
               </div>
               <div className="field-description">
                 <label for="description">
