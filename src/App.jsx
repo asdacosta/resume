@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./styles/App.css";
+import { animateText } from "./components/animateText";
 // import "./styles/reset.css";
 
 function App() {
+  useEffect(() => {
+    animateText();
+  }, []);
+
   return (
     <>
       <section className="edit-cover">
@@ -67,7 +72,7 @@ function App() {
                   type="tel"
                   name="last-name"
                   id="last-name"
-                  placeholder="+233 *** *** ***"
+                  placeholder="+233 ●●● ●●● ●●●"
                   required
                 />
               </div>
