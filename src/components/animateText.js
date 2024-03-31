@@ -117,12 +117,12 @@ const animateText = function () {
               getNodes().emailInput.placeholder = updatedStr;
             }
           })();
-          setTimeout(resolve, 2600);
+          setTimeout(resolve, 1400);
         });
 
         await new Promise((resolve) => {
           animateDomainName(0);
-          setTimeout(resolve, 2600);
+          setTimeout(resolve, 2400);
         });
         await new Promise((resolve) => {
           animateDomainName(1);
@@ -134,7 +134,7 @@ const animateText = function () {
         });
         await new Promise((resolve) => {
           animateDomainName(3);
-          setTimeout(resolve, 2200);
+          setTimeout(resolve, 1800);
         });
 
         await new Promise((resolve) => {
