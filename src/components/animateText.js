@@ -87,22 +87,22 @@ const animateText = function () {
       };
 
       const animateInOrder = (async function () {
-        // await new Promise((resolve) => {
-        //   animateLocalName(0);
-        //   setTimeout(resolve, 2600);
-        // });
-        // await new Promise((resolve) => {
-        //   animateLocalName(1);
-        //   setTimeout(resolve, 2600);
-        // });
-        // await new Promise((resolve) => {
-        //   animateLocalName(2);
-        //   setTimeout(resolve, 2600);
-        // });
-        // await new Promise((resolve) => {
-        //   animateLocalName(3);
-        //   setTimeout(resolve, 2600);
-        // });
+        await new Promise((resolve) => {
+          animateLocalName(0);
+          setTimeout(resolve, 2600);
+        });
+        await new Promise((resolve) => {
+          animateLocalName(1);
+          setTimeout(resolve, 2600);
+        });
+        await new Promise((resolve) => {
+          animateLocalName(2);
+          setTimeout(resolve, 2600);
+        });
+        await new Promise((resolve) => {
+          animateLocalName(3);
+          setTimeout(resolve, 2600);
+        });
 
         await new Promise((resolve) => {
           const removeAppended = (async function () {
