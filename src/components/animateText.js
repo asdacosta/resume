@@ -105,6 +105,22 @@ const animateText = function () {
         // });
 
         await new Promise((resolve) => {
+          const removeAppended = (async function () {
+            for (const char of "example") {
+              let alteredPlaceholder = getNodes().emailInput.placeholder;
+              await new Promise((resolve) => {
+                setTimeout(resolve, 150);
+              });
+              const strArray = alteredPlaceholder.split("");
+              strArray.splice(strArray.indexOf(".") - 1, 1);
+              const updatedStr = strArray.join("");
+              getNodes().emailInput.placeholder = updatedStr;
+            }
+          })();
+          setTimeout(resolve, 2600);
+        });
+
+        await new Promise((resolve) => {
           animateDomainName(0);
           setTimeout(resolve, 2600);
         });
@@ -119,6 +135,22 @@ const animateText = function () {
         await new Promise((resolve) => {
           animateDomainName(3);
           setTimeout(resolve, 2200);
+        });
+
+        await new Promise((resolve) => {
+          const append = (async function () {
+            for (const char of "example") {
+              let alteredPlaceholder = getNodes().emailInput.placeholder;
+              await new Promise((resolve) => {
+                setTimeout(resolve, 150);
+              });
+              const strArray = alteredPlaceholder.split("");
+              strArray.splice(strArray.indexOf("."), 0, char);
+              const updatedStr = strArray.join("");
+              getNodes().emailInput.placeholder = updatedStr;
+            }
+          })();
+          setTimeout(resolve, 2600);
         });
       })();
     })();
