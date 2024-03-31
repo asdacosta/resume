@@ -218,7 +218,7 @@ nav {
 }
 
 .field-footer span:first-child {
-  color: rgb(133, 58, 58);
+  color: rgb(145, 52, 52);
 }
 
 .field-footer span:last-child {
@@ -270,6 +270,20 @@ input {
   border: none;
   padding-left: 0.5rem;
   background-color: rgb(223, 221, 221);
+}
+
+.required,
+.optional {
+  font-size: 0.75rem;
+  visibility: hidden;
+}
+
+.required {
+  color: rgb(145, 52, 52);
+}
+
+.optional {
+  color: rgb(124, 124, 124);
 }
 
 i {
