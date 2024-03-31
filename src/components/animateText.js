@@ -19,8 +19,15 @@ const animateText = function () {
   const animatePlaceholders = (function () {
     const animateEmailField = (async function () {
       const localNames = [".green", "-green", "_green", "2024"];
-      const domainNames = ["yahoo", "outlook", "icloud", "aol", "university.edu"];
-      const placeholder = getNodes().emailInput.placeholder;
+      const domainNames = [
+        "example",
+        "yahoo",
+        "outlook",
+        "icloud",
+        "aol",
+        "university.edu",
+        "example.com",
+      ];
 
       const animateMail = function (
         names,
@@ -31,19 +38,27 @@ const animateText = function () {
         let name = names[localIndex];
 
         const append = async function () {
+          if (name === "example") {
+            // Don't append, just erase;
+            return;
+          }
+
           for (const char of name) {
             let alteredPlaceholder = getNodes().emailInput.placeholder;
             await new Promise((resolve) => {
               setTimeout(resolve, 150);
             });
-            const strArray = alteredPlaceholder.split("");
-            if (stopCharIsLastIndex === true) {
-              strArray.splice(strArray.lastIndexOf(stopChar), 0, char);
-            } else {
-              strArray.splice(strArray.length, 0, char);
-            }
-            const updatedStr = strArray.join("");
-            getNodes().emailInput.placeholder = updatedStr;
+
+            const appendAndUpdate = (function () {
+              const strArray = alteredPlaceholder.split("");
+              if (stopCharIsLastIndex === true) {
+                strArray.splice(strArray.lastIndexOf(stopChar), 0, char);
+              } else {
+                strArray.splice(strArray.length, 0, char);
+              }
+              const updatedStr = strArray.join("");
+              getNodes().emailInput.placeholder = updatedStr;
+            })();
           }
           await new Promise((resolve) => {
             setTimeout(resolve, 500);
@@ -52,54 +67,49 @@ const animateText = function () {
 
         const erase = (async function () {
           await append();
-          if (names === domainNames && localIndex === 3) {
-            name = "aol.com";
-            stopCharIsLastIndex = false;
+          if (name === "example.com") {
+            // Append and stop
+            return;
           }
+          const clearAllForLastDomain = (function () {
+            if (names === domainNames && localIndex === 4) {
+              name = "aol.com";
+              stopCharIsLastIndex = false;
+            }
+          })();
+
           for (const char of name) {
             let alteredPlaceholder = getNodes().emailInput.placeholder;
             await new Promise((resolve) => {
               setTimeout(resolve, 150);
             });
-            const strArray = alteredPlaceholder.split("");
-            if (stopCharIsLastIndex === true) {
-              strArray.splice(strArray.lastIndexOf(stopChar) - 1, 1);
-            } else {
-              strArray.splice(strArray.length - 1, 1);
-            }
-            const updatedStr = strArray.join("");
-            getNodes().emailInput.placeholder = updatedStr;
+
+            const eraseAndUpdate = (function () {
+              const strArray = alteredPlaceholder.split("");
+              if (stopCharIsLastIndex === true) {
+                strArray.splice(strArray.lastIndexOf(stopChar) - 1, 1);
+              } else {
+                strArray.splice(strArray.length - 1, 1);
+              }
+              const updatedStr = strArray.join("");
+              getNodes().emailInput.placeholder = updatedStr;
+            })();
           }
         })();
       };
 
       const animateInOrder = (async function () {
-        // Local Names
-        for (let index = 0; index < 4; index++) {
-          await new Promise((resolve) => {
-            animateMail(localNames, index, "@");
-            setTimeout(resolve, 2600);
-          });
-        }
+        const __localNames = async function () {
+          for (let index = 0; index < 4; index++) {
+            await new Promise((resolve) => {
+              animateMail(localNames, index, "@");
+              setTimeout(resolve, 2600);
+            });
+          }
+        };
+        await __localNames();
 
-        // Domain Names
-        await new Promise((resolve) => {
-          const erase = (async function () {
-            for (const char of "example") {
-              let alteredPlaceholder = getNodes().emailInput.placeholder;
-              await new Promise((resolve) => {
-                setTimeout(resolve, 150);
-              });
-              const strArray = alteredPlaceholder.split("");
-              strArray.splice(strArray.lastIndexOf(".") - 1, 1);
-              const updatedStr = strArray.join("");
-              getNodes().emailInput.placeholder = updatedStr;
-            }
-          })();
-          setTimeout(resolve, 1400);
-        });
-
-        const animateSomeDomainNames = async function (
+        const __domainNames = async function (
           index,
           timer,
           stopChar,
@@ -110,27 +120,13 @@ const animateText = function () {
             setTimeout(resolve, timer);
           });
         };
-        await animateSomeDomainNames(0, 2400, ".");
-        await animateSomeDomainNames(1, 2800, ".");
-        await animateSomeDomainNames(2, 2600, ".");
-        await animateSomeDomainNames(3, 2800, ".");
-        await animateSomeDomainNames(4, 5000, "@", false);
-
-        await new Promise((resolve) => {
-          const append = (async function () {
-            for (const char of "example.com") {
-              let alteredPlaceholder = getNodes().emailInput.placeholder;
-              await new Promise((resolve) => {
-                setTimeout(resolve, 150);
-              });
-              const strArray = alteredPlaceholder.split("");
-              strArray.splice(strArray.length, 0, char);
-              const updatedStr = strArray.join("");
-              getNodes().emailInput.placeholder = updatedStr;
-            }
-          })();
-          setTimeout(resolve, 2600);
-        });
+        await __domainNames(0, 1400, ".");
+        await __domainNames(1, 2400, ".");
+        await __domainNames(2, 2800, ".");
+        await __domainNames(3, 2600, ".");
+        await __domainNames(4, 2800, ".");
+        await __domainNames(5, 5000, "@", false);
+        await __domainNames(6, 2600, "@", false);
       })();
     })();
   })();
