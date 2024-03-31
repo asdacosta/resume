@@ -1,18 +1,45 @@
 import { getNodes } from "./getNodes";
 
 const animateText = function () {
-  getNodes().fieldStatus.forEach(async (status) => {
-    let content = status.textContent;
-    status.textContent = "";
-    status.style.visibility = "visible";
+  const animateFieldStatus = (function () {
+    getNodes().fieldStatus.forEach(async (status) => {
+      const content = status.textContent;
+      status.textContent = "";
+      status.style.visibility = "visible";
 
-    for (const char of content) {
-      await new Promise((resolve) => {
-        setTimeout(resolve, 150);
-      });
-      status.textContent += char;
-    }
-  });
+      for (const char of content) {
+        await new Promise((resolve) => {
+          setTimeout(resolve, 150);
+        });
+        status.textContent += char;
+      }
+    });
+  })();
+
+  const animatePlaceholders = (function () {
+    const animateEmailField = (async function () {
+      const localNames = [".green", "-green", "_green", "2024"];
+      const domainNames = ["yahoo", "outlook", "icloud", "aol", "university.edu"];
+      const placeholder = getNodes().emailInput.placeholder;
+
+      //   for (let charIndex = 0; charIndex < localNames[0].length; charIndex++) {
+      //     getNodes().emailInput.placeholder -= placeholder[charIndex];
+      //   }
+
+      const append = async function () {
+        for (const char of localNames[0]) {
+          let alteredPlaceholder = getNodes().emailInput.placeholder;
+          await new Promise((resolve) => {
+            setTimeout(resolve, 150);
+          });
+          const strArray = alteredPlaceholder.split("");
+          strArray.splice(strArray.indexOf("@"), 0, char);
+          const updatedStr = strArray.join("");
+          getNodes().emailInput.placeholder = updatedStr;
+        }
+      };
+    })();
+  })();
 };
 
 export { animateText };
