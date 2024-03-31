@@ -22,15 +22,15 @@ const animateText = function () {
       const domainNames = ["yahoo", "outlook", "icloud", "aol", "university.edu"];
       const placeholder = getNodes().emailInput.placeholder;
 
-      const animateLocalName = function (localIndex) {
+      const animateMail = function (names, localIndex, stopChar) {
         const append = async function () {
-          for (const char of localNames[localIndex]) {
+          for (const char of names[localIndex]) {
             let alteredPlaceholder = getNodes().emailInput.placeholder;
             await new Promise((resolve) => {
               setTimeout(resolve, 150);
             });
             const strArray = alteredPlaceholder.split("");
-            strArray.splice(strArray.indexOf("@"), 0, char);
+            strArray.splice(strArray.indexOf(stopChar), 0, char);
             const updatedStr = strArray.join("");
             getNodes().emailInput.placeholder = updatedStr;
           }
@@ -41,66 +41,66 @@ const animateText = function () {
 
         const removeAppended = (async function () {
           await append();
-          for (const char of localNames[localIndex]) {
+          for (const char of names[localIndex]) {
             let alteredPlaceholder = getNodes().emailInput.placeholder;
             await new Promise((resolve) => {
               setTimeout(resolve, 150);
             });
             const strArray = alteredPlaceholder.split("");
-            strArray.splice(strArray.indexOf("@") - 1, 1);
+            strArray.splice(strArray.indexOf(stopChar) - 1, 1);
             const updatedStr = strArray.join("");
             getNodes().emailInput.placeholder = updatedStr;
           }
         })();
       };
 
-      const animateDomainName = function (localIndex) {
-        const append = async function () {
-          for (const char of domainNames[localIndex]) {
-            let alteredPlaceholder = getNodes().emailInput.placeholder;
-            await new Promise((resolve) => {
-              setTimeout(resolve, 150);
-            });
-            const strArray = alteredPlaceholder.split("");
-            strArray.splice(strArray.indexOf("."), 0, char);
-            const updatedStr = strArray.join("");
-            getNodes().emailInput.placeholder = updatedStr;
-          }
-          await new Promise((resolve) => {
-            setTimeout(resolve, 500);
-          });
-        };
+      //   const animateDomainName = function (localIndex) {
+      //     const append = async function () {
+      //       for (const char of domainNames[localIndex]) {
+      //         let alteredPlaceholder = getNodes().emailInput.placeholder;
+      //         await new Promise((resolve) => {
+      //           setTimeout(resolve, 150);
+      //         });
+      //         const strArray = alteredPlaceholder.split("");
+      //         strArray.splice(strArray.indexOf("."), 0, char);
+      //         const updatedStr = strArray.join("");
+      //         getNodes().emailInput.placeholder = updatedStr;
+      //       }
+      //       await new Promise((resolve) => {
+      //         setTimeout(resolve, 500);
+      //       });
+      //     };
 
-        const removeAppended = (async function () {
-          await append();
-          for (const char of domainNames[localIndex]) {
-            let alteredPlaceholder = getNodes().emailInput.placeholder;
-            await new Promise((resolve) => {
-              setTimeout(resolve, 150);
-            });
-            const strArray = alteredPlaceholder.split("");
-            strArray.splice(strArray.indexOf(".") - 1, 1);
-            const updatedStr = strArray.join("");
-            getNodes().emailInput.placeholder = updatedStr;
-          }
-        })();
-      };
+      //     const removeAppended = (async function () {
+      //       await append();
+      //       for (const char of domainNames[localIndex]) {
+      //         let alteredPlaceholder = getNodes().emailInput.placeholder;
+      //         await new Promise((resolve) => {
+      //           setTimeout(resolve, 150);
+      //         });
+      //         const strArray = alteredPlaceholder.split("");
+      //         strArray.splice(strArray.indexOf(".") - 1, 1);
+      //         const updatedStr = strArray.join("");
+      //         getNodes().emailInput.placeholder = updatedStr;
+      //       }
+      //     })();
+      //   };
 
       const animateInOrder = (async function () {
         await new Promise((resolve) => {
-          animateLocalName(0);
+          animateMail(localNames, 0, "@");
           setTimeout(resolve, 2600);
         });
         await new Promise((resolve) => {
-          animateLocalName(1);
+          animateMail(localNames, 1, "@");
           setTimeout(resolve, 2600);
         });
         await new Promise((resolve) => {
-          animateLocalName(2);
+          animateMail(localNames, 2, "@");
           setTimeout(resolve, 2600);
         });
         await new Promise((resolve) => {
-          animateLocalName(3);
+          animateMail(localNames, 3, "@");
           setTimeout(resolve, 2600);
         });
 
@@ -121,19 +121,19 @@ const animateText = function () {
         });
 
         await new Promise((resolve) => {
-          animateDomainName(0);
+          animateMail(domainNames, 0, ".");
           setTimeout(resolve, 2400);
         });
         await new Promise((resolve) => {
-          animateDomainName(1);
+          animateMail(domainNames, 1, ".");
           setTimeout(resolve, 2800);
         });
         await new Promise((resolve) => {
-          animateDomainName(2);
+          animateMail(domainNames, 2, ".");
           setTimeout(resolve, 2600);
         });
         await new Promise((resolve) => {
-          animateDomainName(3);
+          animateMail(domainNames, 3, ".");
           setTimeout(resolve, 1800);
         });
 
