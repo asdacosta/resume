@@ -58,10 +58,24 @@ const animateText = function () {
         })();
       };
 
-      animateLocalName(0);
-      //   animateLocalName(1);
-      //   animateLocalName(2);
-      //   animateLocalName(3);
+      const animateInOrder = (async function () {
+        await new Promise((resolve) => {
+          animateLocalName(0);
+          setTimeout(resolve, 2600);
+        });
+        await new Promise((resolve) => {
+          animateLocalName(1);
+          setTimeout(resolve, 2600);
+        });
+        await new Promise((resolve) => {
+          animateLocalName(2);
+          setTimeout(resolve, 2600);
+        });
+        await new Promise((resolve) => {
+          animateLocalName(3);
+          setTimeout(resolve, 2600);
+        });
+      })();
     })();
   })();
 };
