@@ -1,10 +1,4 @@
-const getNodes = function () {
-  const fieldStatus = document.querySelectorAll(".optional, .required");
-
-  return {
-    fieldStatus,
-  };
-};
+import { getNodes } from "./getNodes";
 
 const animateText = function () {
   getNodes().fieldStatus.forEach(async (status) => {
