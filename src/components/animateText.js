@@ -26,33 +26,39 @@ const animateText = function () {
       //     getNodes().emailInput.placeholder -= placeholder[charIndex];
       //   }
 
-      const append = async function () {
-        for (const char of localNames[0]) {
-          let alteredPlaceholder = getNodes().emailInput.placeholder;
-          await new Promise((resolve) => {
-            setTimeout(resolve, 150);
-          });
-          const strArray = alteredPlaceholder.split("");
-          strArray.splice(strArray.indexOf("@"), 0, char);
-          const updatedStr = strArray.join("");
-          getNodes().emailInput.placeholder = updatedStr;
-        }
+      const animateLocalName = function (localIndex) {
+        const append = async function () {
+          for (const char of localNames[localIndex]) {
+            let alteredPlaceholder = getNodes().emailInput.placeholder;
+            await new Promise((resolve) => {
+              setTimeout(resolve, 150);
+            });
+            const strArray = alteredPlaceholder.split("");
+            strArray.splice(strArray.indexOf("@"), 0, char);
+            const updatedStr = strArray.join("");
+            getNodes().emailInput.placeholder = updatedStr;
+          }
+        };
+
+        const removeAppended = (async function () {
+          await append();
+          for (const char of localNames[localIndex]) {
+            let alteredPlaceholder = getNodes().emailInput.placeholder;
+            await new Promise((resolve) => {
+              setTimeout(resolve, 150);
+            });
+            const strArray = alteredPlaceholder.split("");
+            strArray.splice(strArray.indexOf("@") - 1, 1);
+            const updatedStr = strArray.join("");
+            getNodes().emailInput.placeholder = updatedStr;
+          }
+        })();
       };
 
-      const removeAppended = (async function () {
-        await append();
-        for (const char of localNames[0]) {
-          let alteredPlaceholder = getNodes().emailInput.placeholder;
-          await new Promise((resolve) => {
-            setTimeout(resolve, 150);
-          });
-          const strArray = alteredPlaceholder.split("");
-          strArray.splice(strArray.indexOf("@") - 1, 1);
-          const updatedStr = strArray.join("");
-          getNodes().emailInput.placeholder = updatedStr;
-          console.log(getNodes().emailInput.placeholder);
-        }
-      })();
+      animateLocalName(0);
+      animateLocalName(1);
+      animateLocalName(2);
+      animateLocalName(3);
     })();
   })();
 };
