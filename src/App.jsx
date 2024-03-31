@@ -51,13 +51,25 @@ function App() {
                 <label for="mail">
                   Email <span className="required">Required</span>
                 </label>
-                <input type="email" name="mail" id="mail" required />
+                <input
+                  type="email"
+                  name="mail"
+                  id="mail"
+                  placeholder="ever24@gmail.com"
+                  required
+                />
               </div>
               <div className="field">
                 <label for="phone">
                   Phone number <span className="required">Required</span>
                 </label>
-                <input type="tel" name="last-name" id="last-name" required />
+                <input
+                  type="tel"
+                  name="last-name"
+                  id="last-name"
+                  placeholder="+233 *** *** ***"
+                  required
+                />
               </div>
               <div className="field">
                 <label for="country">
@@ -75,7 +87,12 @@ function App() {
                 <label for="address">
                   Address <span className="optional">Optional</span>
                 </label>
-                <input type="text" name="last-name" id="last-name" />
+                <input
+                  type="text"
+                  name="last-name"
+                  id="last-name"
+                  placeholder="A24/12 Hell Street"
+                />
               </div>
               <div className="field-profile">
                 <label for="profile">
@@ -110,13 +127,19 @@ function App() {
                 <label for="degree">
                   Degree <span className="required">Required</span>
                 </label>
-                <input type="text" name="degree" id="degree" required />
+                <input
+                  type="text"
+                  name="degree"
+                  id="degree"
+                  placeholder="Bachelor of Science in ..."
+                  required
+                />
               </div>
               <div className="field">
                 <label for="honors">
                   Class Honors <span className="optional">Optional</span>
                 </label>
-                <input type="text" name="honors" id="honors" />
+                <input type="text" name="honors" id="honors" placeholder="First Class" />
               </div>
               <div className="field">
                 <label for="start-date">
@@ -175,7 +198,13 @@ function App() {
                 <label for="position">
                   Position <span className="required">Required</span>
                 </label>
-                <input type="text" name="position" id="position" required />
+                <input
+                  type="text"
+                  name="position"
+                  id="position"
+                  placeholder="Intern"
+                  required
+                />
               </div>
               <div className="field">
                 <label for="start-date">
@@ -206,6 +235,7 @@ function App() {
                 <textarea
                   name="description"
                   id="description"
+                  placeholder="As an intern, ..."
                   cols="20"
                   rows="10"
                 ></textarea>
