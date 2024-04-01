@@ -1,20 +1,31 @@
 import { getNodes } from "./getNodes";
 
-const animateText = function () {
+const animateText = async function () {
+  // Wait before starting field status animation
+  await new Promise((resolve) => {
+    setTimeout(resolve, 100);
+  });
+
   const animateFieldStatus = (function () {
     getNodes().fieldStatus.forEach(async (status) => {
       const content = status.textContent;
       status.textContent = "";
       status.style.visibility = "visible";
+      status.style.fontWeight = "500";
 
       for (const char of content) {
         await new Promise((resolve) => {
-          setTimeout(resolve, 150);
+          setTimeout(resolve, 120);
         });
         status.textContent += char;
       }
     });
   })();
+
+  // Wait before starting placeholders animation
+  await new Promise((resolve) => {
+    setTimeout(resolve, 2000);
+  });
 
   const animatePlaceholders = (async function () {
     // Email Samples
