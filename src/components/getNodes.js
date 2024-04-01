@@ -8,6 +8,12 @@ const getNodes = function () {
   const positionInput = document.querySelector("#position");
   const descriptionInput = document.querySelector("#description");
   const menu = document.querySelector(".menu");
+  const sampleBar = document.querySelector(".sample-bar");
+  const dialog = document.querySelector(".dialog");
+  const palette = document.querySelector(".palette");
+  const paletteButtons = document.querySelectorAll(".palette > button");
+  const layout = document.querySelector(".layout");
+  const layoutButtons = document.querySelectorAll(".layout > button");
 
   return {
     fieldStatus,
@@ -19,6 +25,12 @@ const getNodes = function () {
     positionInput,
     descriptionInput,
     menu,
+    sampleBar,
+    dialog,
+    palette,
+    paletteButtons,
+    layout,
+    layoutButtons,
   };
 };
 
