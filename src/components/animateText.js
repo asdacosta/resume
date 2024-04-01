@@ -153,6 +153,9 @@ const animateText = async function () {
           (names === descriptionSamples && localIndex === 2)
         ) {
           const blinkToIndicateEnd = (async function () {
+            await new Promise((resolve) => {
+              setTimeout(resolve, 1500);
+            });
             for (let rounds = 0; rounds < 2; rounds++) {
               node.removeAttribute("id");
               node.setAttribute("id", "now");
@@ -206,34 +209,37 @@ const animateText = async function () {
     const animateMailField = (async function () {
       const node = getNodes().emailInput;
 
-      const __localNames = async function () {
-        for (let index = 0; index < 4; index++) {
-          await new Promise((resolve) => {
-            animateInput(node, localNames, index, "@");
-            setTimeout(resolve, 2400);
-          });
-        }
-      };
-      await __localNames();
+      let rounds = 0;
+      while (rounds !== 1) {
+        const __localNames = async function () {
+          for (let index = 0; index < 4; index++) {
+            await new Promise((resolve) => {
+              animateInput(node, localNames, index, "@");
+              setTimeout(resolve, 2400);
+            });
+          }
+        };
+        await __localNames();
 
-      const __domainNames = async function (
-        index,
-        timer,
-        stopChar,
-        stopCharIsLastIndex = true,
-      ) {
-        await new Promise((resolve) => {
-          animateInput(node, domainNames, index, stopChar, stopCharIsLastIndex);
-          setTimeout(resolve, timer);
-        });
-      };
-      await __domainNames(0, 1200, ".");
-      await __domainNames(1, 2200, ".");
-      await __domainNames(2, 2600, ".");
-      await __domainNames(3, 2400, ".");
-      await __domainNames(4, 2200, ".");
-      await __domainNames(5, 4600, "@", false);
-      await __domainNames(6, 2400, "@", false);
+        const __domainNames = async function (
+          index,
+          timer,
+          stopChar,
+          stopCharIsLastIndex = true,
+        ) {
+          await new Promise((resolve) => {
+            animateInput(node, domainNames, index, stopChar, stopCharIsLastIndex);
+            setTimeout(resolve, timer);
+          });
+        };
+        await __domainNames(0, 1200, ".");
+        await __domainNames(1, 2200, ".");
+        await __domainNames(2, 2600, ".");
+        await __domainNames(3, 2400, ".");
+        await __domainNames(4, 2200, ".");
+        await __domainNames(5, 4600, "@", false);
+        await __domainNames(6, 5200, "@", false);
+      }
     })();
 
     // When stopCharIsLastIndex = false, stopChar is useless
@@ -252,10 +258,13 @@ const animateText = async function () {
           setTimeout(resolve, timer);
         });
       };
-      await __eachSample(0, 2200, "●");
-      await __eachSample(1, 4200, "●");
-      await __eachSample(2, 4000, "●");
-      await __eachSample(3, 2200, "●");
+      let rounds = 0;
+      while (rounds !== 1) {
+        await __eachSample(0, 2200, "●");
+        await __eachSample(1, 4200, "●");
+        await __eachSample(2, 4000, "●");
+        await __eachSample(3, 5600, "●");
+      }
     })();
 
     const animateAddressField = (async function () {
@@ -272,12 +281,15 @@ const animateText = async function () {
           setTimeout(resolve, timer);
         });
       };
-      await __eachSample(0, 2600, "t");
-      await __eachSample(1, 4800, "t");
-      await __eachSample(2, 6400, "t");
-      await __eachSample(3, 4000, "t");
-      await __eachSample(4, 6000, "t");
-      await __eachSample(5, 2600, "t");
+      let rounds = 0;
+      while (rounds !== 1) {
+        await __eachSample(0, 2600, "t");
+        await __eachSample(1, 4800, "t");
+        await __eachSample(2, 6400, "t");
+        await __eachSample(3, 4000, "t");
+        await __eachSample(4, 6000, "t");
+        await __eachSample(5, 6000, "t");
+      }
     })();
 
     const animateDegreeField = (async function () {
@@ -294,14 +306,17 @@ const animateText = async function () {
           setTimeout(resolve, timer);
         });
       };
-      await __eachSample(0, 1600, "e");
-      await __eachSample(1, 1800, "e");
-      await __eachSample(2, 6500, "e");
-      await __eachSample(3, 4000, "e");
-      await __eachSample(4, 6000, "e");
-      await __eachSample(5, 4800, "e");
-      await __eachSample(6, 5000, "e");
-      await __eachSample(7, 3000, "e");
+      let rounds = 0;
+      while (rounds !== 1) {
+        await __eachSample(0, 1600, "e");
+        await __eachSample(1, 1800, "e");
+        await __eachSample(2, 6500, "e");
+        await __eachSample(3, 4000, "e");
+        await __eachSample(4, 6000, "e");
+        await __eachSample(5, 4800, "e");
+        await __eachSample(6, 5000, "e");
+        await __eachSample(7, 6200, "e");
+      }
     })();
 
     const animateHonorsField = (async function () {
@@ -318,11 +333,14 @@ const animateText = async function () {
           setTimeout(resolve, timer);
         });
       };
-      await __eachSample(0, 1800, "s");
-      await __eachSample(1, 5300, "s");
-      await __eachSample(2, 5300, "s");
-      await __eachSample(3, 3600, "s");
-      await __eachSample(4, 1800, "s");
+      let rounds = 0;
+      while (rounds !== 1) {
+        await __eachSample(0, 1800, "s");
+        await __eachSample(1, 5300, "s");
+        await __eachSample(2, 5300, "s");
+        await __eachSample(3, 3600, "s");
+        await __eachSample(4, 5200, "s");
+      }
     })();
 
     const animatePositionsField = (async function () {
@@ -339,15 +357,18 @@ const animateText = async function () {
           setTimeout(resolve, timer);
         });
       };
-      await __eachSample(0, 2500, "r");
-      await __eachSample(1, 4200, "r");
-      await __eachSample(2, 3600, "r");
-      await __eachSample(3, 5000, "r");
-      await __eachSample(4, 3200, "r");
-      await __eachSample(5, 4000, "r");
-      await __eachSample(6, 2800, "r");
-      await __eachSample(7, 3400, "r");
-      await __eachSample(8, 2500, "r");
+      let rounds = 0;
+      while (rounds !== 1) {
+        await __eachSample(0, 2500, "r");
+        await __eachSample(1, 4200, "r");
+        await __eachSample(2, 3600, "r");
+        await __eachSample(3, 5000, "r");
+        await __eachSample(4, 3200, "r");
+        await __eachSample(5, 4000, "r");
+        await __eachSample(6, 2800, "r");
+        await __eachSample(7, 3400, "r");
+        await __eachSample(8, 6000, "r");
+      }
     })();
 
     const animateDescriptionField = (async function () {
@@ -364,9 +385,12 @@ const animateText = async function () {
           setTimeout(resolve, timer);
         });
       };
-      await __eachSample(0, 1200, ".");
-      await __eachSample(1, 32200, ".");
-      await __eachSample(2, 1200, ".");
+      let rounds = 0;
+      while (rounds !== 1) {
+        await __eachSample(0, 1200, ".");
+        await __eachSample(1, 32200, ".");
+        await __eachSample(2, 4400, ".");
+      }
     })();
   })();
 };
