@@ -136,7 +136,7 @@ function App() {
                   type="text"
                   name="degree"
                   id="degree"
-                  placeholder="Bachelor of Science in ..."
+                  placeholder="Bachelor of Science"
                   required
                 />
               </div>
@@ -211,7 +211,7 @@ function App() {
                   type="text"
                   name="position"
                   id="position"
-                  placeholder="Intern"
+                  placeholder="Software Engineer"
                   required
                 />
               </div>
@@ -256,7 +256,7 @@ function App() {
                 <textarea
                   name="description"
                   id="description"
-                  placeholder="As an intern, ..."
+                  placeholder="As a software engineer, ..."
                   cols="20"
                   rows="10"
                 ></textarea>
