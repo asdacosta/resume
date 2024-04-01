@@ -58,6 +58,32 @@ const animateText = function () {
       "Bachelor of Science",
     ];
 
+    const honorsSamples = [
+      "First Class",
+      "Upper Second Class",
+      "Lower Second Class",
+      "Pass Degree",
+      "First Class",
+    ];
+
+    const positionSamples = [
+      "Software Engineer",
+      "IT Specialist",
+      "Accountant",
+      "Financial Analyst",
+      "President",
+      "Chief Officer",
+      "Manager",
+      "Supervisor",
+      "Software Engineer",
+    ];
+
+    const descriptionSamples = [
+      ", ...",
+      ", I turn challenges into solutions through lines of code. Dedicated to building impactful software with innovation and expertise.",
+      ", ...",
+    ];
+
     const animateInput = function (
       node,
       names,
@@ -72,7 +98,10 @@ const animateText = function () {
           name === "example" ||
           (names === phoneSamples && localIndex === 0) ||
           (names === addressSamples && localIndex === 0) ||
-          (names === degreeSamples && localIndex === 0)
+          (names === degreeSamples && localIndex === 0) ||
+          (names === honorsSamples && localIndex === 0) ||
+          (names === positionSamples && localIndex === 0) ||
+          (names === descriptionSamples && localIndex === 0)
         ) {
           // Don't append for initial case, just erase;
           return;
@@ -107,7 +136,10 @@ const animateText = function () {
           name === "example.com" ||
           (names === phoneSamples && localIndex === 3) ||
           (names === addressSamples && localIndex === 5) ||
-          (names === degreeSamples && localIndex === 7)
+          (names === degreeSamples && localIndex === 7) ||
+          (names === honorsSamples && localIndex === 4) ||
+          (names === positionSamples && localIndex === 8) ||
+          (names === descriptionSamples && localIndex === 2)
         ) {
           // Append and stop for last case
           return;
@@ -174,9 +206,11 @@ const animateText = function () {
       await __domainNames(2, 2600, ".");
       await __domainNames(3, 2400, ".");
       await __domainNames(4, 2200, ".");
-      await __domainNames(5, 4800, "@", false);
+      await __domainNames(5, 4600, "@", false);
       await __domainNames(6, 2400, "@", false);
     })();
+
+    // When stopCharIsLastIndex = false, stopChar is useless
 
     const animatePhoneField = (async function () {
       const node = getNodes().phoneInput;
@@ -242,6 +276,71 @@ const animateText = function () {
       await __eachSample(5, 4800, "e");
       await __eachSample(6, 5000, "e");
       await __eachSample(7, 3000, "e");
+    })();
+
+    const animateHonorsField = (async function () {
+      const node = getNodes().honorsInput;
+
+      const __eachSample = async function (
+        index,
+        timer,
+        stopChar,
+        stopCharIsLastIndex = false,
+      ) {
+        await new Promise((resolve) => {
+          animateInput(node, honorsSamples, index, stopChar, stopCharIsLastIndex);
+          setTimeout(resolve, timer);
+        });
+      };
+      await __eachSample(0, 1800, "s");
+      await __eachSample(1, 5300, "s");
+      await __eachSample(2, 5300, "s");
+      await __eachSample(3, 3600, "s");
+      await __eachSample(4, 1800, "s");
+    })();
+
+    const animatePositionsField = (async function () {
+      const node = getNodes().positionInput;
+
+      const __eachSample = async function (
+        index,
+        timer,
+        stopChar,
+        stopCharIsLastIndex = false,
+      ) {
+        await new Promise((resolve) => {
+          animateInput(node, positionSamples, index, stopChar, stopCharIsLastIndex);
+          setTimeout(resolve, timer);
+        });
+      };
+      await __eachSample(0, 2500, "r");
+      await __eachSample(1, 4200, "r");
+      await __eachSample(2, 3600, "r");
+      await __eachSample(3, 5000, "r");
+      await __eachSample(4, 3200, "r");
+      await __eachSample(5, 4000, "r");
+      await __eachSample(6, 2800, "r");
+      await __eachSample(7, 3400, "r");
+      await __eachSample(8, 2500, "r");
+    })();
+
+    const animateDescriptionField = (async function () {
+      const node = getNodes().descriptionInput;
+
+      const __eachSample = async function (
+        index,
+        timer,
+        stopChar,
+        stopCharIsLastIndex = false,
+      ) {
+        await new Promise((resolve) => {
+          animateInput(node, descriptionSamples, index, stopChar, stopCharIsLastIndex);
+          setTimeout(resolve, timer);
+        });
+      };
+      await __eachSample(0, 1200, ".");
+      await __eachSample(1, 32200, ".");
+      await __eachSample(2, 1200, ".");
     })();
   })();
 };
