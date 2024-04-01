@@ -55,7 +55,7 @@ const animateText = function () {
         for (const char of name) {
           let alteredPlaceholder = node.placeholder;
           await new Promise((resolve) => {
-            setTimeout(resolve, 150);
+            setTimeout(resolve, 120);
           });
 
           const appendAndUpdate = (function () {
@@ -77,7 +77,7 @@ const animateText = function () {
       const erase = (async function () {
         await append();
         if (name === "example.com" || (names === phoneSamples && localIndex === 3)) {
-          // Append and stop
+          // Append and stop for last case
           return;
         }
         const clearAllForLastDomain = (function () {
@@ -90,7 +90,7 @@ const animateText = function () {
         for (const char of name) {
           let alteredPlaceholder = node.placeholder;
           await new Promise((resolve) => {
-            setTimeout(resolve, 150);
+            setTimeout(resolve, 120);
           });
 
           const eraseAndUpdate = (function () {
@@ -114,7 +114,7 @@ const animateText = function () {
         for (let index = 0; index < 4; index++) {
           await new Promise((resolve) => {
             animateInput(node, localNames, index, "@");
-            setTimeout(resolve, 2600);
+            setTimeout(resolve, 2400);
           });
         }
       };
@@ -131,13 +131,13 @@ const animateText = function () {
           setTimeout(resolve, timer);
         });
       };
-      await __domainNames(0, 1400, ".");
-      await __domainNames(1, 2400, ".");
-      await __domainNames(2, 2800, ".");
-      await __domainNames(3, 2600, ".");
-      await __domainNames(4, 2600, ".");
-      await __domainNames(5, 5000, "@", false);
-      await __domainNames(6, 2600, "@", false);
+      await __domainNames(0, 1200, ".");
+      await __domainNames(1, 2200, ".");
+      await __domainNames(2, 2600, ".");
+      await __domainNames(3, 2400, ".");
+      await __domainNames(4, 2200, ".");
+      await __domainNames(5, 4800, "@", false);
+      await __domainNames(6, 2400, "@", false);
     })();
 
     const animatePhoneField = (async function () {
@@ -154,10 +154,10 @@ const animateText = function () {
           setTimeout(resolve, timer);
         });
       };
-      await __allSamples(0, 2500, "●");
-      await __allSamples(1, 4500, "●");
-      await __allSamples(2, 4500, "●");
-      await __allSamples(3, 2500, "●");
+      await __allSamples(0, 2200, "●");
+      await __allSamples(1, 4200, "●");
+      await __allSamples(2, 4000, "●");
+      await __allSamples(3, 2200, "●");
     })();
   })();
 };
