@@ -72,7 +72,7 @@ function App() {
                   type="tel"
                   name="phone"
                   id="phone"
-                  placeholder="+233 ●●● ●●● ●●●"
+                  placeholder="+(code)-●●●-●●●-●●●●"
                   required
                 />
               </div>
