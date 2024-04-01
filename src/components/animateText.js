@@ -152,6 +152,21 @@ const animateText = async function () {
           (names === positionSamples && localIndex === 8) ||
           (names === descriptionSamples && localIndex === 2)
         ) {
+          const blinkToIndicateEnd = (async function () {
+            for (let rounds = 0; rounds < 2; rounds++) {
+              node.removeAttribute("id");
+              node.setAttribute("id", "now");
+              await new Promise((resolve) => {
+                setTimeout(resolve, 500);
+              });
+              node.removeAttribute("id");
+              node.setAttribute("id", "add");
+              await new Promise((resolve) => {
+                setTimeout(resolve, 500);
+              });
+            }
+          })();
+
           // Append and stop for last case
           return;
         }
