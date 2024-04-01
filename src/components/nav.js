@@ -27,32 +27,21 @@ const navigation = function () {
         getNodes().layoutButtons[0].classList.add("chosen");
       })();
 
-      const choosePalette = (function () {
-        const palletteButtons = getNodes().paletteButtons;
-        palletteButtons.forEach((button) => {
-          button.addEventListener("click", () => {
-            const removePreviousChosen = (function () {
-              palletteButtons.forEach((preButton) => {
-                preButton.classList.remove("chosen");
-              });
-            })();
-            button.classList.add("chosen");
+      const choosePersonalization = (function () {
+        const choose = function (nodes) {
+          nodes.forEach((button) => {
+            button.addEventListener("click", () => {
+              const removePreviousChosen = (function () {
+                nodes.forEach((preButton) => {
+                  preButton.classList.remove("chosen");
+                });
+              })();
+              button.classList.add("chosen");
+            });
           });
-        });
-      })();
-
-      const chooseLayout = (function () {
-        const layoutButtons = getNodes().layoutButtons;
-        layoutButtons.forEach((button) => {
-          button.addEventListener("click", () => {
-            const removePreviousChosen = (function () {
-              layoutButtons.forEach((preButton) => {
-                preButton.classList.remove("chosen");
-              });
-            })();
-            button.classList.add("chosen");
-          });
-        });
+        };
+        choose(getNodes().paletteButtons);
+        choose(getNodes().layoutButtons);
       })();
     })();
 
