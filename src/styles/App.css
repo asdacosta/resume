@@ -272,7 +272,7 @@ textarea {
 }
 
 input {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   letter-spacing: 0.05rem;
   height: 1.6rem;
   border-radius: 0.5rem;
@@ -293,6 +293,18 @@ input {
 
 .optional {
   color: rgb(124, 124, 124);
+}
+
+::placeholder {
+  transition: opacity 0.4s;
+}
+
+#now::placeholder {
+  opacity: 0.4;
+}
+
+#end::placeholder {
+  opacity: 1;
 }
 
 i {
