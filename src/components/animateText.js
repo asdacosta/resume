@@ -47,6 +47,17 @@ const animateText = function () {
       "A24/12 Hell Street",
     ];
 
+    const degreeSamples = [
+      "Science",
+      "Arts",
+      "Business Administration",
+      "Engineering",
+      "Architecture",
+      "Master's Degree",
+      "Doctoral's Degree",
+      "Bachelor of Science",
+    ];
+
     const animateInput = function (
       node,
       names,
@@ -60,7 +71,8 @@ const animateText = function () {
         if (
           name === "example" ||
           (names === phoneSamples && localIndex === 0) ||
-          (names === addressSamples && localIndex === 0)
+          (names === addressSamples && localIndex === 0) ||
+          (names === degreeSamples && localIndex === 0)
         ) {
           // Don't append for initial case, just erase;
           return;
@@ -90,13 +102,22 @@ const animateText = function () {
 
       const erase = (async function () {
         await append();
+
         if (
-          (name === "example.com" || (names === phoneSamples && localIndex === 3),
-          names === addressSamples && localIndex === 5)
+          name === "example.com" ||
+          (names === phoneSamples && localIndex === 3) ||
+          (names === addressSamples && localIndex === 5) ||
+          (names === degreeSamples && localIndex === 7)
         ) {
           // Append and stop for last case
           return;
         }
+
+        // Clear All For Degree From index 5
+        if (names === degreeSamples && localIndex === 4) {
+          name = "Bachelor of Architecture";
+        }
+
         const clearAllForLastDomain = (function () {
           if (names === domainNames && localIndex === 4) {
             name = "aol.com";
@@ -160,7 +181,7 @@ const animateText = function () {
     const animatePhoneField = (async function () {
       const node = getNodes().phoneInput;
 
-      const __allSamples = async function (
+      const __eachSample = async function (
         index,
         timer,
         stopChar,
@@ -171,16 +192,16 @@ const animateText = function () {
           setTimeout(resolve, timer);
         });
       };
-      await __allSamples(0, 2200, "●");
-      await __allSamples(1, 4200, "●");
-      await __allSamples(2, 4000, "●");
-      await __allSamples(3, 2200, "●");
+      await __eachSample(0, 2200, "●");
+      await __eachSample(1, 4200, "●");
+      await __eachSample(2, 4000, "●");
+      await __eachSample(3, 2200, "●");
     })();
 
     const animateAddressField = (async function () {
       const node = getNodes().addressInput;
 
-      const __allSamples = async function (
+      const __eachSample = async function (
         index,
         timer,
         stopChar,
@@ -191,12 +212,36 @@ const animateText = function () {
           setTimeout(resolve, timer);
         });
       };
-      await __allSamples(0, 2600, "t");
-      await __allSamples(1, 4800, "t");
-      await __allSamples(2, 6400, "t");
-      await __allSamples(3, 4000, "t");
-      await __allSamples(4, 6000, "t");
-      await __allSamples(5, 2600, "t");
+      await __eachSample(0, 2600, "t");
+      await __eachSample(1, 4800, "t");
+      await __eachSample(2, 6400, "t");
+      await __eachSample(3, 4000, "t");
+      await __eachSample(4, 6000, "t");
+      await __eachSample(5, 2600, "t");
+    })();
+
+    const animateDegreeField = (async function () {
+      const node = getNodes().degreeInput;
+
+      const __eachSample = async function (
+        index,
+        timer,
+        stopChar,
+        stopCharIsLastIndex = false,
+      ) {
+        await new Promise((resolve) => {
+          animateInput(node, degreeSamples, index, stopChar, stopCharIsLastIndex);
+          setTimeout(resolve, timer);
+        });
+      };
+      await __eachSample(0, 1600, "e");
+      await __eachSample(1, 1800, "e");
+      await __eachSample(2, 6500, "e");
+      await __eachSample(3, 4000, "e");
+      await __eachSample(4, 6000, "e");
+      await __eachSample(5, 4800, "e");
+      await __eachSample(6, 5000, "e");
+      await __eachSample(7, 3000, "e");
     })();
   })();
 };
