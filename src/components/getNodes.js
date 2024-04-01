@@ -7,6 +7,7 @@ const getNodes = function () {
   const honorsInput = document.querySelector("#honors");
   const positionInput = document.querySelector("#position");
   const descriptionInput = document.querySelector("#description");
+  const menu = document.querySelector(".menu");
 
   return {
     fieldStatus,
@@ -17,6 +18,7 @@ const getNodes = function () {
     honorsInput,
     positionInput,
     descriptionInput,
+    menu,
   };
 };
 
