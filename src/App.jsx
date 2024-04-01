@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import "./styles/App.css";
 import { animateText } from "./components/animateText";
+import { navigation } from "./components/nav";
 // import "./styles/reset.css";
 
 function App() {
   useEffect(() => {
     animateText();
+    navigation();
   }, []);
 
   return (
@@ -16,6 +18,30 @@ function App() {
             <i class="fa-solid fa-circle"></i>
             <i class="fa-solid fa-caret-down"></i>
             <i class="fa-solid fa-circle"></i>
+          </section>
+          <section className="dialog">
+            <h2>Personalize</h2>
+            <ul>
+              <li>
+                Palette <i class="fa-solid fa-angle-right"></i>
+              </li>
+              <div className="palette">
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+              </div>
+              <li>
+                Layout <i class="fa-solid fa-angle-right"></i>
+              </li>
+              <div className="layout">
+                <button></button>
+                <button></button>
+                <button></button>
+              </div>
+            </ul>
           </section>
           <section className="sample-bar">
             <span>Clear</span>
