@@ -37,6 +37,16 @@ const animateText = function () {
       "-●●●-●●●-●●●●",
     ];
 
+    // Address Samples
+    const addressSamples = [
+      "A24/12 Hell Street",
+      "123 Main Street",
+      "456 Elm Street, Apt 8B",
+      "P.O. Box 246",
+      "Paris, Île-de-France",
+      "A24/12 Hell Street",
+    ];
+
     const animateInput = function (
       node,
       names,
@@ -47,7 +57,11 @@ const animateText = function () {
       let name = names[localIndex];
 
       const append = async function () {
-        if (name === "example" || (names === phoneSamples && localIndex === 0)) {
+        if (
+          name === "example" ||
+          (names === phoneSamples && localIndex === 0) ||
+          (names === addressSamples && localIndex === 0)
+        ) {
           // Don't append for initial case, just erase;
           return;
         }
@@ -76,7 +90,10 @@ const animateText = function () {
 
       const erase = (async function () {
         await append();
-        if (name === "example.com" || (names === phoneSamples && localIndex === 3)) {
+        if (
+          (name === "example.com" || (names === phoneSamples && localIndex === 3),
+          names === addressSamples && localIndex === 5)
+        ) {
           // Append and stop for last case
           return;
         }
@@ -107,7 +124,7 @@ const animateText = function () {
       })();
     };
 
-    const animateMail = (async function () {
+    const animateMailField = (async function () {
       const node = getNodes().emailInput;
 
       const __localNames = async function () {
@@ -158,6 +175,28 @@ const animateText = function () {
       await __allSamples(1, 4200, "●");
       await __allSamples(2, 4000, "●");
       await __allSamples(3, 2200, "●");
+    })();
+
+    const animateAddressField = (async function () {
+      const node = getNodes().addressInput;
+
+      const __allSamples = async function (
+        index,
+        timer,
+        stopChar,
+        stopCharIsLastIndex = false,
+      ) {
+        await new Promise((resolve) => {
+          animateInput(node, addressSamples, index, stopChar, stopCharIsLastIndex);
+          setTimeout(resolve, timer);
+        });
+      };
+      await __allSamples(0, 2600, "t");
+      await __allSamples(1, 4800, "t");
+      await __allSamples(2, 6400, "t");
+      await __allSamples(3, 4000, "t");
+      await __allSamples(4, 6000, "t");
+      await __allSamples(5, 2600, "t");
     })();
   })();
 };
