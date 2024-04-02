@@ -5,38 +5,64 @@ const navigation = function () {
     const __menu = (function () {
       const menuEyes = getNodes().menu.querySelectorAll(".fa-circle");
       const caret = getNodes().menu.querySelector(".fa-caret-down");
+      const menu = getNodes().menu.querySelector("div");
 
-      getNodes().menu.addEventListener("mouseover", () => {
-        menuEyes.forEach((eye) => {
-          eye.style.transform = "translateY(-0.2rem)";
+      const triggerHoverEffect = (function () {
+        menu.addEventListener("mouseover", () => {
+          menuEyes.forEach((eye) => {
+            eye.style.transform = "translateY(-0.2rem)";
+          });
         });
-      });
-      getNodes().menu.addEventListener("mouseout", () => {
-        menuEyes.forEach((eye) => {
-          eye.style.transform = "translateY(0)";
+        menu.addEventListener("mouseout", () => {
+          menuEyes.forEach((eye) => {
+            eye.style.transform = "translateY(0)";
+          });
         });
-      });
+      })();
 
-      let isClicked = false;
-      getNodes().menu.addEventListener("click", () => {
-        if (isClicked === false) {
-          isClicked = true;
-          caret.style.transform = "translateY(0.5rem)";
-          getNodes().dialog.style.transition =
-            "height 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 2s ease-in-out";
-          getNodes().dialog.classList.add("reveal");
-          return;
-        }
+      let isDisplayed = false;
+      let outsideClickListenerAdded = false;
+      const triggerDialogBox = (function () {
+        // Exit with any outside click
+        const triggerExitWithOutsideClick = function (event) {
+          if (!getNodes().dialog.contains(event.target) && event.target !== menu) {
+            isDisplayed = false;
+            caret.style.transform = "translateY(0)";
+            getNodes().dialog.style.transition =
+              "height 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.6s ease-in-out";
+            getNodes().dialog.classList.remove("reveal");
+            document.removeEventListener("click", triggerExitWithOutsideClick);
+            outsideClickListenerAdded = false;
+          }
+        };
 
-        if (isClicked === true) {
-          isClicked = false;
-          caret.style.transform = "translateY(0)";
-          getNodes().dialog.style.transition =
-            "height 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.6s ease-in-out";
-          getNodes().dialog.classList.remove("reveal");
-          return;
-        }
-      });
+        menu.addEventListener("click", () => {
+          // Display
+          if (isDisplayed === false) {
+            isDisplayed = true;
+            caret.style.transform = "translateY(0.5rem)";
+            getNodes().dialog.style.transition =
+              "height 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 2s ease-in-out";
+            getNodes().dialog.classList.add("reveal");
+
+            if (!outsideClickListenerAdded) {
+              document.addEventListener("click", triggerExitWithOutsideClick);
+              outsideClickListenerAdded = true;
+            }
+            return;
+          }
+
+          // Exit
+          if (isDisplayed === true) {
+            isDisplayed = false;
+            caret.style.transform = "translateY(0)";
+            getNodes().dialog.style.transition =
+              "height 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.6s ease-in-out";
+            getNodes().dialog.classList.remove("reveal");
+            return;
+          }
+        });
+      })();
     })();
 
     const __dialog = (function () {
