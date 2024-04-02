@@ -233,11 +233,21 @@ h2 {
 
 .sample-bar > span {
   position: absolute;
+  transition: opacity 0.7s;
+}
+
+.hideSampleText {
+  opacity: 0;
 }
 
 .sample-bar > i {
   font-size: 1.2rem;
   margin-left: auto;
+  transition: transform 0.7s ease-in-out;
+}
+
+.moveSampleIcon {
+  transform: translateX(-7.5rem);
 }
 
 .download {
