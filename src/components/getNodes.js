@@ -11,6 +11,7 @@ const getNodes = function () {
   const sampleBar = document.querySelector(".sample-bar");
   const sampleBarIcon = document.querySelector(".sample-bar i");
   const sampleBarText = document.querySelector(".sample-bar span");
+  const view = document.querySelector(".view");
   const dialog = document.querySelector(".dialog");
   const palette = document.querySelector(".palette");
   const paletteButtons = document.querySelectorAll(".palette > button");
@@ -31,6 +32,7 @@ const getNodes = function () {
     sampleBar,
     sampleBarIcon,
     sampleBarText,
+    view,
     dialog,
     palette,
     paletteButtons,
