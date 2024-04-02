@@ -67,9 +67,16 @@ nav {
   border-radius: 1rem;
   top: 3.5rem;
   left: 0rem;
+  height: 0;
+  opacity: 0;
 }
 
-.layout,
+.reveal {
+  opacity: 1;
+  height: 17rem;
+}
+
+.dialog .layout,
 .palette {
   display: grid;
   justify-content: center;
@@ -184,6 +191,7 @@ h2 {
   align-self: stretch;
   display: flex;
   align-items: center;
+  position: relative;
   gap: 0.2rem;
   padding: 0 0.3rem;
   border: 0.1rem solid rgb(155, 154, 154);
@@ -192,12 +200,21 @@ h2 {
   cursor: pointer;
 }
 
-.menu i:nth-child(2) {
+.menu i.fa-caret-down {
   font-size: 1.2rem;
 }
 
-.menu i:not(:nth-child(2)) {
+.menu i.fa-circle {
   font-size: 0.6rem;
+}
+
+.menu div {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.5rem;
+  left: 0;
+  z-index: 2;
 }
 
 .sample-bar {
