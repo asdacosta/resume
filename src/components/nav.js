@@ -95,6 +95,7 @@ const navigation = function () {
       const text = getNodes().sampleBarText;
 
       getNodes().sampleBar.addEventListener("click", async () => {
+        // Clear
         if (!isWheelOnLeft) {
           wheel.classList.add("moveSampleIcon");
           text.classList.add("hideSampleText");
@@ -110,6 +111,7 @@ const navigation = function () {
           return;
         }
 
+        // Display Sample
         if (isWheelOnLeft) {
           wheel.classList.remove("moveSampleIcon");
           text.classList.add("hideSampleText");
