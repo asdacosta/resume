@@ -57,7 +57,7 @@ const navigation = function () {
             isDisplayed = false;
             caret.style.transform = "translateY(0)";
             getNodes().dialog.style.transition =
-              "height 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.6s ease-in-out";
+              "height 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.55s ease-in-out";
             getNodes().dialog.classList.remove("reveal");
             return;
           }
@@ -89,7 +89,42 @@ const navigation = function () {
       })();
     })();
 
-    const __sampleBar = (function () {})();
+    const __sampleBar = (function () {
+      let isWheelOnLeft = false;
+      const wheel = getNodes().sampleBarIcon;
+      const text = getNodes().sampleBarText;
+
+      getNodes().sampleBar.addEventListener("click", async () => {
+        if (!isWheelOnLeft) {
+          wheel.classList.add("moveSampleIcon");
+          text.classList.add("hideSampleText");
+          isWheelOnLeft = true;
+
+          // Wait for animation to finish
+          await new Promise((resolve) => {
+            setTimeout(() => {
+              text.classList.remove("hideSampleText");
+              text.textContent = "Sample";
+            }, 500);
+          });
+          return;
+        }
+
+        if (isWheelOnLeft) {
+          wheel.classList.remove("moveSampleIcon");
+          text.classList.add("hideSampleText");
+          isWheelOnLeft = false;
+
+          // Wait for animation to finish
+          await new Promise((resolve) => {
+            setTimeout(() => {
+              text.classList.remove("hideSampleText");
+              text.textContent = "Clear";
+            }, 500);
+          });
+        }
+      });
+    })();
   })();
 };
 
