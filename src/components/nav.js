@@ -16,8 +16,26 @@ const navigation = function () {
           eye.style.transform = "translateY(0)";
         });
       });
+
+      let isClicked = false;
       getNodes().menu.addEventListener("click", () => {
-        caret.style.transform = "translateY(0.5rem)";
+        if (isClicked === false) {
+          isClicked = true;
+          caret.style.transform = "translateY(0.5rem)";
+          getNodes().dialog.style.transition =
+            "height 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 2s ease-in-out";
+          getNodes().dialog.classList.add("reveal");
+          return;
+        }
+
+        if (isClicked === true) {
+          isClicked = false;
+          caret.style.transform = "translateY(0)";
+          getNodes().dialog.style.transition =
+            "height 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.6s ease-in-out";
+          getNodes().dialog.classList.remove("reveal");
+          return;
+        }
       });
     })();
 
