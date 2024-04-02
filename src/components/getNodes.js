@@ -9,6 +9,8 @@ const getNodes = function () {
   const descriptionInput = document.querySelector("#description");
   const menu = document.querySelector(".menu");
   const sampleBar = document.querySelector(".sample-bar");
+  const sampleBarIcon = document.querySelector(".sample-bar i");
+  const sampleBarText = document.querySelector(".sample-bar span");
   const dialog = document.querySelector(".dialog");
   const palette = document.querySelector(".palette");
   const paletteButtons = document.querySelectorAll(".palette > button");
@@ -27,6 +29,8 @@ const getNodes = function () {
     descriptionInput,
     menu,
     sampleBar,
+    sampleBarIcon,
+    sampleBarText,
     dialog,
     palette,
     paletteButtons,
