@@ -17,6 +17,7 @@ function App() {
       <section className="edit-cover">
         <nav>
           <section className="menu">
+            <div></div>
             <i class="fa-solid fa-circle"></i>
             <i class="fa-solid fa-caret-down"></i>
             <i class="fa-solid fa-circle"></i>
