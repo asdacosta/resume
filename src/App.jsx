@@ -54,7 +54,6 @@ function App() {
             <i class="fa-solid fa-arrow-down"></i>
           </section>
           <section className="view">
-            <span></span>
             <i class="fa-solid fa-eye"></i>
           </section>
         </nav>
