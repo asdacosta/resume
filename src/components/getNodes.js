@@ -14,6 +14,7 @@ const getNodes = function () {
   const paletteButtons = document.querySelectorAll(".palette > button");
   const layout = document.querySelector(".layout");
   const layoutButtons = document.querySelectorAll(".layout > button");
+  const profileUploadBox = document.querySelector(".field-profile label");
 
   return {
     fieldStatus,
@@ -31,6 +32,7 @@ const getNodes = function () {
     paletteButtons,
     layout,
     layoutButtons,
+    profileUploadBox,
   };
 };
 
