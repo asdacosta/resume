@@ -48,7 +48,7 @@ function App() {
           </section>
           <section className="sample-bar">
             <span>Clear</span>
-            <i className="fa-solid fa-gear"></i>
+            <i class="fa-solid fa-circle"></i>
           </section>
           <section className="download">
             <i class="fa-solid fa-arrow-down"></i>
