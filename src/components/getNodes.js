@@ -18,6 +18,7 @@ const getNodes = function () {
   const layout = document.querySelector(".layout");
   const layoutButtons = document.querySelectorAll(".layout > button");
   const profileUploadBox = document.querySelector(".field-profile label");
+  const resumeCover = document.querySelector(".resume-cover");
 
   return {
     fieldStatus,
@@ -39,6 +40,7 @@ const getNodes = function () {
     layout,
     layoutButtons,
     profileUploadBox,
+    resumeCover,
   };
 };
 
