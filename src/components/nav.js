@@ -130,18 +130,35 @@ const navigation = function () {
 
     const __view = (function () {
       const viewIcon = getNodes().view.querySelector("i");
+      const resume = getNodes().resumeCover;
       let isInView = true;
-      viewIcon.addEventListener("click", () => {
+
+      viewIcon.addEventListener("click", async () => {
         if (isInView) {
           viewIcon.classList.remove("fa-eye");
           viewIcon.classList.add("fa-eye-low-vision");
           isInView = false;
+
+          resume.style.transform = "translateY(-110%)";
+          await new Promise((resolve) => {
+            setTimeout(() => {
+              resume.style.display = "none";
+            }, 300);
+          });
           return;
         }
+
         if (!isInView) {
           viewIcon.classList.remove("fa-eye-low-vision");
           viewIcon.classList.add("fa-eye");
           isInView = true;
+
+          resume.style.display = "grid";
+          await new Promise((resolve) => {
+            setTimeout(() => {
+              resume.style.transform = "translateY(0)";
+            }, 100);
+          });
           return;
         }
       });
