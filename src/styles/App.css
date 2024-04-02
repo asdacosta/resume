@@ -8,7 +8,8 @@ body {
 }
 
 #root {
-  display: flex;
+  display: grid;
+  grid-template: 1fr / repeat(2, 1fr);
   justify-content: center;
   font-size: 1.1rem;
   font-family: "Raleway", sans-serif;
@@ -18,11 +19,6 @@ body {
   padding: 2rem 5rem;
   gap: 2rem;
   background-color: rgb(231, 231, 231);
-}
-
-#root > section {
-  flex: 1 1 auto;
-  width: 50%;
 }
 
 nav,
@@ -472,7 +468,7 @@ textarea:focus {
 }
 
 i {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 
@@ -482,4 +478,8 @@ i {
 
 .fa-caret-down {
   transition: transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.resume-cover {
+  transition: transform 0.2s;
 }
