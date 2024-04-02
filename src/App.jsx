@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import "./styles/App.css";
 import { animateText } from "./components/animateText";
 import { navigation } from "./components/nav";
+import { inputFields } from "./components/inputFields";
 // import "./styles/reset.css";
 
 function App() {
   useEffect(() => {
     animateText();
     navigation();
+    inputFields();
   }, []);
 
   return (
