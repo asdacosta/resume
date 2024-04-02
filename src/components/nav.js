@@ -127,6 +127,25 @@ const navigation = function () {
         }
       });
     })();
+
+    const __view = (function () {
+      const viewIcon = getNodes().view.querySelector("i");
+      let isInView = true;
+      viewIcon.addEventListener("click", () => {
+        if (isInView) {
+          viewIcon.classList.remove("fa-eye");
+          viewIcon.classList.add("fa-eye-low-vision");
+          isInView = false;
+          return;
+        }
+        if (!isInView) {
+          viewIcon.classList.remove("fa-eye-low-vision");
+          viewIcon.classList.add("fa-eye");
+          isInView = true;
+          return;
+        }
+      });
+    })();
   })();
 };
 
