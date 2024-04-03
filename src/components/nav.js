@@ -152,7 +152,8 @@ const navigation = function () {
             setTimeout(resolve, 300);
           });
           const centerEditCover = (async function () {
-            editCover.style.transform = "translateX(30%)";
+            // editCover.style.transform = "translateX(30%)";
+            editCover.style.width = "200%";
           })();
 
           return;
@@ -165,6 +166,7 @@ const navigation = function () {
 
           const returnEditCoverToDefault = (async function () {
             editCover.style.transform = "translateX(0)";
+            editCover.style.width = "100%";
           })();
           await new Promise((resolve) => {
             setTimeout(resolve, 300);
