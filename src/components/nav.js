@@ -172,7 +172,7 @@ const navigation = function () {
             setTimeout(resolve, 300);
           });
           const revealResume = (async function () {
-            resume.style.display = "grid";
+            resume.style.display = "flex";
             await new Promise((resolve) => {
               setTimeout(() => {
                 resume.style.transform = "translateY(0)";
