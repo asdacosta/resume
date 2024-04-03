@@ -131,6 +131,7 @@ const navigation = function () {
     const __view = (function () {
       const viewIcon = getNodes().view.querySelector("i");
       const resume = getNodes().resumeCover;
+      const editCover = getNodes().editCover;
       let isInView = true;
 
       viewIcon.addEventListener("click", async () => {
@@ -139,12 +140,21 @@ const navigation = function () {
           viewIcon.classList.add("fa-eye-low-vision");
           isInView = false;
 
-          resume.style.transform = "translateY(-110%)";
+          const hideResume = (async function () {
+            resume.style.transform = "translateY(-110%)";
+            await new Promise((resolve) => {
+              setTimeout(() => {
+                resume.style.display = "none";
+              }, 300);
+            });
+          })();
           await new Promise((resolve) => {
-            setTimeout(() => {
-              resume.style.display = "none";
-            }, 300);
+            setTimeout(resolve, 300);
           });
+          const centerEditCover = (async function () {
+            editCover.style.transform = "translateX(30%)";
+          })();
+
           return;
         }
 
@@ -153,12 +163,20 @@ const navigation = function () {
           viewIcon.classList.add("fa-eye");
           isInView = true;
 
-          resume.style.display = "grid";
+          const returnEditCoverToDefault = (async function () {
+            editCover.style.transform = "translateX(0)";
+          })();
           await new Promise((resolve) => {
-            setTimeout(() => {
-              resume.style.transform = "translateY(0)";
-            }, 100);
+            setTimeout(resolve, 300);
           });
+          const revealResume = (async function () {
+            resume.style.display = "grid";
+            await new Promise((resolve) => {
+              setTimeout(() => {
+                resume.style.transform = "translateY(0)";
+              }, 100);
+            });
+          })();
           return;
         }
       });
