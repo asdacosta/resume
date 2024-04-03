@@ -43,6 +43,7 @@ nav,
 }
 
 .edit-cover {
+  transition: transform 0.5s;
   display: flex;
   flex-direction: column;
   gap: 2rem;
