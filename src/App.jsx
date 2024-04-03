@@ -149,7 +149,7 @@ function App() {
                 <i class="fa-solid fa-plus"></i> Education
               </span>
             </div>
-            <section>
+            <section className="education-fields">
               <div className="field">
                 <label for="school">
                   School <span className="required">Required</span>
@@ -224,7 +224,7 @@ function App() {
                 <i class="fa-solid fa-plus"></i> Experience
               </span>
             </div>
-            <section>
+            <section className="professional-fields">
               <div className="field">
                 <label for="company">
                   Company Name <span className="required">Required</span>
@@ -301,7 +301,82 @@ function App() {
           </section>
         </section>
       </section>
-      <section className="resume-cover"></section>
+      <section className="resume-cover">
+        <section className="resume-header">
+          <section className="resume-profile">
+            <div></div>
+          </section>
+          <section className="name-position">
+            <p className="resume-name">Ace Draco</p>
+            <p className="resume-position">Software Engineer</p>
+          </section>
+          <section className="resume-contact">
+            <h2>Contact</h2>
+            <p>
+              <i class="fa-solid fa-phone"></i> <span>+233 501403974</span>
+            </p>
+            <p>
+              <i class="fa-solid fa-envelope"></i> <span>ace@gmail.com</span>
+            </p>
+            <p>
+              <i class="fa-solid fa-location-dot"></i> <span>Canada Ottawa</span>
+            </p>
+            <p>
+              <i class="fa-solid fa-location-arrow"></i> Accra, Anywhere
+            </p>
+          </section>
+          <section className="resume-skills">
+            <h2>Skills</h2>
+            <ul>
+              <li>Code</li>
+              <li>Program</li>
+              <li>Thinker</li>
+            </ul>
+          </section>
+        </section>
+        <section className="resume-body">
+          <section className="resume-education">
+            <h2>Education</h2>
+            <section>
+              <p>
+                <span>Oxford University</span> <span>2019 - 2023</span>
+              </p>
+              <p>
+                <span>Bachelor of Science</span> | <span>First Class Honors</span>
+              </p>
+              <p>Ghana ⚫ Accra</p>
+            </section>
+            <section>
+              <p>
+                <span>Oxford University</span> <span>2019 - 2023</span>
+              </p>
+              <p>
+                <span>Bachelor of Science</span> | <span>First Class Honors</span>
+              </p>
+              <p>Ghana ⚫ Accra</p>
+            </section>
+          </section>
+          <section className="resume-professional">
+            <h2>Professional Experience</h2>
+            <section>
+              <p>
+                <span>Tesla Inc</span>
+                <span>Aug, 2024 - Sep, 2025</span>
+              </p>
+              <p>Chief Software Engineer</p>
+              <p>Canada ⚫ Ottawa</p>
+            </section>
+            <section>
+              <p>
+                <span>Tesla Inc</span>
+                <span>Aug, 2024 - Sep, 2025</span>
+              </p>
+              <p>Chief Software Engineer</p>
+              <p>Canada ⚫ Ottawa</p>
+            </section>
+          </section>
+        </section>
+      </section>
     </>
   );
 }
