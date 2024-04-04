@@ -9,7 +9,7 @@ body {
 
 #root {
   display: grid;
-  grid-template: 1fr / repeat(2, 1fr);
+  grid-template: 1fr / 1fr minmax(45rem, 1fr);
   justify-content: center;
   font-size: 1.1rem;
   font-family: "Raleway", sans-serif;
@@ -19,6 +19,13 @@ body {
   padding: 2rem 5rem;
   gap: 2rem;
   background-color: rgb(231, 231, 231);
+}
+
+.input-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 1rem 0 12rem;
 }
 
 nav,
@@ -259,13 +266,6 @@ h3 {
 
 .view {
   width: 2rem;
-}
-
-.input-fields {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 0 1rem 0 12rem;
 }
 
 .education > p,
@@ -610,5 +610,200 @@ i {
 
 .resume-education > section > p:first-child > span:last-child,
 .resume-professional > section > p:first-child > span:last-child {
+  font-size: 0.85rem;
   opacity: 0.5;
+}
+
+.resume-professional > section > p:last-child {
+  margin-top: 0.3rem;
+  padding: 0.3rem;
+  font-size: 0.9rem;
+  text-align: justify;
+  background-color: rgb(231, 231, 231);
+  border-radius: 1rem;
+  font-weight: 400;
+}
+
+@media (max-width: 1630px) {
+  .input-fields {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 1450px) {
+  .personal-info > section {
+    grid-template: repeat(8, 1fr) / 1fr;
+  }
+
+  .education > section {
+    grid-template: repeat(7, 1fr) / 1fr;
+  }
+
+  .professional > section {
+    grid-template: repeat(6, 1fr) 2fr / 1fr;
+  }
+
+  .education .field:first-child,
+  .field-description {
+    margin-right: 0;
+  }
+
+  .resume-body {
+    padding-left: 1.5rem;
+  }
+}
+
+@media (max-width: 1150px) {
+  #root {
+    grid-template: repeat(2, 1fr) / 1fr;
+    font-size: 0.9rem;
+    gap: 1.5rem;
+    padding: 1rem;
+    /* For tablet screens that hide content at bottom */
+    margin-bottom: 30rem;
+  }
+
+  .edit-cover {
+    align-self: flex-start;
+    gap: 0;
+  }
+
+  .personal-info > section,
+  .education > section {
+    grid-template: repeat(4, 1fr) / repeat(2, 1fr);
+  }
+
+  .professional > section {
+    grid-template: repeat(3, 1fr) 2fr / repeat(2, 1fr);
+  }
+
+  .resume-name {
+    font-size: 1.5rem;
+  }
+
+  .resume-position {
+    font-size: 1rem;
+  }
+
+  .resume-cover h2 {
+    font-size: 1.2rem;
+  }
+
+  .resume-profile div {
+    width: 9rem;
+    height: 9rem;
+    margin: 0.5rem;
+  }
+
+  .resume-contact p {
+    gap: 0.4rem;
+    margin-left: 1rem;
+  }
+
+  .resume-body {
+    gap: 2.5rem;
+    padding-left: 1rem;
+  }
+
+  .resume-cover ul {
+    padding-left: 1.8rem;
+  }
+
+  .resume-education > section > p:first-child > span:first-child,
+  .resume-professional > section > p:first-child > span:first-child {
+    font-size: 1.1rem;
+  }
+
+  i {
+    font-size: 1.3rem;
+  }
+
+  .education > p,
+  .professional > p,
+  .personal-info > p {
+    font-size: 1.2rem;
+  }
+
+  .required,
+  .optional {
+    font-size: 0.7rem;
+  }
+
+  input {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 630px) {
+  #root {
+    font-size: 0.85rem;
+    gap: 1.2rem;
+    padding: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .personal-info > section {
+    grid-template: repeat(8, 1fr) / 1fr;
+  }
+
+  .education > section {
+    grid-template: repeat(7, 1fr) / 1fr;
+  }
+
+  .professional > section {
+    grid-template: repeat(6, 1fr) 2fr / 1fr;
+  }
+
+  .resume-education > section > p:first-child,
+  .resume-professional > section > p:first-child {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .resume-name {
+    font-size: 1.2rem;
+  }
+
+  .resume-position {
+    font-size: 0.9rem;
+  }
+
+  .resume-cover h2 {
+    font-size: 1rem;
+  }
+
+  .resume-education > section > p:first-child > span:first-child,
+  .resume-professional > section > p:first-child > span:first-child {
+    font-size: 0.9rem;
+  }
+
+  .resume-profile div {
+    width: 7rem;
+    height: 7rem;
+    margin: 0.5rem;
+  }
+
+  .resume-body {
+    gap: 1.2rem;
+    padding-left: 0.5rem;
+  }
+
+  .resume-education,
+  .resume-professional {
+    gap: 0.5rem;
+  }
+
+  .resume-education > section,
+  .resume-professional > section {
+    margin-right: 0.5rem;
+  }
+
+  input {
+    font-size: 0.9rem;
+  }
+
+  .required,
+  .optional {
+    font-size: 0.6rem;
+  }
 }
