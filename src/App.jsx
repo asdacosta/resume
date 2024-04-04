@@ -365,6 +365,11 @@ function App() {
               </p>
               <p>Chief Software Engineer</p>
               <p>Canada ⚫ Ottawa</p>
+              <p>
+                As a software engineer, I turn challenges into solutions through lines of
+                code. Dedicated to building impactful software with innovation and
+                expertise.
+              </p>
             </section>
             <section>
               <p>
@@ -373,6 +378,11 @@ function App() {
               </p>
               <p>Chief Software Engineer</p>
               <p>Canada ⚫ Ottawa</p>
+              <p>
+                As a software engineer, I turn challenges into solutions through lines of
+                code. Dedicated to building impactful software with innovation and
+                expertise.
+              </p>
             </section>
           </section>
         </section>
