@@ -152,8 +152,7 @@ const navigation = function () {
             setTimeout(resolve, 300);
           });
           const centerEditCover = (async function () {
-            // editCover.style.transform = "translateX(30%)";
-            editCover.style.width = "200%";
+            editCover.style.gridColumn = "1 / -1";
           })();
 
           return;
@@ -165,11 +164,10 @@ const navigation = function () {
           isInView = true;
 
           const returnEditCoverToDefault = (async function () {
-            editCover.style.transform = "translateX(0)";
-            editCover.style.width = "100%";
+            editCover.style.gridColumn = "1 / 2";
           })();
           await new Promise((resolve) => {
-            setTimeout(resolve, 300);
+            setTimeout(resolve, 100);
           });
           const revealResume = (async function () {
             resume.style.display = "flex";
