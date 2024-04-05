@@ -227,7 +227,7 @@ h3 {
   align-items: center;
   flex: 1 1 5rem;
   position: relative;
-  max-width: 10rem;
+  max-width: 9rem;
   padding: 0.2rem 0.5rem;
   border: 0.1rem solid rgb(155, 154, 154);
   border-radius: 1rem;
@@ -246,12 +246,13 @@ h3 {
 
 .sample-bar > i {
   font-size: 1.2rem;
+  margin-top: 0.08rem;
   margin-left: auto;
   transition: transform 0.7s ease-in-out;
 }
 
 .moveSampleIcon {
-  transform: translateX(-7.5rem);
+  transform: translateX(-6.5rem);
 }
 
 .download {
@@ -650,12 +651,17 @@ i {
   }
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 1310px) {
+  #root {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 1160px) {
   #root {
     grid-template: repeat(2, 1fr) / 1fr;
     font-size: 0.9rem;
-    gap: 1.5rem;
-    padding: 1rem;
     /* For tablet screens that hide content at bottom */
     margin-bottom: 30rem;
   }
@@ -737,6 +743,11 @@ i {
     gap: 1.2rem;
     padding: 0.5rem;
     margin-bottom: 0;
+  }
+
+  nav {
+    gap: 0.5rem;
+    padding: 0.5rem;
   }
 
   .personal-info > section {
