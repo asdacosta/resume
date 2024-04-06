@@ -24,6 +24,10 @@ const getNodes = function () {
   const professionalParagraph = document.querySelector(".professional p");
   const educationLocker = document.querySelector(".education .open-field");
   const professionalLocker = document.querySelector(".professional .open-field");
+  const educationAddSection = document.querySelector(".education .add");
+  const educationAdd = document.querySelector(".education .add span");
+  const professionalAddSection = document.querySelector(".professional .add");
+  const professionalAdd = document.querySelector(".professional .add span");
 
   return {
     fieldStatus,
@@ -51,6 +55,10 @@ const getNodes = function () {
     professionalParagraph,
     educationLocker,
     professionalLocker,
+    educationAddSection,
+    educationAdd,
+    professionalAddSection,
+    professionalAdd,
   };
 };
 
