@@ -67,6 +67,79 @@ const inputFields = function () {
       getNodes().professionalAdd,
     );
   })();
+
+  const displayOneField = (function () {
+    let educationFirstFieldFilled = false;
+    let professionalFirstFieldFilled = false;
+
+    const setAddAndFieldToDefault = function (nodeAdd, nodeField, isLastField = false) {
+      nodeField.style.display = "none";
+      if (!isLastField) {
+        nodeAdd.style.pointerEvents = "auto";
+        nodeAdd.style.color = "black";
+      }
+    };
+
+    const addfilledField = function (
+      nodeField,
+      nodeAdd,
+      nodeFieldAdded,
+      isFirstField = false,
+    ) {
+      nodeField.querySelector(".add-field").addEventListener("click", () => {
+        setAddAndFieldToDefault(nodeAdd, nodeField, educationFirstFieldFilled);
+        nodeFieldAdded.style.display = "flex";
+        if (isFirstField) {
+          educationFirstFieldFilled = true;
+        }
+      });
+    };
+
+    const clearField = function (nodeField, nodeAdd) {
+      nodeField.querySelector(".clear-field").addEventListener("click", () => {
+        setAddAndFieldToDefault(nodeAdd, nodeField);
+      });
+    };
+
+    const setAddAndFieldToInputMode = function (nodeField, nodeAdd) {
+      nodeAdd.style.pointerEvents = "none";
+      nodeAdd.style.color = "grey";
+      nodeField.style.display = "grid";
+    };
+
+    const __forField = function () {
+      getNodes().educationAdd.addEventListener("click", () => {
+        // Second Field
+        if (educationFirstFieldFilled) {
+          setAddAndFieldToInputMode(
+            getNodes().educationLastField,
+            getNodes().educationAdd,
+          );
+          addfilledField(
+            getNodes().educationLastField,
+            getNodes().educationAdd,
+            getNodes().educationLastFieldAdded,
+          );
+          clearField(getNodes().educationLastField, getNodes().educationAdd);
+          return;
+        }
+
+        // First Field
+        setAddAndFieldToInputMode(
+          getNodes().educationFirstField,
+          getNodes().educationAdd,
+        );
+        addfilledField(
+          getNodes().educationFirstField,
+          getNodes().educationAdd,
+          getNodes().educationFirstFieldAdded,
+          true,
+        );
+        clearField(getNodes().educationFirstField, getNodes().educationAdd);
+      });
+    };
+    __forField();
+  })();
 };
 
 export { inputFields };
