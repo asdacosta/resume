@@ -149,7 +149,21 @@ function App() {
                 <i class="fa-solid fa-plus"></i> Education
               </span>
             </div>
-            <section className="education-fields">
+            <div className="second added">
+              <span>School</span>
+              <span>
+                <i class="fa-solid fa-trash"></i>
+                <i class="fa-solid fa-pen-to-square"></i>
+              </span>
+            </div>
+            <div className="first added">
+              <span>School2</span>
+              <span>
+                <i class="fa-solid fa-trash"></i>
+                <i class="fa-solid fa-pen-to-square"></i>
+              </span>
+            </div>
+            <section className="education-fields first">
               <div className="field">
                 <label for="school">
                   School <span className="required">Required</span>
@@ -201,10 +215,70 @@ function App() {
                 <input type="text" name="city-education" id="city-education" />
               </div>
               <div className="field-footer">
-                <span>
+                <span className="clear-field">
                   <i class="fa-solid fa-eraser"></i> Clear
                 </span>
-                <span>
+                <span className="add-field">
+                  <i class="fa-solid fa-pencil"></i> Add
+                </span>
+              </div>
+            </section>
+            <section className="education-fields second">
+              <div className="field">
+                <label for="school">
+                  School <span className="required">Required</span>
+                </label>
+                <input type="text" name="school" id="school" required />
+              </div>
+              <div className="field">
+                <label for="degree">
+                  Degree <span className="required">Required</span>
+                </label>
+                <input
+                  type="text"
+                  name="degree"
+                  id="degree"
+                  placeholder="Bachelor of Science"
+                  required
+                />
+              </div>
+              <div className="field">
+                <label for="honors">
+                  Class Honors <span className="optional">Optional</span>
+                </label>
+                <input type="text" name="honors" id="honors" placeholder="First Class" />
+              </div>
+              <div className="field">
+                <label for="start-date-education">
+                  Start Date <span className="optional">Optional</span>
+                </label>
+                <input
+                  type="date"
+                  name="start-date-education"
+                  id="start-date-education"
+                />
+              </div>
+              <div className="field">
+                <label for="end-date-education">End Date</label>
+                <input type="date" name="end-date-education" id="end-date-education" />
+              </div>
+              <div className="field">
+                <label for="country-education">
+                  Country <span className="optional">Optional</span>
+                </label>
+                <input type="text" name="country-education" id="country-education" />
+              </div>
+              <div className="field">
+                <label for="city-education">
+                  City <span className="optional">Optional</span>
+                </label>
+                <input type="text" name="city-education" id="city-education" />
+              </div>
+              <div className="field-footer">
+                <span className="clear-field">
+                  <i class="fa-solid fa-eraser"></i> Clear
+                </span>
+                <span className="add-field">
                   <i class="fa-solid fa-pencil"></i> Add
                 </span>
               </div>
@@ -224,7 +298,21 @@ function App() {
                 <i class="fa-solid fa-plus"></i> Experience
               </span>
             </div>
-            <section className="professional-fields">
+            <div className="first added">
+              <span>Company Name</span>
+              <span>
+                <i class="fa-solid fa-trash"></i>
+                <i class="fa-solid fa-pen-to-square"></i>
+              </span>
+            </div>
+            <div className="second added">
+              <span>Company Name</span>
+              <span>
+                <i class="fa-solid fa-trash"></i>
+                <i class="fa-solid fa-pen-to-square"></i>
+              </span>
+            </div>
+            <section className="professional-fields first">
               <div className="field">
                 <label for="company">
                   Company Name <span className="required">Required</span>
@@ -290,10 +378,84 @@ function App() {
                 ></textarea>
               </div>
               <div className="field-footer">
-                <span>
+                <span className="clear-field">
                   <i class="fa-solid fa-eraser"></i> Clear
                 </span>
-                <span>
+                <span className="add-field">
+                  <i class="fa-solid fa-pencil"></i> Add
+                </span>
+              </div>
+            </section>
+            <section className="professional-fields second">
+              <div className="field">
+                <label for="company">
+                  Company Name <span className="required">Required</span>
+                </label>
+                <input type="text" name="company" id="company" required />
+              </div>
+              <div className="field">
+                <label for="position">
+                  Position <span className="required">Required</span>
+                </label>
+                <input
+                  type="text"
+                  name="position"
+                  id="position"
+                  placeholder="Software Engineer"
+                  required
+                />
+              </div>
+              <div className="field">
+                <label for="start-date-professional">
+                  Start Date <span className="optional">Optional</span>
+                </label>
+                <input
+                  type="date"
+                  name="start-date-professional"
+                  id="start-date-professional"
+                />
+              </div>
+              <div className="field">
+                <label for="end-date-professional">End Date</label>
+                <input
+                  type="date"
+                  name="end-date-professional"
+                  id="end-date-professional"
+                />
+              </div>
+              <div className="field">
+                <label for="country-professional">
+                  Country <span className="optional">Optional</span>
+                </label>
+                <input
+                  type="text"
+                  name="country-professional"
+                  id="country-professional"
+                />
+              </div>
+              <div className="field">
+                <label for="city-professional">
+                  City <span className="optional">Optional</span>
+                </label>
+                <input type="text" name="city-professional" id="city-professional" />
+              </div>
+              <div className="field-description">
+                <label for="description">
+                  Description <span className="optional">Optional</span>
+                </label>
+                <textarea
+                  name="description"
+                  id="description"
+                  placeholder="As a software engineer, ..."
+                  cols="20"
+                  rows="10"
+                ></textarea>
+              </div>
+              <div className="field-footer">
+                <span className="clear-field">
+                  <i class="fa-solid fa-eraser"></i> Clear
+                </span>
+                <span className="add-field">
                   <i class="fa-solid fa-pencil"></i> Add
                 </span>
               </div>
