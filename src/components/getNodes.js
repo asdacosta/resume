@@ -20,6 +20,10 @@ const getNodes = function () {
   const profileUploadBox = document.querySelector(".field-profile label");
   const resumeCover = document.querySelector(".resume-cover");
   const editCover = document.querySelector(".edit-cover");
+  const educationParagraph = document.querySelector(".education p");
+  const professionalParagraph = document.querySelector(".professional p");
+  const educationLocker = document.querySelector(".education .open-field");
+  const professionalLocker = document.querySelector(".professional .open-field");
 
   return {
     fieldStatus,
@@ -43,6 +47,10 @@ const getNodes = function () {
     profileUploadBox,
     resumeCover,
     editCover,
+    educationParagraph,
+    professionalParagraph,
+    educationLocker,
+    professionalLocker,
   };
 };
 
