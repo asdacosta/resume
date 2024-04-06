@@ -15,49 +15,57 @@ const inputFields = function () {
     let educationExpanded = false;
     let professionalExpanded = false;
 
-    const __forEducation = (function () {
-      getNodes().educationParagraph.addEventListener("click", async () => {
+    const __forField = function (node, variable, locker, addSection, addButton) {
+      node.addEventListener("click", async () => {
         // Close if opened
-        if (educationExpanded) {
-          getNodes().educationLocker.style.transform = "rotate(45deg)";
+        if (variable) {
+          locker.style.transform = "rotate(45deg)";
+          const hideAdd = (function () {
+            addSection.style.height = "0";
+            addButton.style.opacity = "0";
+            addButton.style.display = "none";
+          })();
           await new Promise((resolve) => {
             setTimeout(resolve, 800);
           });
-          getNodes().educationLocker.style.gap = "0";
-          educationExpanded = false;
+          locker.style.gap = "0";
+          variable = false;
           return;
         }
         // Open
-        getNodes().educationLocker.style.gap = "0.5rem";
+        locker.style.gap = "0.5rem";
         await new Promise((resolve) => {
           setTimeout(resolve, 500);
         });
-        getNodes().educationLocker.style.transform = "rotate(0)";
-        educationExpanded = true;
-      });
-    })();
+        locker.style.transform = "rotate(0)";
+        variable = true;
 
-    const __forProfessional = (function () {
-      getNodes().professionalParagraph.addEventListener("click", async () => {
-        // Close if opened
-        if (professionalExpanded) {
-          getNodes().professionalLocker.style.transform = "rotate(45deg)";
+        const showAdd = (async function () {
+          addSection.style.height = "2.5rem";
+          addButton.style.display = "flex";
+          // Wait to allow transition immediately after the display: none to flex
           await new Promise((resolve) => {
-            setTimeout(resolve, 800);
+            setTimeout(resolve, 100);
           });
-          getNodes().professionalLocker.style.gap = "0";
-          professionalExpanded = false;
-          return;
-        }
-        // Open
-        getNodes().professionalLocker.style.gap = "0.5rem";
-        await new Promise((resolve) => {
-          setTimeout(resolve, 500);
-        });
-        getNodes().professionalLocker.style.transform = "rotate(0)";
-        professionalExpanded = true;
+          addButton.style.opacity = "1";
+        })();
       });
-    })();
+    };
+
+    __forField(
+      getNodes().educationParagraph,
+      educationExpanded,
+      getNodes().educationLocker,
+      getNodes().educationAddSection,
+      getNodes().educationAdd,
+    );
+    __forField(
+      getNodes().professionalParagraph,
+      professionalExpanded,
+      getNodes().professionalLocker,
+      getNodes().professionalAddSection,
+      getNodes().professionalAdd,
+    );
   })();
 };
 
