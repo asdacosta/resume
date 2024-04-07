@@ -96,17 +96,41 @@ const inputFields = function () {
           }
         })();
 
-        setAddAndFieldToDefault(nodeAdd, nodeField, firstFieldFilled);
         nodeFieldAdded.style.display = "flex";
+        if (getComputedStyle(getNodes().educationLastFieldAdded).display === "flex") {
+          // When first field is on edit, dont continue to set to default when second field is available
+          nodeField.style.display = "none";
+          return;
+        }
+        setAddAndFieldToDefault(nodeAdd, nodeField, firstFieldFilled);
+
         if (isFirstField) {
           firstFieldFilled = true;
-
           const updateRealFieldVariable = (function () {
             if (nodeField.classList.contains("education-fields")) {
               educationFirstFieldFilled = firstFieldFilled;
             } else if (nodeField.classList.contains("professional-fields")) {
               professionalFirstFieldFilled = firstFieldFilled;
             }
+          })();
+          const removeOrEditAdded = (function () {
+            const editAdded = (function () {
+              getNodes().eduFirstEditIcon.addEventListener("click", () => {
+                getNodes().educationFirstFieldAdded.style.display = "none";
+                getNodes().educationFirstField.style.display = "grid";
+              });
+            })();
+            const removeAdded = (function () {
+              getNodes().eduFirstRemoveIcon.addEventListener("click", () => {
+                getNodes().educationFirstFieldAdded.style.display = "none";
+                educationFirstFieldFilled = false;
+                setAddAndFieldToDefault(
+                  getNodes().educationAdd,
+                  getNodes().educationFirstField,
+                  educationFirstFieldFilled,
+                );
+              });
+            })();
           })();
         }
       });
