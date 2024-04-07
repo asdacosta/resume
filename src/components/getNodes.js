@@ -32,6 +32,14 @@ const getNodes = function () {
   const educationLastField = document.querySelector(".education-fields.second");
   const educationFirstFieldAdded = document.querySelector(".education .first.added");
   const educationLastFieldAdded = document.querySelector(".education .second.added");
+  const professionalFirstField = document.querySelector(".professional-fields.first");
+  const professionalLastField = document.querySelector(".professional-fields.second");
+  const professionalFirstFieldAdded = document.querySelector(
+    ".professional .first.added",
+  );
+  const professionalLastFieldAdded = document.querySelector(
+    ".professional .second.added",
+  );
 
   return {
     fieldStatus,
@@ -67,6 +75,10 @@ const getNodes = function () {
     educationLastField,
     educationFirstFieldAdded,
     educationLastFieldAdded,
+    professionalFirstField,
+    professionalLastField,
+    professionalFirstFieldAdded,
+    professionalLastFieldAdded,
   };
 };
 
