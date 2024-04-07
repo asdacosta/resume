@@ -87,10 +87,27 @@ const inputFields = function () {
       isFirstField = false,
     ) {
       nodeField.querySelector(".add-field").addEventListener("click", () => {
-        setAddAndFieldToDefault(nodeAdd, nodeField, educationFirstFieldFilled);
+        let firstFieldFilled = null;
+        const updateVariableForRespectiveField = (function () {
+          if (nodeField.classList.contains("education-fields")) {
+            firstFieldFilled = educationFirstFieldFilled;
+          } else if (nodeField.classList.contains("professional-fields")) {
+            firstFieldFilled = professionalFirstFieldFilled;
+          }
+        })();
+
+        setAddAndFieldToDefault(nodeAdd, nodeField, firstFieldFilled);
         nodeFieldAdded.style.display = "flex";
         if (isFirstField) {
-          educationFirstFieldFilled = true;
+          firstFieldFilled = true;
+
+          const updateRealFieldVariable = (function () {
+            if (nodeField.classList.contains("education-fields")) {
+              educationFirstFieldFilled = firstFieldFilled;
+            } else if (nodeField.classList.contains("professional-fields")) {
+              professionalFirstFieldFilled = firstFieldFilled;
+            }
+          })();
         }
       });
     };
@@ -107,38 +124,53 @@ const inputFields = function () {
       nodeField.style.display = "grid";
     };
 
-    const __forField = function () {
-      getNodes().educationAdd.addEventListener("click", () => {
+    const __forField = function (
+      nodeFirstField,
+      nodeFirstAdded,
+      nodeLastField,
+      nodeLastAdded,
+      nodeAdd,
+    ) {
+      nodeAdd.addEventListener("click", () => {
+        let firstFieldFilled = null;
+        const updateVariableForRespectiveField = (function () {
+          if (nodeFirstField.classList.contains("education-fields")) {
+            firstFieldFilled = educationFirstFieldFilled;
+          } else if (nodeFirstField.classList.contains("professional-fields")) {
+            firstFieldFilled = professionalFirstFieldFilled;
+          }
+        })();
+
         // Second Field
-        if (educationFirstFieldFilled) {
-          setAddAndFieldToInputMode(
-            getNodes().educationLastField,
-            getNodes().educationAdd,
-          );
-          addfilledField(
-            getNodes().educationLastField,
-            getNodes().educationAdd,
-            getNodes().educationLastFieldAdded,
-          );
-          clearField(getNodes().educationLastField, getNodes().educationAdd);
+        if (firstFieldFilled) {
+          setAddAndFieldToInputMode(nodeLastField, nodeAdd);
+          addfilledField(nodeLastField, nodeAdd, nodeLastAdded);
+          clearField(nodeLastField, nodeAdd);
           return;
         }
 
         // First Field
-        setAddAndFieldToInputMode(
-          getNodes().educationFirstField,
-          getNodes().educationAdd,
-        );
-        addfilledField(
-          getNodes().educationFirstField,
-          getNodes().educationAdd,
-          getNodes().educationFirstFieldAdded,
-          true,
-        );
-        clearField(getNodes().educationFirstField, getNodes().educationAdd);
+        setAddAndFieldToInputMode(nodeFirstField, nodeAdd);
+        addfilledField(nodeFirstField, nodeAdd, nodeFirstAdded, true);
+        clearField(nodeFirstField, nodeAdd);
       });
     };
-    __forField();
+
+    __forField(
+      getNodes().educationFirstField,
+      getNodes().educationFirstFieldAdded,
+      getNodes().educationLastField,
+      getNodes().educationLastFieldAdded,
+      getNodes().educationAdd,
+    );
+
+    __forField(
+      getNodes().professionalFirstField,
+      getNodes().professionalFirstFieldAdded,
+      getNodes().professionalLastField,
+      getNodes().professionalLastFieldAdded,
+      getNodes().professionalAdd,
+    );
   })();
 };
 
