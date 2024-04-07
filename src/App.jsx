@@ -149,14 +149,14 @@ function App() {
                 <i class="fa-solid fa-plus"></i> Education
               </span>
             </div>
-            <div className="second added">
+            <div className="first added">
               <span>School</span>
               <span>
                 <i class="fa-solid fa-trash"></i>
                 <i class="fa-solid fa-pen-to-square"></i>
               </span>
             </div>
-            <div className="first added">
+            <div className="second added">
               <span>School2</span>
               <span>
                 <i class="fa-solid fa-trash"></i>
@@ -306,7 +306,7 @@ function App() {
               </span>
             </div>
             <div className="second added">
-              <span>Company Name</span>
+              <span>Company Name 2</span>
               <span>
                 <i class="fa-solid fa-trash"></i>
                 <i class="fa-solid fa-pen-to-square"></i>
