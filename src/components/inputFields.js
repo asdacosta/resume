@@ -78,6 +78,15 @@ const inputFields = function () {
         nodeAdd.style.pointerEvents = "auto";
         nodeAdd.style.color = "black";
       }
+      // If first field exists and second field is removed, set default.
+      if (
+        nodeField.classList.contains("education-fields") &&
+        isLastField &&
+        getComputedStyle(getNodes().educationFirstFieldAdded).display === "flex"
+      ) {
+        nodeAdd.style.pointerEvents = "auto";
+        nodeAdd.style.color = "black";
+      }
     };
 
     const addfilledField = function (
@@ -97,7 +106,10 @@ const inputFields = function () {
         })();
 
         nodeFieldAdded.style.display = "flex";
-        if (getComputedStyle(getNodes().educationLastFieldAdded).display === "flex") {
+        if (
+          nodeField.classList.contains("education-fields") &&
+          getComputedStyle(getNodes().educationLastFieldAdded).display === "flex"
+        ) {
           // When first field is on edit, dont continue to set to default when second field is available
           nodeField.style.display = "none";
           return;
@@ -113,25 +125,44 @@ const inputFields = function () {
               professionalFirstFieldFilled = firstFieldFilled;
             }
           })();
-          const removeOrEditAdded = (function () {
+          const removeOrEditAdded = function (
+            editIcon,
+            removeIcon,
+            nodeField2,
+            nodeFieldAdded2,
+          ) {
             const editAdded = (function () {
-              getNodes().eduFirstEditIcon.addEventListener("click", () => {
-                getNodes().educationFirstFieldAdded.style.display = "none";
-                getNodes().educationFirstField.style.display = "grid";
+              editIcon.addEventListener("click", () => {
+                nodeFieldAdded2.style.display = "none";
+                nodeField2.style.display = "grid";
               });
             })();
             const removeAdded = (function () {
-              getNodes().eduFirstRemoveIcon.addEventListener("click", () => {
-                getNodes().educationFirstFieldAdded.style.display = "none";
-                educationFirstFieldFilled = false;
+              removeIcon.addEventListener("click", () => {
+                nodeFieldAdded2.style.display = "none";
+                if (nodeField2.classList.contains("first")) {
+                  educationFirstFieldFilled = false;
+                }
                 setAddAndFieldToDefault(
                   getNodes().educationAdd,
-                  getNodes().educationFirstField,
+                  nodeField2,
                   educationFirstFieldFilled,
                 );
               });
             })();
-          })();
+          };
+          removeOrEditAdded(
+            getNodes().eduFirstEditIcon,
+            getNodes().eduFirstRemoveIcon,
+            getNodes().educationFirstField,
+            getNodes().educationFirstFieldAdded,
+          );
+          removeOrEditAdded(
+            getNodes().eduLastEditIcon,
+            getNodes().eduLastRemoveIcon,
+            getNodes().educationLastField,
+            getNodes().educationLastFieldAdded,
+          );
         }
       });
     };
