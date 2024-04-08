@@ -194,6 +194,9 @@ const inputFields = function () {
                 nodeField2.style.display = "grid";
                 // Make field not expandable while in input mode
                 if (nodeField.classList.contains("education-fields")) {
+                  if (nodeField.classList.contains("first")) {
+                    educationFirstFieldFilled = false;
+                  }
                   invertInteractivePartsOfField(
                     getNodes().educationFirstFieldAdded,
                     getNodes().educationLastFieldAdded,
@@ -201,6 +204,9 @@ const inputFields = function () {
                     getNodes().educationParagraph,
                   );
                 } else if (nodeField.classList.contains("professional-fields")) {
+                  if (nodeField.classList.contains("first")) {
+                    professionalFirstFieldFilled = false;
+                  }
                   invertInteractivePartsOfField(
                     getNodes().professionalFirstFieldAdded,
                     getNodes().professionalLastFieldAdded,
