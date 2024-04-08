@@ -97,7 +97,7 @@ const inputFields = function () {
       }
     };
 
-    const addfilledField = function (
+    const addFilledField = function (
       nodeField,
       nodeAdd,
       nodeFieldAdded,
@@ -105,11 +105,15 @@ const inputFields = function () {
     ) {
       nodeField.querySelector(".add-field").addEventListener("click", () => {
         let firstFieldFilled = null;
-        const updateVariableForRespectiveField = (function () {
+        const updateVariableAndExpandable = (function () {
           if (nodeField.classList.contains("education-fields")) {
             firstFieldFilled = educationFirstFieldFilled;
+            getNodes().educationLocker.style.opacity = "1";
+            getNodes().educationParagraph.style.pointerEvents = "auto";
           } else if (nodeField.classList.contains("professional-fields")) {
             firstFieldFilled = professionalFirstFieldFilled;
+            getNodes().professionalLocker.style.opacity = "1";
+            getNodes().professionalParagraph.style.pointerEvents = "auto";
           }
         })();
 
@@ -118,7 +122,7 @@ const inputFields = function () {
           nodeField.classList.contains("education-fields") &&
           getComputedStyle(getNodes().educationLastFieldAdded).display === "flex"
         ) {
-          // When first field is on edit, dont continue to set to default when second field is available
+          // When first field is on edit, don't continue to set to default when second field is available
           nodeField.style.display = "none";
           return;
         }
@@ -126,7 +130,7 @@ const inputFields = function () {
           nodeField.classList.contains("professional-fields") &&
           getComputedStyle(getNodes().professionalLastFieldAdded).display === "flex"
         ) {
-          // When first field is on edit, dont continue to set to default when second field is available
+          // When first field is on edit, don't continue to set to default when second field is available
           nodeField.style.display = "none";
           return;
         }
@@ -152,6 +156,14 @@ const inputFields = function () {
               editIcon.addEventListener("click", () => {
                 nodeFieldAdded2.style.display = "none";
                 nodeField2.style.display = "grid";
+                // Make field not expandable while in input mode
+                if (nodeField.classList.contains("education-fields")) {
+                  getNodes().educationLocker.style.opacity = "0.4";
+                  getNodes().educationParagraph.style.pointerEvents = "none";
+                } else if (nodeField.classList.contains("professional-fields")) {
+                  getNodes().professionalLocker.style.opacity = "0.4";
+                  getNodes().professionalParagraph.style.pointerEvents = "none";
+                }
               });
             })();
             const removeAdded = (function () {
@@ -210,6 +222,15 @@ const inputFields = function () {
     const clearField = function (nodeField, nodeAdd) {
       nodeField.querySelector(".clear-field").addEventListener("click", () => {
         setAddAndFieldToDefault(nodeAdd, nodeField);
+
+        // Make field expandable when out of input mode
+        if (nodeField.classList.contains("education-fields")) {
+          getNodes().educationLocker.style.opacity = "1";
+          getNodes().educationParagraph.style.pointerEvents = "auto";
+        } else if (nodeField.classList.contains("professional-fields")) {
+          getNodes().professionalLocker.style.opacity = "1";
+          getNodes().professionalParagraph.style.pointerEvents = "auto";
+        }
       });
     };
 
@@ -217,6 +238,15 @@ const inputFields = function () {
       nodeAdd.style.pointerEvents = "none";
       nodeAdd.style.color = "grey";
       nodeField.style.display = "grid";
+
+      // Make field not expandable while in input mode
+      if (nodeField.classList.contains("education-fields")) {
+        getNodes().educationLocker.style.opacity = "0.4";
+        getNodes().educationParagraph.style.pointerEvents = "none";
+      } else if (nodeField.classList.contains("professional-fields")) {
+        getNodes().professionalLocker.style.opacity = "0.4";
+        getNodes().professionalParagraph.style.pointerEvents = "none";
+      }
     };
 
     const __forField = function (
@@ -239,14 +269,14 @@ const inputFields = function () {
         // Second Field
         if (firstFieldFilled) {
           setAddAndFieldToInputMode(nodeLastField, nodeAdd);
-          addfilledField(nodeLastField, nodeAdd, nodeLastAdded);
+          addFilledField(nodeLastField, nodeAdd, nodeLastAdded);
           clearField(nodeLastField, nodeAdd);
           return;
         }
 
         // First Field
         setAddAndFieldToInputMode(nodeFirstField, nodeAdd);
-        addfilledField(nodeFirstField, nodeAdd, nodeFirstAdded, true);
+        addFilledField(nodeFirstField, nodeAdd, nodeFirstAdded, true);
         clearField(nodeFirstField, nodeAdd);
       });
     };
