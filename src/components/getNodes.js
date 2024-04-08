@@ -40,6 +40,18 @@ const getNodes = function () {
   const professionalLastFieldAdded = document.querySelector(
     ".professional .second.added",
   );
+  const eduFirstEditIcon = document.querySelector(".education .first .fa-pen-to-square");
+  const eduFirstRemoveIcon = document.querySelector(".education .first .fa-trash");
+  const eduLastEditIcon = document.querySelector(".education .second .fa-pen-to-square");
+  const eduLastRemoveIcon = document.querySelector(".education .second .fa-trash");
+  const profFirstEditIcon = document.querySelector(
+    ".professional .first .fa-pen-to-square",
+  );
+  const profFirstRemoveIcon = document.querySelector(".professional .first .fa-trash");
+  const profLastEditIcon = document.querySelector(
+    ".professional .second .fa-pen-to-square",
+  );
+  const profLastRemoveIcon = document.querySelector(".professional .second .fa-trash");
 
   return {
     fieldStatus,
@@ -79,6 +91,14 @@ const getNodes = function () {
     professionalLastField,
     professionalFirstFieldAdded,
     professionalLastFieldAdded,
+    eduFirstEditIcon,
+    eduFirstRemoveIcon,
+    eduLastEditIcon,
+    eduLastRemoveIcon,
+    profFirstEditIcon,
+    profFirstRemoveIcon,
+    profLastEditIcon,
+    profLastRemoveIcon,
   };
 };
 
