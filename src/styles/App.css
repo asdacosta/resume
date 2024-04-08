@@ -718,7 +718,7 @@ i {
 
 @media (max-width: 1160px) {
   #root {
-    grid-template: repeat(2, 1fr) / 1fr;
+    grid-template: 1fr 1.2fr / 1fr;
     font-size: 0.9rem;
     /* For tablet screens that hide content at bottom */
     margin-bottom: 30rem;
