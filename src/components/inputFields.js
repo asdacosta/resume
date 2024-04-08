@@ -193,8 +193,8 @@ const inputFields = function () {
                 nodeFieldAdded2.style.display = "none";
                 nodeField2.style.display = "grid";
                 // Make field not expandable while in input mode
-                if (nodeField.classList.contains("education-fields")) {
-                  if (nodeField.classList.contains("first")) {
+                if (nodeField2.classList.contains("education-fields")) {
+                  if (nodeField2.classList.contains("first")) {
                     educationFirstFieldFilled = false;
                   }
                   invertInteractivePartsOfField(
@@ -203,10 +203,11 @@ const inputFields = function () {
                     getNodes().educationLocker,
                     getNodes().educationParagraph,
                   );
-                } else if (nodeField.classList.contains("professional-fields")) {
-                  if (nodeField.classList.contains("first")) {
+                } else if (nodeField2.classList.contains("professional-fields")) {
+                  if (nodeField2.classList.contains("first")) {
                     professionalFirstFieldFilled = false;
                   }
+                  console.log("Ace");
                   invertInteractivePartsOfField(
                     getNodes().professionalFirstFieldAdded,
                     getNodes().professionalLastFieldAdded,
