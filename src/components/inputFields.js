@@ -87,6 +87,14 @@ const inputFields = function () {
         nodeAdd.style.pointerEvents = "auto";
         nodeAdd.style.color = "black";
       }
+      if (
+        nodeField.classList.contains("professional-fields") &&
+        isLastField &&
+        getComputedStyle(getNodes().professionalFirstFieldAdded).display === "flex"
+      ) {
+        nodeAdd.style.pointerEvents = "auto";
+        nodeAdd.style.color = "black";
+      }
     };
 
     const addfilledField = function (
@@ -114,6 +122,14 @@ const inputFields = function () {
           nodeField.style.display = "none";
           return;
         }
+        if (
+          nodeField.classList.contains("professional-fields") &&
+          getComputedStyle(getNodes().professionalLastFieldAdded).display === "flex"
+        ) {
+          // When first field is on edit, dont continue to set to default when second field is available
+          nodeField.style.display = "none";
+          return;
+        }
         setAddAndFieldToDefault(nodeAdd, nodeField, firstFieldFilled);
 
         if (isFirstField) {
@@ -126,6 +142,7 @@ const inputFields = function () {
             }
           })();
           const removeOrEditAdded = function (
+            nodeAdd,
             editIcon,
             removeIcon,
             nodeField2,
@@ -140,28 +157,51 @@ const inputFields = function () {
             const removeAdded = (function () {
               removeIcon.addEventListener("click", () => {
                 nodeFieldAdded2.style.display = "none";
+
+                let firstFieldFilled2 = null;
                 if (nodeField2.classList.contains("first")) {
-                  educationFirstFieldFilled = false;
+                  const updateRealFieldVariable = (function () {
+                    if (nodeField.classList.contains("education-fields")) {
+                      educationFirstFieldFilled = false;
+                      firstFieldFilled2 = false;
+                    } else if (nodeField.classList.contains("professional-fields")) {
+                      professionalFirstFieldFilled = false;
+                      firstFieldFilled2 = false;
+                    }
+                  })();
                 }
-                setAddAndFieldToDefault(
-                  getNodes().educationAdd,
-                  nodeField2,
-                  educationFirstFieldFilled,
-                );
+                setAddAndFieldToDefault(nodeAdd, nodeField2, firstFieldFilled2);
               });
             })();
           };
           removeOrEditAdded(
+            getNodes().educationAdd,
             getNodes().eduFirstEditIcon,
             getNodes().eduFirstRemoveIcon,
             getNodes().educationFirstField,
             getNodes().educationFirstFieldAdded,
           );
           removeOrEditAdded(
+            getNodes().educationAdd,
             getNodes().eduLastEditIcon,
             getNodes().eduLastRemoveIcon,
             getNodes().educationLastField,
             getNodes().educationLastFieldAdded,
+          );
+
+          removeOrEditAdded(
+            getNodes().professionalAdd,
+            getNodes().profFirstEditIcon,
+            getNodes().profFirstRemoveIcon,
+            getNodes().professionalFirstField,
+            getNodes().professionalFirstFieldAdded,
+          );
+          removeOrEditAdded(
+            getNodes().professionalAdd,
+            getNodes().profLastEditIcon,
+            getNodes().profLastRemoveIcon,
+            getNodes().professionalLastField,
+            getNodes().professionalLastFieldAdded,
           );
         }
       });
@@ -218,7 +258,6 @@ const inputFields = function () {
       getNodes().educationLastFieldAdded,
       getNodes().educationAdd,
     );
-
     __forField(
       getNodes().professionalFirstField,
       getNodes().professionalFirstFieldAdded,
