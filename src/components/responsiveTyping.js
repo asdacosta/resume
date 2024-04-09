@@ -12,6 +12,17 @@ const responsiveTyping = function () {
     }
     __forNames(getNodes().firstNamesInput);
     __forNames(getNodes().lastNameInput);
+
+    const __forLocation = function (input) {
+      input.addEventListener("input", () => {
+        let country = getNodes().personalCountryInput.value;
+        let city = getNodes().personalCityInput.value;
+        let location = country + ", " + city;
+        getNodes().resumePersonalLocation.textContent = location;
+      });
+    };
+    __forLocation(getNodes().personalCountryInput);
+    __forLocation(getNodes().personalCityInput);
   })();
 };
 
