@@ -505,23 +505,27 @@ function App() {
         <section className="resume-body">
           <section className="resume-education">
             <h2>Education</h2>
-            <section>
+            <section className="first">
               <p>
-                <span>Oxford University</span> <span>2019 - 2023</span>
+                <span className="resume-school">Oxford University</span>{" "}
+                <span className="resume-date">2019 - 2023</span>
               </p>
               <p>
-                <span>Bachelor of Science</span> | <span>First Class Honors</span>
+                <span className="resume-degree">Bachelor of Science</span> |{" "}
+                <span className="resume-honors">First Class Honors</span>
               </p>
-              <p>Ghana ⚫ Accra</p>
+              <p className="resume-location">Ghana ⚫ Accra</p>
             </section>
-            <section>
+            <section className="second">
               <p>
-                <span>Oxford University</span> <span>2019 - 2023</span>
+                <span className="resume-school">Oxford University</span>{" "}
+                <span className="resume-date">2019 - 2023</span>
               </p>
               <p>
-                <span>Bachelor of Science</span> | <span>First Class Honors</span>
+                <span className="resume-degree">Bachelor of Science</span> |{" "}
+                <span className="resume-honors">First Class Honors</span>
               </p>
-              <p>Ghana ⚫ Accra</p>
+              <p className="resume-location">Ghana ⚫ Accra</p>
             </section>
           </section>
           <section className="resume-professional">
