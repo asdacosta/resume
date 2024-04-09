@@ -493,14 +493,14 @@ function App() {
               <span className="resume-personal-address">Accra, Anywhere</span>
             </p>
           </section>
-          <section className="resume-skills">
+          {/* <section className="resume-skills">
             <h2>Skills</h2>
             <ul>
               <li>Code</li>
               <li>Program</li>
               <li>Thinker</li>
             </ul>
-          </section>
+          </section> */}
         </section>
         <section className="resume-body">
           <section className="resume-education">
