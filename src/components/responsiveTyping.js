@@ -30,9 +30,15 @@ const responsiveTyping = function () {
     __forLocation(getNodes().personalCountryInput);
     __forLocation(getNodes().personalCityInput);
 
-    // const __forProfilePic = function () {
-
-    // }
+    const updateProfilePic = (function () {
+      getNodes().personalImageInput.addEventListener("change", (event) => {
+        const image = event.target.files[0];
+        const imageUrl = URL.createObjectURL(image);
+        getNodes().resumeProfile.style.background = `url('${imageUrl}')`;
+        getNodes().resumeProfile.style.backgroundPosition = `center`;
+        getNodes().resumeProfile.style.backgroundSize = `cover`;
+      });
+    })();
 
     __forIndepInput(getNodes().resumePersonalMail, getNodes().emailInput);
     __forIndepInput(getNodes().resumePersonalPhone, getNodes().phoneInput);
