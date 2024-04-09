@@ -8,6 +8,7 @@ const getNodes = function () {
   const personalCityInput = document.querySelector("#city-personal");
   const addressInput = document.querySelector("#address");
   const personalImageInput = document.querySelector("#profile");
+
   const firstEduSchool = document.querySelector(".education-fields.first #school");
   const firstEduDegree = document.querySelector(".education-fields.first #degree");
   const firstEduHonors = document.querySelector(".education-fields.first #honors");
@@ -38,6 +39,41 @@ const getNodes = function () {
   const honorsInput = document.querySelector("#honors");
   const positionInput = document.querySelector("#position");
   const descriptionInput = document.querySelector("#description");
+
+  const firstProCompany = document.querySelector(".professional-fields.first #company");
+  const firstProPosition = document.querySelector(".professional-fields.first #position");
+  const firstProStartDate = document.querySelector(
+    ".professional-fields.first #start-date-professional",
+  );
+  const firstProEndDate = document.querySelector(
+    ".professional-fields.first #end-date-professional",
+  );
+  const firstProCountry = document.querySelector(
+    ".professional-fields.first #country-professional",
+  );
+  const firstProCity = document.querySelector(
+    ".professional-fields.first #city-professional",
+  );
+  const firstProDescription = document.querySelector(
+    ".professional-fields.first #description",
+  );
+  const lastProCompany = document.querySelector(".professional-fields.second #company");
+  const lastProPosition = document.querySelector(".professional-fields.second #position");
+  const lastProStartDate = document.querySelector(
+    ".professional-fields.second #start-date-professional",
+  );
+  const lastProEndDate = document.querySelector(
+    ".professional-fields.second #end-date-professional",
+  );
+  const lastProCountry = document.querySelector(
+    ".professional-fields.second #country-professional",
+  );
+  const lastProCity = document.querySelector(
+    ".professional-fields.second #city-professional",
+  );
+  const lastProDescription = document.querySelector(
+    ".professional-fields.second #description",
+  );
 
   const menu = document.querySelector(".menu");
   const sampleBar = document.querySelector(".sample-bar");
@@ -121,6 +157,36 @@ const getNodes = function () {
   const resumeLastEduLocation = document.querySelector(
     ".resume-education .second .resume-location",
   );
+  const resumeFirstProCompany = document.querySelector(
+    ".resume-professional .first .resume-company",
+  );
+  const resumeFirstProDate = document.querySelector(
+    ".resume-professional .first .resume-date",
+  );
+  const resumeFirstProPosition = document.querySelector(
+    ".resume-professional .first .resume-position",
+  );
+  const resumeFirstProLocation = document.querySelector(
+    ".resume-professional .first .resume-location",
+  );
+  const resumeFirstProDescription = document.querySelector(
+    ".resume-professional .first .resume-description",
+  );
+  const resumelastProCompany = document.querySelector(
+    ".resume-professional .second .resume-company",
+  );
+  const resumelastProDate = document.querySelector(
+    ".resume-professional .second .resume-date",
+  );
+  const resumelastProPosition = document.querySelector(
+    ".resume-professional .second .resume-position",
+  );
+  const resumelastProLocation = document.querySelector(
+    ".resume-professional .second .resume-location",
+  );
+  const resumelastProDescription = document.querySelector(
+    ".resume-professional .second .resume-description",
+  );
 
   return {
     fieldStatus,
@@ -146,6 +212,20 @@ const getNodes = function () {
     lastEduEndDate,
     lastEduCountry,
     lastEduCity,
+    firstProCompany,
+    firstProPosition,
+    firstProStartDate,
+    firstProEndDate,
+    firstProCountry,
+    firstProCity,
+    firstProDescription,
+    lastProCompany,
+    lastProPosition,
+    lastProStartDate,
+    lastProEndDate,
+    lastProCountry,
+    lastProCity,
+    lastProDescription,
     degreeInput,
     honorsInput,
     positionInput,
@@ -166,6 +246,16 @@ const getNodes = function () {
     resumeLastEduHonors,
     resumeLastEduDate,
     resumeLastEduLocation,
+    resumeFirstProCompany,
+    resumeFirstProDate,
+    resumeFirstProPosition,
+    resumeFirstProLocation,
+    resumeFirstProDescription,
+    resumelastProCompany,
+    resumelastProDate,
+    resumelastProPosition,
+    resumelastProLocation,
+    resumelastProDescription,
     menu,
     sampleBar,
     sampleBarIcon,
