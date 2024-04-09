@@ -23,6 +23,15 @@ const responsiveTyping = function () {
     };
     __forLocation(getNodes().personalCountryInput);
     __forLocation(getNodes().personalCityInput);
+
+    const __forRest = function (inputTake, inputGive) {
+      inputGive.addEventListener("input", () => {
+        inputTake.textContent = inputGive.value;
+      });
+    };
+    __forRest(getNodes().resumePersonalMail, getNodes().emailInput);
+    __forRest(getNodes().resumePersonalPhone, getNodes().phoneInput);
+    __forRest(getNodes().resumePersonalAddress, getNodes().addressInput);
   })();
 };
 
