@@ -39,29 +39,73 @@ const responsiveTyping = function () {
   })();
 
   const __forEducation = (function () {
-    const __forLocation = function (input) {
+    const __forLocation = function (input, inputCountry, inputCity, resume) {
       input.addEventListener("input", () => {
-        let country = getNodes().firstEduCountry.value;
-        let city = getNodes().firstEduCity.value;
-        let location = country + " ⚫ " + city;
-        getNodes().resumeFirstEduLocation.textContent = location;
+        let country = inputCountry.value;
+        let city = inputCity.value;
+        resume.textContent = country + " ⚫ " + city;
       });
     };
-    __forLocation(getNodes().firstEduCountry);
-    __forLocation(getNodes().firstEduCity);
+    __forLocation(
+      getNodes().firstEduCountry,
+      getNodes().firstEduCountry,
+      getNodes().firstEduCity,
+      getNodes().resumeFirstEduLocation,
+    );
+    __forLocation(
+      getNodes().firstEduCity,
+      getNodes().firstEduCountry,
+      getNodes().firstEduCity,
+      getNodes().resumeFirstEduLocation,
+    );
 
-    const __forDate = function (input) {
+    __forLocation(
+      getNodes().lastEduCountry,
+      getNodes().lastEduCountry,
+      getNodes().lastEduCity,
+      getNodes().resumeLastEduLocation,
+    );
+    __forLocation(
+      getNodes().lastEduCity,
+      getNodes().lastEduCountry,
+      getNodes().lastEduCity,
+      getNodes().resumeLastEduLocation,
+    );
+
+    const __forDate = function (input, initialDate, finalDate, resumeDate) {
       input.addEventListener("input", () => {
-        let startDate = new Date(getNodes().firstEduStartDate.value);
-        let endDate = new Date(getNodes().firstEduEndDate.value);
+        let startDate = new Date(initialDate.value);
+        let endDate = new Date(finalDate.value);
         let startYear = startDate.getFullYear() || "";
         let endYear = endDate.getFullYear() || "";
-        let year = startYear + " - " + endYear;
-        getNodes().resumeFirstEduDate.textContent = year;
+        resumeDate.textContent = startYear + " - " + endYear;
       });
     };
-    __forDate(getNodes().firstEduStartDate);
-    __forDate(getNodes().firstEduEndDate);
+    __forDate(
+      getNodes().firstEduStartDate,
+      getNodes().firstEduStartDate,
+      getNodes().firstEduEndDate,
+      getNodes().resumeFirstEduDate,
+    );
+    __forDate(
+      getNodes().firstEduEndDate,
+      getNodes().firstEduStartDate,
+      getNodes().firstEduEndDate,
+      getNodes().resumeFirstEduDate,
+    );
+
+    __forDate(
+      getNodes().lastEduStartDate,
+      getNodes().lastEduStartDate,
+      getNodes().lastEduEndDate,
+      getNodes().resumeLastEduDate,
+    );
+    __forDate(
+      getNodes().lastEduEndDate,
+      getNodes().lastEduStartDate,
+      getNodes().lastEduEndDate,
+      getNodes().resumeLastEduDate,
+    );
 
     const __forRest = function (inputTake, inputGive) {
       inputGive.addEventListener("input", () => {
@@ -71,6 +115,10 @@ const responsiveTyping = function () {
     __forRest(getNodes().resumeFirstEduSchool, getNodes().firstEduSchool);
     __forRest(getNodes().resumeFirstEduDegree, getNodes().firstEduDegree);
     __forRest(getNodes().resumeFirstEduHonors, getNodes().firstEduHonors);
+
+    __forRest(getNodes().resumeLastEduSchool, getNodes().lastEduSchool);
+    __forRest(getNodes().resumeLastEduDegree, getNodes().lastEduDegree);
+    __forRest(getNodes().resumeLastEduHonors, getNodes().lastEduHonors);
   })();
 };
 
