@@ -190,6 +190,8 @@ const inputFields = function () {
           ) {
             const editAdded = (function () {
               editIcon.addEventListener("click", () => {
+                nodeAdd.style.pointerEvents = "none";
+                nodeAdd.style.color = "grey";
                 nodeFieldAdded2.style.display = "none";
                 nodeField2.style.display = "grid";
                 // Make field not expandable while in input mode
@@ -207,7 +209,6 @@ const inputFields = function () {
                   if (nodeField2.classList.contains("first")) {
                     professionalFirstFieldFilled = false;
                   }
-                  console.log("Ace");
                   invertInteractivePartsOfField(
                     getNodes().professionalFirstFieldAdded,
                     getNodes().professionalLastFieldAdded,
