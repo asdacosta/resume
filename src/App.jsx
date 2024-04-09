@@ -530,27 +530,27 @@ function App() {
           </section>
           <section className="resume-professional">
             <h2>Professional Experience</h2>
-            <section>
+            <section className="first">
               <p>
-                <span>Tesla Inc</span>
-                <span>Aug, 2024 - Sep, 2025</span>
+                <span className="resume-company">Tesla Inc</span>
+                <span className="resume-date">Aug, 2024 - Sep, 2025</span>
               </p>
-              <p>Chief Software Engineer</p>
-              <p>Canada ⚫ Ottawa</p>
-              <p>
+              <p className="resume-position">Chief Software Engineer</p>
+              <p className="resume-location">Canada ⚫ Ottawa</p>
+              <p className="resume-description">
                 As a software engineer, I turn challenges into solutions through lines of
                 code. Dedicated to building impactful software with innovation and
                 expertise.
               </p>
             </section>
-            <section>
+            <section className="second">
               <p>
-                <span>Tesla Inc</span>
-                <span>Aug, 2024 - Sep, 2025</span>
+                <span className="resume-company">Tesla Inc</span>
+                <span className="resume-date">Aug, 2024 - Sep, 2025</span>
               </p>
-              <p>Chief Software Engineer</p>
-              <p>Canada ⚫ Ottawa</p>
-              <p>
+              <p className="resume-position">Chief Software Engineer</p>
+              <p className="resume-location">Canada ⚫ Ottawa</p>
+              <p className="resume-description">
                 As a software engineer, I turn challenges into solutions through lines of
                 code. Dedicated to building impactful software with innovation and
                 expertise.
