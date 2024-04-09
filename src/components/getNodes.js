@@ -1,12 +1,44 @@
 const getNodes = function () {
   const fieldStatus = document.querySelectorAll(".optional, .required");
+  const firstNamesInput = document.querySelector("#first-names");
+  const lastNameInput = document.querySelector("#last-name");
   const emailInput = document.querySelector("#mail");
   const phoneInput = document.querySelector("#phone");
+  const personalCountryInput = document.querySelector("#country-personal");
+  const personalCityInput = document.querySelector("#city-personal");
   const addressInput = document.querySelector("#address");
+  const personalImageInput = document.querySelector("#profile");
+  const firstEduSchool = document.querySelector(".education-fields.first #school");
+  const firstEduDegree = document.querySelector(".education-fields.first #degree");
+  const firstEduHonors = document.querySelector(".education-fields.first #honors");
+  const firstEduStartDate = document.querySelector(
+    ".education-fields.first #start-date-education",
+  );
+  const firstEduEndDate = document.querySelector(
+    ".education-fields.first #end-date-education",
+  );
+  const firstEduCountry = document.querySelector(
+    ".education-fields.first #country-education",
+  );
+  const firstEduCity = document.querySelector(".education-fields.first #city-education");
+  const lastEduSchool = document.querySelector(".education-fields.second #school");
+  const lastEduDegree = document.querySelector(".education-fields.second #degree");
+  const lastEduHonors = document.querySelector(".education-fields.second #honors");
+  const lastEduStartDate = document.querySelector(
+    ".education-fields.second #start-date-education",
+  );
+  const lastEduEndDate = document.querySelector(
+    ".education-fields.second #end-date-education",
+  );
+  const lastEduCountry = document.querySelector(
+    ".education-fields.second #country-education",
+  );
+  const lastEduCity = document.querySelector(".education-fields.second #city-education");
   const degreeInput = document.querySelector("#degree");
   const honorsInput = document.querySelector("#honors");
   const positionInput = document.querySelector("#position");
   const descriptionInput = document.querySelector("#description");
+
   const menu = document.querySelector(".menu");
   const sampleBar = document.querySelector(".sample-bar");
   const sampleBarIcon = document.querySelector(".sample-bar i");
@@ -53,15 +85,87 @@ const getNodes = function () {
   );
   const profLastRemoveIcon = document.querySelector(".professional .second .fa-trash");
 
+  const resumeName = document.querySelector(".resume-name");
+  const resumePersonalPhone = document.querySelector(".resume-personal-phone");
+  const resumePersonalMail = document.querySelector(".resume-personal-mail");
+  const resumePersonalLocation = document.querySelector(".resume-personal-location");
+  const resumePersonalAddress = document.querySelector(".resume-personal-address");
+  const resumeProfile = document.querySelector(".resume-profile div");
+  const resumeFirstEduSchool = document.querySelector(
+    ".resume-education .first .resume-school",
+  );
+  const resumeFirstEduDegree = document.querySelector(
+    ".resume-education .first .resume-degree",
+  );
+  const resumeFirstEduHonors = document.querySelector(
+    ".resume-education .first .resume-honors",
+  );
+  const resumeFirstEduDate = document.querySelector(
+    ".resume-education .first .resume-date",
+  );
+  const resumeFirstEduLocation = document.querySelector(
+    ".resume-education .first .resume-location",
+  );
+  const resumeLastEduSchool = document.querySelector(
+    ".resume-education .second .resume-school",
+  );
+  const resumeLastEduDegree = document.querySelector(
+    ".resume-education .second .resume-degree",
+  );
+  const resumeLastEduHonors = document.querySelector(
+    ".resume-education .second .resume-honors",
+  );
+  const resumeLastEduDate = document.querySelector(
+    ".resume-education .second .resume-date",
+  );
+  const resumeLastEduLocation = document.querySelector(
+    ".resume-education .second .resume-location",
+  );
+
   return {
     fieldStatus,
+    firstNamesInput,
+    lastNameInput,
     emailInput,
     phoneInput,
+    personalCountryInput,
+    personalCityInput,
     addressInput,
+    personalImageInput,
+    firstEduSchool,
+    firstEduDegree,
+    firstEduHonors,
+    firstEduStartDate,
+    firstEduEndDate,
+    firstEduCountry,
+    firstEduCity,
+    lastEduSchool,
+    lastEduDegree,
+    lastEduHonors,
+    lastEduStartDate,
+    lastEduEndDate,
+    lastEduCountry,
+    lastEduCity,
     degreeInput,
     honorsInput,
     positionInput,
     descriptionInput,
+    resumeName,
+    resumePersonalPhone,
+    resumePersonalMail,
+    resumePersonalLocation,
+    resumePersonalAddress,
+    resumeProfile,
+    resumeFirstEduSchool,
+    resumeFirstEduDegree,
+    resumeFirstEduHonors,
+    resumeFirstEduDate,
+    resumeFirstEduLocation,
+    resumeLastEduSchool,
+    resumeLastEduDegree,
+    resumeLastEduHonors,
+    resumeLastEduDate,
+    resumeLastEduLocation,
     menu,
     sampleBar,
     sampleBarIcon,
