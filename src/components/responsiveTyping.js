@@ -145,6 +145,46 @@ const responsiveTyping = function () {
       getNodes().resumelastProLocation,
     );
 
+    const __forDate = function (input, initialDate, finalDate, resumeDate) {
+      input.addEventListener("input", () => {
+        const startDate = new Date(initialDate.value);
+        const endDate = new Date(finalDate.value);
+        let startMonth = startDate.toLocaleString("default", { month: "short" });
+        startMonth === "Invalid Date" ? (startMonth = "") : true;
+        let endMonth = endDate.toLocaleString("default", { month: "short" });
+        endMonth === "Invalid Date" ? (endMonth = "") : true;
+        const startYear = startDate.getFullYear() || "";
+        const endYear = endDate.getFullYear() || "";
+        resumeDate.textContent =
+          startMonth + ", " + startYear + " - " + endMonth + ", " + endYear;
+      });
+    };
+    __forDate(
+      getNodes().firstProStartDate,
+      getNodes().firstProStartDate,
+      getNodes().firstProEndDate,
+      getNodes().resumeFirstProDate,
+    );
+    __forDate(
+      getNodes().firstProEndDate,
+      getNodes().firstProStartDate,
+      getNodes().firstProEndDate,
+      getNodes().resumeFirstProDate,
+    );
+
+    __forDate(
+      getNodes().lastProStartDate,
+      getNodes().lastProStartDate,
+      getNodes().lastProEndDate,
+      getNodes().resumelastProDate,
+    );
+    __forDate(
+      getNodes().lastProEndDate,
+      getNodes().lastProStartDate,
+      getNodes().lastProEndDate,
+      getNodes().resumelastProDate,
+    );
+
     __forIndepInput(getNodes().resumeFirstProCompany, getNodes().firstProCompany);
     __forIndepInput(getNodes().resumeFirstProPosition, getNodes().firstProPosition);
     __forIndepInput(getNodes().resumeFirstProDescription, getNodes().firstProDescription);
