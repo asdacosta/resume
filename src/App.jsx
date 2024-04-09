@@ -3,6 +3,7 @@ import "./styles/App.css";
 import { animateText } from "./components/animateText";
 import { navigation } from "./components/nav";
 import { inputFields } from "./components/inputFields";
+import { responsiveTyping } from "./components/responsiveTyping";
 // import "./styles/reset.css";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     animateText();
     navigation();
     inputFields();
+    responsiveTyping();
   }, []);
 
   return (
@@ -475,16 +477,20 @@ function App() {
           <section className="resume-contact">
             <h2>Contact</h2>
             <p>
-              <i class="fa-solid fa-phone"></i> <span>+233 501403974</span>
+              <i class="fa-solid fa-phone"></i>{" "}
+              <span className="resume-personal-phone">+233 501403974</span>
             </p>
             <p>
-              <i class="fa-solid fa-envelope"></i> <span>ace@gmail.com</span>
+              <i class="fa-solid fa-envelope"></i>{" "}
+              <span className="resume-personal-mail">ace@gmail.com</span>
             </p>
             <p>
-              <i class="fa-solid fa-location-dot"></i> <span>Canada Ottawa</span>
+              <i class="fa-solid fa-location-dot"></i>{" "}
+              <span className="resume-personal-location">Canada Ottawa</span>
             </p>
             <p>
-              <i class="fa-solid fa-location-arrow"></i> Accra, Anywhere
+              <i class="fa-solid fa-location-arrow"></i>{" "}
+              <span className="resume-personal-address">Accra, Anywhere</span>
             </p>
           </section>
           <section className="resume-skills">
