@@ -43,8 +43,6 @@ const navigation = function () {
   function clearSample() {
     // Personal Details
     getNodes().resumeProfile.classList.add("unknown");
-    getNodes().resumeProfile.style.backgroundPosition = `center`;
-    getNodes().resumeProfile.style.backgroundSize = `cover`;
     getNodes().resumeName.textContent = "Full Name";
     getNodes().resumeMainPosition.textContent = "Last Position";
     getNodes().resumePersonalPhone.textContent = "Phone";
