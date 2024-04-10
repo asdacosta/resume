@@ -1,6 +1,46 @@
 import { getNodes } from "./getNodes";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
+import { saveAs } from "file-saver";
+// import html2pdf from "html2pdf.js";
 
 const navigation = function () {
+  const download = (function () {
+    getNodes().downloadBox.addEventListener("click", async () => {
+      // Animate Icon
+      const icon = getNodes().downloadBox.querySelector("i");
+      icon.classList.add("rotate");
+      await new Promise((resolve) => {
+        setTimeout(resolve, 1000);
+      });
+      icon.classList.add("up");
+      await new Promise((resolve) => {
+        setTimeout(resolve, 500);
+      });
+
+      // Download
+      html2canvas(getNodes().resume).then((canvas) => {
+        const imgData = canvas.toDataURL("image/png");
+        const width = getNodes().resume.offsetWidth + 5;
+        const height = getNodes().resume.offsetHeight;
+        const resume = new jsPDF({
+          orientation: "portrait",
+          unit: "pt",
+          format: [width, height],
+        });
+        resume.addImage(imgData, "PNG", 0, 0, width, height);
+        resume.save("resume.pdf");
+      });
+
+      // Set icon to default position
+      await new Promise((resolve) => {
+        setTimeout(resolve, 300);
+      });
+      icon.classList.remove("rotate");
+      icon.classList.remove("up");
+    });
+  })();
+
   function clearSample() {
     // Personal Details
     getNodes().resumeProfile.classList.add("unknown");
@@ -263,5 +303,3 @@ const navigation = function () {
 };
 
 export { navigation };
-
-// TODO: Set input limit
