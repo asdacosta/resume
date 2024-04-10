@@ -1,7 +1,6 @@
 import { getNodes } from "./getNodes";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
-import { saveAs } from "file-saver";
 // import html2pdf from "html2pdf.js";
 
 const navigation = function () {
@@ -197,6 +196,14 @@ const navigation = function () {
                 });
               })();
               button.classList.add("chosen");
+
+              if (button.parentNode.classList.contains("layout")) {
+                if (button.classList.contains("left-align")) {
+                  getNodes().resumeCover.style.flexDirection = "row";
+                } else if (button.classList.contains("right-align")) {
+                  getNodes().resumeCover.style.flexDirection = "row-reverse";
+                }
+              }
             });
           });
         };
