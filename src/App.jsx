@@ -42,9 +42,8 @@ function App() {
                 Layout <i class="fa-solid fa-angle-right"></i>
               </li>
               <div className="layout">
-                <button></button>
-                <button></button>
-                <button></button>
+                <button className="left-align"></button>
+                <button className="right-align"></button>
               </div>
             </ul>
           </section>
