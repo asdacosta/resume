@@ -188,6 +188,8 @@ const getNodes = function () {
   const resumelastProDescription = document.querySelector(
     ".resume-professional .second .resume-description",
   );
+  const downloadBox = document.querySelector(".download");
+  const resume = document.querySelector(".resume-cover");
 
   return {
     fieldStatus,
@@ -295,6 +297,8 @@ const getNodes = function () {
     profFirstRemoveIcon,
     profLastEditIcon,
     profLastRemoveIcon,
+    downloadBox,
+    resume,
   };
 };
 
