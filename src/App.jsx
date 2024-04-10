@@ -613,8 +613,7 @@ function App() {
               <p className="resume-location">Canada ⚫ Ottawa</p>
               <p className="resume-description">
                 As a software engineer, I turn challenges into solutions through lines of
-                code. Dedicated to building impactful software with innovation and
-                expertise.
+                code. Dedicated to building impactful software.
               </p>
             </section>
             <section className="second">
@@ -626,8 +625,7 @@ function App() {
               <p className="resume-location">US ⚫ Hawthorne</p>
               <p className="resume-description">
                 As a chief software engineer, I turn challenges into solutions through
-                lines of code. Dedicated to building impactful software with innovation
-                and expertise.
+                lines of code. Dedicated to building impactful software.
               </p>
             </section>
           </section>
