@@ -197,6 +197,7 @@ const responsiveTyping = function () {
 
     __forIndepInput(getNodes().resumelastProCompany, getNodes().lastProCompany);
     __forIndepInput(getNodes().resumelastProPosition, getNodes().lastProPosition);
+    __forIndepInput(getNodes().resumeMainPosition, getNodes().lastProPosition);
     __forIndepInput(getNodes().resumelastProDescription, getNodes().lastProDescription);
   })();
 };
