@@ -554,6 +554,8 @@ i {
 
 .resume-profile div.unknown {
   background: url(../assets/unknown.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 .name-position {
