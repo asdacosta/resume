@@ -238,7 +238,7 @@ h3 {
 
 .sample-bar > span {
   position: absolute;
-  transition: opacity 0.7s;
+  transition: opacity 0.5s;
 }
 
 .hideSampleText {
@@ -249,7 +249,7 @@ h3 {
   font-size: 1.2rem;
   margin-top: 0.08rem;
   margin-left: auto;
-  transition: transform 0.7s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
 .moveSampleIcon {
@@ -540,6 +540,10 @@ i {
   background: url(../assets/profile.jpg);
   background-position: center;
   background-size: cover;
+}
+
+.resume-profile div.unknown {
+  background: url(../assets/unknown.jpg);
 }
 
 .name-position {
