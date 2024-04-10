@@ -263,6 +263,18 @@ h3 {
   border-radius: 1rem;
 }
 
+.download i {
+  transition: transform 0.7s;
+}
+
+.download i.rotate {
+  transform: rotateX(180deg);
+}
+
+.download i.up {
+  transform: translateY(-10rem);
+}
+
 .view {
   width: 2rem;
 }
