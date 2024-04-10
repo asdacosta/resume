@@ -127,6 +127,7 @@ const getNodes = function () {
   const resumePersonalLocation = document.querySelector(".resume-personal-location");
   const resumePersonalAddress = document.querySelector(".resume-personal-address");
   const resumeProfile = document.querySelector(".resume-profile div");
+  const resumeMainPosition = document.querySelector(".resume-position");
   const resumeFirstEduSchool = document.querySelector(
     ".resume-education .first .resume-school",
   );
@@ -236,6 +237,7 @@ const getNodes = function () {
     resumePersonalLocation,
     resumePersonalAddress,
     resumeProfile,
+    resumeMainPosition,
     resumeFirstEduSchool,
     resumeFirstEduDegree,
     resumeFirstEduHonors,
