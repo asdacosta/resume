@@ -74,13 +74,25 @@ function App() {
                 <label for="first-names">
                   First Name(s) <span className="required">Required</span>
                 </label>
-                <input type="text" name="first-names" id="first-names" required />
+                <input
+                  type="text"
+                  name="first-names"
+                  id="first-names"
+                  maxLength={15}
+                  required
+                />
               </div>
               <div className="field">
                 <label for="last-name">
                   Last Name <span className="required">Required</span>
                 </label>
-                <input type="text" name="last-name" id="last-name" required />
+                <input
+                  type="text"
+                  name="last-name"
+                  id="last-name"
+                  maxLength={10}
+                  required
+                />
               </div>
               <div className="field">
                 <label for="mail">
@@ -91,6 +103,7 @@ function App() {
                   name="mail"
                   id="mail"
                   placeholder="ever@example.com"
+                  maxLength={25}
                   required
                 />
               </div>
@@ -103,6 +116,7 @@ function App() {
                   name="phone"
                   id="phone"
                   placeholder="+(code)-●●●-●●●-●●●●"
+                  maxLength={18}
                   required
                 />
               </div>
@@ -110,13 +124,23 @@ function App() {
                 <label for="country-personal">
                   Country <span className="optional">Optional</span>
                 </label>
-                <input type="text" name="country-personal" id="country-personal" />
+                <input
+                  type="text"
+                  name="country-personal"
+                  id="country-personal"
+                  maxLength={20}
+                />
               </div>
               <div className="field">
                 <label for="city-personal">
                   City <span className="optional">Optional</span>
                 </label>
-                <input type="text" name="city-personal" id="city-personal" />
+                <input
+                  type="text"
+                  name="city-personal"
+                  id="city-personal"
+                  maxLength={20}
+                />
               </div>
               <div className="field">
                 <label for="address">
@@ -127,6 +151,7 @@ function App() {
                   name="address"
                   id="address"
                   placeholder="A24/12 Hell Street"
+                  maxLength={25}
                 />
               </div>
               <div className="field-profile">
@@ -170,7 +195,7 @@ function App() {
                 <label for="school">
                   School <span className="required">Required</span>
                 </label>
-                <input type="text" name="school" id="school" required />
+                <input type="text" name="school" id="school" maxLength={30} required />
               </div>
               <div className="field">
                 <label for="degree">
@@ -181,6 +206,7 @@ function App() {
                   name="degree"
                   id="degree"
                   placeholder="Bachelor of Science"
+                  maxLength={35}
                   required
                 />
               </div>
@@ -188,7 +214,13 @@ function App() {
                 <label for="honors">
                   Class Honors <span className="optional">Optional</span>
                 </label>
-                <input type="text" name="honors" id="honors" placeholder="First Class" />
+                <input
+                  type="text"
+                  name="honors"
+                  id="honors"
+                  placeholder="First Class"
+                  maxLength={25}
+                />
               </div>
               <div className="field">
                 <label for="start-date-education">
@@ -208,13 +240,23 @@ function App() {
                 <label for="country-education">
                   Country <span className="optional">Optional</span>
                 </label>
-                <input type="text" name="country-education" id="country-education" />
+                <input
+                  type="text"
+                  name="country-education"
+                  id="country-education"
+                  maxLength={20}
+                />
               </div>
               <div className="field">
                 <label for="city-education">
                   City <span className="optional">Optional</span>
                 </label>
-                <input type="text" name="city-education" id="city-education" />
+                <input
+                  type="text"
+                  name="city-education"
+                  id="city-education"
+                  maxLength={20}
+                />
               </div>
               <div className="field-footer">
                 <span className="clear-field">
@@ -230,7 +272,7 @@ function App() {
                 <label for="school">
                   School <span className="required">Required</span>
                 </label>
-                <input type="text" name="school" id="school" required />
+                <input type="text" name="school" id="school" maxLength={30} required />
               </div>
               <div className="field">
                 <label for="degree">
@@ -241,6 +283,7 @@ function App() {
                   name="degree"
                   id="degree"
                   placeholder="Bachelor of Science"
+                  maxLength={35}
                   required
                 />
               </div>
@@ -248,7 +291,13 @@ function App() {
                 <label for="honors">
                   Class Honors <span className="optional">Optional</span>
                 </label>
-                <input type="text" name="honors" id="honors" placeholder="First Class" />
+                <input
+                  type="text"
+                  name="honors"
+                  id="honors"
+                  placeholder="First Class"
+                  maxLength={25}
+                />
               </div>
               <div className="field">
                 <label for="start-date-education">
@@ -268,13 +317,23 @@ function App() {
                 <label for="country-education">
                   Country <span className="optional">Optional</span>
                 </label>
-                <input type="text" name="country-education" id="country-education" />
+                <input
+                  type="text"
+                  name="country-education"
+                  id="country-education"
+                  maxLength={20}
+                />
               </div>
               <div className="field">
                 <label for="city-education">
                   City <span className="optional">Optional</span>
                 </label>
-                <input type="text" name="city-education" id="city-education" />
+                <input
+                  type="text"
+                  name="city-education"
+                  id="city-education"
+                  maxLength={20}
+                />
               </div>
               <div className="field-footer">
                 <span className="clear-field">
@@ -319,7 +378,7 @@ function App() {
                 <label for="company">
                   Company Name <span className="required">Required</span>
                 </label>
-                <input type="text" name="company" id="company" required />
+                <input type="text" name="company" id="company" maxLength={30} required />
               </div>
               <div className="field">
                 <label for="position">
@@ -330,6 +389,7 @@ function App() {
                   name="position"
                   id="position"
                   placeholder="Software Engineer"
+                  maxLength={30}
                   required
                 />
               </div>
@@ -359,13 +419,19 @@ function App() {
                   type="text"
                   name="country-professional"
                   id="country-professional"
+                  maxLength={20}
                 />
               </div>
               <div className="field">
                 <label for="city-professional">
                   City <span className="optional">Optional</span>
                 </label>
-                <input type="text" name="city-professional" id="city-professional" />
+                <input
+                  type="text"
+                  name="city-professional"
+                  id="city-professional"
+                  maxLength={20}
+                />
               </div>
               <div className="field-description">
                 <label for="description">
@@ -375,6 +441,7 @@ function App() {
                   name="description"
                   id="description"
                   placeholder="As a software engineer, ..."
+                  maxLength={160}
                   cols="20"
                   rows="10"
                 ></textarea>
@@ -393,7 +460,7 @@ function App() {
                 <label for="company">
                   Company Name <span className="required">Required</span>
                 </label>
-                <input type="text" name="company" id="company" required />
+                <input type="text" name="company" id="company" maxLength={30} required />
               </div>
               <div className="field">
                 <label for="position">
@@ -404,6 +471,7 @@ function App() {
                   name="position"
                   id="position"
                   placeholder="Software Engineer"
+                  maxLength={30}
                   required
                 />
               </div>
@@ -433,13 +501,19 @@ function App() {
                   type="text"
                   name="country-professional"
                   id="country-professional"
+                  maxLength={20}
                 />
               </div>
               <div className="field">
                 <label for="city-professional">
                   City <span className="optional">Optional</span>
                 </label>
-                <input type="text" name="city-professional" id="city-professional" />
+                <input
+                  type="text"
+                  name="city-professional"
+                  id="city-professional"
+                  maxLength={20}
+                />
               </div>
               <div className="field-description">
                 <label for="description">
@@ -449,6 +523,7 @@ function App() {
                   name="description"
                   id="description"
                   placeholder="As a software engineer, ..."
+                  maxLength={160}
                   cols="20"
                   rows="10"
                 ></textarea>
