@@ -125,6 +125,15 @@ const inputFields = function () {
       paragraph.style.pointerEvents = "auto";
     }
 
+    function clearFieldInputs(field) {
+      field.querySelectorAll("input").forEach((input) => {
+        input.value = "";
+      });
+      if (field.querySelector("textarea")) {
+        field.querySelector("textarea").value = "";
+      }
+    }
+
     const addFilledField = function (
       nodeField,
       nodeAdd,
@@ -220,9 +229,10 @@ const inputFields = function () {
             })();
             const removeAdded = (function () {
               removeIcon.addEventListener("click", () => {
+                clearFieldInputs(nodeField2);
                 nodeFieldAdded2.style.display = "none";
 
-                let firstFieldFilled2 = null;
+                let firstFieldFilled2 = true;
                 if (nodeField2.classList.contains("first")) {
                   const updateRealFieldVariable = (function () {
                     if (nodeField.classList.contains("education-fields")) {
@@ -272,7 +282,8 @@ const inputFields = function () {
     };
 
     const clearField = function (nodeField, nodeAdd) {
-      nodeField.querySelector(".clear-field").addEventListener("click", () => {
+      nodeField.querySelector(".clear-field").addEventListener("click", async () => {
+        clearFieldInputs(nodeField);
         setAddAndFieldToDefault(nodeAdd, nodeField);
 
         // Make field expandable when out of input mode
