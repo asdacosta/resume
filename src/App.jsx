@@ -471,26 +471,26 @@ function App() {
             <div></div>
           </section>
           <section className="name-position">
-            <p className="resume-name">Ace Draco</p>
+            <p className="resume-name">Ever Costa</p>
             <p className="resume-position">Software Engineer</p>
           </section>
           <section className="resume-contact">
             <h2>Contact</h2>
             <p>
               <i class="fa-solid fa-phone"></i>{" "}
-              <span className="resume-personal-phone">+233 501403974</span>
+              <span className="resume-personal-phone">+1 416 123 4567</span>
             </p>
             <p>
               <i class="fa-solid fa-envelope"></i>{" "}
-              <span className="resume-personal-mail">ace@gmail.com</span>
+              <span className="resume-personal-mail">ever@gmail.com</span>
             </p>
             <p>
               <i class="fa-solid fa-location-dot"></i>{" "}
-              <span className="resume-personal-location">Canada Ottawa</span>
+              <span className="resume-personal-location">Canada, Ottawa</span>
             </p>
             <p>
               <i class="fa-solid fa-location-arrow"></i>{" "}
-              <span className="resume-personal-address">Accra, Anywhere</span>
+              <span className="resume-personal-address">123 Main Street</span>
             </p>
           </section>
           {/* <section className="resume-skills">
@@ -507,25 +507,25 @@ function App() {
             <h2>Education</h2>
             <section className="first">
               <p>
-                <span className="resume-school">Oxford University</span>{" "}
-                <span className="resume-date">2019 - 2023</span>
+                <span className="resume-school">University of Montreal</span>{" "}
+                <span className="resume-date">2020 - 2024</span>
               </p>
               <p>
                 <span className="resume-degree">Bachelor of Science</span> |{" "}
                 <span className="resume-honors">First Class Honors</span>
               </p>
-              <p className="resume-location">Ghana ⚫ Accra</p>
+              <p className="resume-location">Canada ⚫ Quebec</p>
             </section>
             <section className="second">
               <p>
                 <span className="resume-school">Oxford University</span>{" "}
-                <span className="resume-date">2019 - 2023</span>
+                <span className="resume-date">2024 - 2025</span>
               </p>
               <p>
-                <span className="resume-degree">Bachelor of Science</span> |{" "}
-                <span className="resume-honors">First Class Honors</span>
+                <span className="resume-degree">Master's Degree</span> |{" "}
+                <span className="resume-honors">High distinction</span>
               </p>
-              <p className="resume-location">Ghana ⚫ Accra</p>
+              <p className="resume-location">UK ⚫ Oxford</p>
             </section>
           </section>
           <section className="resume-professional">
@@ -533,7 +533,7 @@ function App() {
             <section className="first">
               <p>
                 <span className="resume-company">Tesla Inc</span>
-                <span className="resume-date">Aug, 2024 - Sep, 2025</span>
+                <span className="resume-date">Aug, 2025 - Sep, 2026</span>
               </p>
               <p className="resume-position">Chief Software Engineer</p>
               <p className="resume-location">Canada ⚫ Ottawa</p>
@@ -545,15 +545,15 @@ function App() {
             </section>
             <section className="second">
               <p>
-                <span className="resume-company">Tesla Inc</span>
-                <span className="resume-date">Aug, 2024 - Sep, 2025</span>
+                <span className="resume-company">SpaceX Corp</span>
+                <span className="resume-date">Aug, 2027 - Sep, 2028</span>
               </p>
-              <p className="resume-position">Chief Software Engineer</p>
-              <p className="resume-location">Canada ⚫ Ottawa</p>
+              <p className="resume-position">Software Engineer</p>
+              <p className="resume-location">US ⚫ Hawthorne</p>
               <p className="resume-description">
-                As a software engineer, I turn challenges into solutions through lines of
-                code. Dedicated to building impactful software with innovation and
-                expertise.
+                As a chief software engineer, I turn challenges into solutions through
+                lines of code. Dedicated to building impactful software with innovation
+                and expertise.
               </p>
             </section>
           </section>
