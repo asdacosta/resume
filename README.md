@@ -106,6 +106,8 @@ Developers, users, recruiters.
 <summary>Invert</summary>
 
 - [ ] Uncomment Skills html, add its input, animated placeholder and make it responsive in Resume.
+- [ ] Make download occur once at click.
+- [ ] Downloaded Resume should be visibly the same as on website.
 
 </details>
 
