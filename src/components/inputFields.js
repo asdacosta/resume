@@ -163,6 +163,12 @@ const inputFields = function () {
         })();
 
         nodeFieldAdded.style.display = "flex";
+        const updateFieldAddedHeader = (function () {
+          const addedHeader = nodeFieldAdded.querySelector("span");
+          const header = nodeField.querySelector("input");
+          addedHeader.textContent = header.value;
+        })();
+        // Last fields
         if (
           nodeField.classList.contains("education-fields") &&
           getComputedStyle(getNodes().educationLastFieldAdded).display === "flex"
