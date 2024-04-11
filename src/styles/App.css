@@ -126,15 +126,15 @@ nav {
 }
 
 .palette > button:nth-child(2) {
-  background: linear-gradient(to right, #a9b8be 50%, #477992 50%);
+  background: linear-gradient(to right, #e4e9b9 50%, #b9ce43 50%);
 }
 
 .palette > button:nth-child(3) {
-  background: linear-gradient(to right, #9cb5c9 50%, #427eac 50%);
+  background: linear-gradient(to right, #b7cbdd 50%, #427eac 50%);
 }
 
 .palette > button:nth-child(4) {
-  background: linear-gradient(to right, rgb(219, 206, 190) 50%, rgb(192, 144, 81) 50%);
+  background: linear-gradient(to right, rgb(230, 217, 202) 50%, rgb(192, 144, 81) 50%);
 }
 
 .palette > button:nth-child(5) {
@@ -142,7 +142,7 @@ nav {
 }
 
 .palette > button:last-child {
-  background: linear-gradient(to right, #c4c4c4 50%, #555555 50%);
+  background: linear-gradient(to right, #e9c6e9 50%, #b639ab 50%);
 }
 
 .layout > button {
