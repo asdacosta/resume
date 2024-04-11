@@ -24,6 +24,9 @@ function App() {
         <span>M</span>
         <span>É</span>
       </div>
+      <div className="first-circle"></div>
+      <div className="sec-circle"></div>
+      <div className="last-circle"></div>
       <section className="edit-cover">
         <nav>
           <section className="menu">
