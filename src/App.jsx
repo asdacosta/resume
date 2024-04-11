@@ -31,15 +31,15 @@ function App() {
         <nav>
           <section className="menu">
             <div></div>
-            <i class="fa-solid fa-circle"></i>
-            <i class="fa-solid fa-caret-down"></i>
-            <i class="fa-solid fa-circle"></i>
+            <i className="fa-solid fa-circle"></i>
+            <i className="fa-solid fa-caret-down"></i>
+            <i className="fa-solid fa-circle"></i>
           </section>
           <section className="dialog">
             <h2>Personalize</h2>
             <ul>
               <li>
-                Palette <i class="fa-solid fa-angle-down"></i>
+                Palette <i className="fa-solid fa-angle-down"></i>
               </li>
               <div className="palette">
                 <button className="grey"></button>
@@ -50,7 +50,7 @@ function App() {
                 <button className="violet"></button>
               </div>
               <li>
-                Layout <i class="fa-solid fa-angle-down"></i>
+                Layout <i className="fa-solid fa-angle-down"></i>
               </li>
               <div className="layout">
                 <button className="left-align"></button>
@@ -60,23 +60,23 @@ function App() {
           </section>
           <section className="sample-bar">
             <span>Clear</span>
-            <i class="fa-solid fa-circle"></i>
+            <i className="fa-solid fa-circle"></i>
           </section>
           <section className="download">
-            <i class="fa-solid fa-arrow-down"></i>
+            <i className="fa-solid fa-arrow-down"></i>
           </section>
           <section className="view">
-            <i class="fa-solid fa-eye"></i>
+            <i className="fa-solid fa-eye"></i>
           </section>
         </nav>
         <section className="input-fields">
           <section className="personal-info">
             <p>
-              <i class="fa-solid fa-user-large"></i>
+              <i className="fa-solid fa-user-large"></i>
               Personal Info
               <span className="open-field">
-                <i class="fa-solid fa-arrow-right fa-rotate-270"></i>
-                <i class="fa-solid fa-arrow-right fa-rotate-90"></i>
+                <i className="fa-solid fa-arrow-right fa-rotate-270"></i>
+                <i className="fa-solid fa-arrow-right fa-rotate-90"></i>
               </span>
             </p>
             <section>
@@ -166,7 +166,7 @@ function App() {
               </div>
               <div className="field-profile">
                 <label for="profile">
-                  <i class="fa-solid fa-images fa-fade"></i>Upload Picture
+                  <i className="fa-solid fa-images fa-fade"></i>Upload Picture
                 </label>
                 <input type="file" name="profile" id="profile" accept="image/*" />
               </div>
@@ -174,30 +174,30 @@ function App() {
           </section>
           <section className="education">
             <p>
-              <i class="fa-solid fa-user-graduate"></i>
+              <i className="fa-solid fa-user-graduate"></i>
               Education
               <span className="open-field">
-                <i class="fa-solid fa-arrow-right fa-rotate-270"></i>
-                <i class="fa-solid fa-arrow-right fa-rotate-90"></i>
+                <i className="fa-solid fa-arrow-right fa-rotate-270"></i>
+                <i className="fa-solid fa-arrow-right fa-rotate-90"></i>
               </span>
             </p>
             <div className="add">
               <span>
-                <i class="fa-solid fa-plus"></i> Education
+                <i className="fa-solid fa-plus"></i> Education
               </span>
             </div>
             <div className="first added">
               <span>School</span>
               <span>
-                <i class="fa-solid fa-trash"></i>
-                <i class="fa-solid fa-pen-to-square"></i>
+                <i className="fa-solid fa-trash"></i>
+                <i className="fa-solid fa-pen-to-square"></i>
               </span>
             </div>
             <div className="second added">
               <span>School2</span>
               <span>
-                <i class="fa-solid fa-trash"></i>
-                <i class="fa-solid fa-pen-to-square"></i>
+                <i className="fa-solid fa-trash"></i>
+                <i className="fa-solid fa-pen-to-square"></i>
               </span>
             </div>
             <section className="education-fields first">
@@ -270,10 +270,10 @@ function App() {
               </div>
               <div className="field-footer">
                 <span className="clear-field">
-                  <i class="fa-solid fa-eraser"></i> Clear
+                  <i className="fa-solid fa-eraser"></i> Clear
                 </span>
                 <span className="add-field">
-                  <i class="fa-solid fa-pencil"></i> Add
+                  <i className="fa-solid fa-pencil"></i> Add
                 </span>
               </div>
             </section>
@@ -347,40 +347,40 @@ function App() {
               </div>
               <div className="field-footer">
                 <span className="clear-field">
-                  <i class="fa-solid fa-eraser"></i> Clear
+                  <i className="fa-solid fa-eraser"></i> Clear
                 </span>
                 <span className="add-field">
-                  <i class="fa-solid fa-pencil"></i> Add
+                  <i className="fa-solid fa-pencil"></i> Add
                 </span>
               </div>
             </section>
           </section>
           <section className="professional">
             <p>
-              <i class="fa-solid fa-user-tie"></i>
+              <i className="fa-solid fa-user-tie"></i>
               Professional Experience
               <span className="open-field">
-                <i class="fa-solid fa-arrow-right fa-rotate-270"></i>
-                <i class="fa-solid fa-arrow-right fa-rotate-90"></i>
+                <i className="fa-solid fa-arrow-right fa-rotate-270"></i>
+                <i className="fa-solid fa-arrow-right fa-rotate-90"></i>
               </span>
             </p>
             <div className="add">
               <span>
-                <i class="fa-solid fa-plus"></i> Experience
+                <i className="fa-solid fa-plus"></i> Experience
               </span>
             </div>
             <div className="first added">
               <span>Company Name</span>
               <span>
-                <i class="fa-solid fa-trash"></i>
-                <i class="fa-solid fa-pen-to-square"></i>
+                <i className="fa-solid fa-trash"></i>
+                <i className="fa-solid fa-pen-to-square"></i>
               </span>
             </div>
             <div className="second added">
               <span>Company Name 2</span>
               <span>
-                <i class="fa-solid fa-trash"></i>
-                <i class="fa-solid fa-pen-to-square"></i>
+                <i className="fa-solid fa-trash"></i>
+                <i className="fa-solid fa-pen-to-square"></i>
               </span>
             </div>
             <section className="professional-fields first">
@@ -458,10 +458,10 @@ function App() {
               </div>
               <div className="field-footer">
                 <span className="clear-field">
-                  <i class="fa-solid fa-eraser"></i> Clear
+                  <i className="fa-solid fa-eraser"></i> Clear
                 </span>
                 <span className="add-field">
-                  <i class="fa-solid fa-pencil"></i> Add
+                  <i className="fa-solid fa-pencil"></i> Add
                 </span>
               </div>
             </section>
@@ -540,10 +540,10 @@ function App() {
               </div>
               <div className="field-footer">
                 <span className="clear-field">
-                  <i class="fa-solid fa-eraser"></i> Clear
+                  <i className="fa-solid fa-eraser"></i> Clear
                 </span>
                 <span className="add-field">
-                  <i class="fa-solid fa-pencil"></i> Add
+                  <i className="fa-solid fa-pencil"></i> Add
                 </span>
               </div>
             </section>
@@ -562,19 +562,19 @@ function App() {
           <section className="resume-contact">
             <h2>Contact</h2>
             <p>
-              <i class="fa-solid fa-phone"></i>{" "}
+              <i className="fa-solid fa-phone"></i>{" "}
               <span className="resume-personal-phone">+1 416 123 4567</span>
             </p>
             <p>
-              <i class="fa-solid fa-envelope"></i>{" "}
+              <i className="fa-solid fa-envelope"></i>{" "}
               <span className="resume-personal-mail">ever@gmail.com</span>
             </p>
             <p>
-              <i class="fa-solid fa-location-dot"></i>{" "}
+              <i className="fa-solid fa-location-dot"></i>{" "}
               <span className="resume-personal-location">Canada, Ottawa</span>
             </p>
             <p>
-              <i class="fa-solid fa-location-arrow"></i>{" "}
+              <i className="fa-solid fa-location-arrow"></i>{" "}
               <span className="resume-personal-address">123 Main Street</span>
             </p>
           </section>
