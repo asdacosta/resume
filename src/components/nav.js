@@ -336,7 +336,7 @@ const navigation = function () {
           isInView = false;
 
           const hideResume = (async function () {
-            resume.style.transform = "translateY(-110%)";
+            resume.style.transform = "translateY(-200%)";
             await new Promise((resolve) => {
               setTimeout(() => {
                 resume.style.display = "none";
