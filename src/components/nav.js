@@ -104,14 +104,14 @@ const navigation = function () {
     getNodes().resumeFirstProLocation.textContent = "Canada ⚫ Ottawa";
     getNodes().resumeFirstProDate.textContent = "Aug, 2025 - Sep, 2026";
     getNodes().resumeFirstProDescription.textContent =
-      "As a software engineer, I turn challenges into solutions through lines of code. Dedicated to building impactful software with innovation and expertise.";
+      "As a software engineer, I turn challenges into solutions through lines of code. Dedicated to building impactful software.";
 
     getNodes().resumelastProCompany.textContent = "SpaceX Corp";
     getNodes().resumelastProPosition.textContent = "Software Engineer";
     getNodes().resumelastProLocation.textContent = "US ⚫ Hawthorne";
     getNodes().resumelastProDate.textContent = "Aug, 2027 - Sep, 2028";
     getNodes().resumelastProDescription.textContent =
-      "As a software engineer, I turn challenges into solutions through lines of code. Dedicated to building impactful software with innovation and expertise.";
+      "As a chief software engineer, I turn challenges into solutions through lines of code. Dedicated to building impactful software.";
   }
 
   const animateParts = (function () {
