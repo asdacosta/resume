@@ -236,7 +236,7 @@ const animateText = async function () {
         await __domainNames(1, 2200, ".");
         await __domainNames(2, 2600, ".");
         await __domainNames(3, 2400, ".");
-        await __domainNames(4, 2200, ".");
+        await __domainNames(4, 2300, ".");
         await __domainNames(5, 4600, "@", false);
         await __domainNames(6, 5200, "@", false);
       }
@@ -260,8 +260,8 @@ const animateText = async function () {
     const animatePhoneInput = (async function () {
       const node = getNodes().phoneInput;
       while (true) {
-        await __singleNode(node, phoneSamples, 0, 2200, "●");
-        await __singleNode(node, phoneSamples, 1, 4200, "●");
+        await __singleNode(node, phoneSamples, 0, 2300, "●");
+        await __singleNode(node, phoneSamples, 1, 4400, "●");
         await __singleNode(node, phoneSamples, 2, 4000, "●");
         await __singleNode(node, phoneSamples, 3, 5600, "●");
       }
@@ -270,9 +270,9 @@ const animateText = async function () {
     const animateAddressInput = (async function () {
       const node = getNodes().addressInput;
       while (true) {
-        await __singleNode(node, addressSamples, 0, 2600, "t");
+        await __singleNode(node, addressSamples, 0, 2800, "t");
         await __singleNode(node, addressSamples, 1, 4800, "t");
-        await __singleNode(node, addressSamples, 2, 6400, "t");
+        await __singleNode(node, addressSamples, 2, 6500, "t");
         await __singleNode(node, addressSamples, 3, 4000, "t");
         await __singleNode(node, addressSamples, 4, 6000, "t");
         await __singleNode(node, addressSamples, 5, 6000, "t");
@@ -300,13 +300,13 @@ const animateText = async function () {
       const lastNode = getNodes().lastEduDegree;
 
       while (true) {
-        await __doubleNodes(firstNode, lastNode, degreeSamples, 0, 1600, "e");
-        await __doubleNodes(firstNode, lastNode, degreeSamples, 1, 1800, "e");
-        await __doubleNodes(firstNode, lastNode, degreeSamples, 2, 6500, "e");
+        await __doubleNodes(firstNode, lastNode, degreeSamples, 0, 1700, "e");
+        await __doubleNodes(firstNode, lastNode, degreeSamples, 1, 2000, "e");
+        await __doubleNodes(firstNode, lastNode, degreeSamples, 2, 6700, "e");
         await __doubleNodes(firstNode, lastNode, degreeSamples, 3, 4000, "e");
         await __doubleNodes(firstNode, lastNode, degreeSamples, 4, 6000, "e");
         await __doubleNodes(firstNode, lastNode, degreeSamples, 5, 4800, "e");
-        await __doubleNodes(firstNode, lastNode, degreeSamples, 6, 5000, "e");
+        await __doubleNodes(firstNode, lastNode, degreeSamples, 6, 5200, "e");
         await __doubleNodes(firstNode, lastNode, degreeSamples, 7, 6200, "e");
       }
     })();
@@ -316,10 +316,10 @@ const animateText = async function () {
       const lastNode = getNodes().lastEduHonors;
 
       while (true) {
-        await __doubleNodes(firstNode, lastNode, honorsSamples, 0, 1800, "s");
-        await __doubleNodes(firstNode, lastNode, honorsSamples, 1, 5300, "s");
-        await __doubleNodes(firstNode, lastNode, honorsSamples, 2, 5300, "s");
-        await __doubleNodes(firstNode, lastNode, honorsSamples, 3, 3600, "s");
+        await __doubleNodes(firstNode, lastNode, honorsSamples, 0, 1900, "s");
+        await __doubleNodes(firstNode, lastNode, honorsSamples, 1, 5500, "s");
+        await __doubleNodes(firstNode, lastNode, honorsSamples, 2, 5400, "s");
+        await __doubleNodes(firstNode, lastNode, honorsSamples, 3, 3700, "s");
         await __doubleNodes(firstNode, lastNode, honorsSamples, 4, 5200, "s");
       }
     })();
@@ -329,14 +329,14 @@ const animateText = async function () {
       const lastNode = getNodes().lastProPosition;
 
       while (true) {
-        await __doubleNodes(firstNode, lastNode, positionSamples, 0, 2500, "r");
-        await __doubleNodes(firstNode, lastNode, positionSamples, 1, 4200, "r");
-        await __doubleNodes(firstNode, lastNode, positionSamples, 2, 3600, "r");
-        await __doubleNodes(firstNode, lastNode, positionSamples, 3, 5000, "r");
-        await __doubleNodes(firstNode, lastNode, positionSamples, 4, 3200, "r");
-        await __doubleNodes(firstNode, lastNode, positionSamples, 5, 4000, "r");
-        await __doubleNodes(firstNode, lastNode, positionSamples, 6, 2800, "r");
-        await __doubleNodes(firstNode, lastNode, positionSamples, 7, 3400, "r");
+        await __doubleNodes(firstNode, lastNode, positionSamples, 0, 2700, "r");
+        await __doubleNodes(firstNode, lastNode, positionSamples, 1, 4300, "r");
+        await __doubleNodes(firstNode, lastNode, positionSamples, 2, 3700, "r");
+        await __doubleNodes(firstNode, lastNode, positionSamples, 3, 5200, "r");
+        await __doubleNodes(firstNode, lastNode, positionSamples, 4, 3400, "r");
+        await __doubleNodes(firstNode, lastNode, positionSamples, 5, 4400, "r");
+        await __doubleNodes(firstNode, lastNode, positionSamples, 6, 3100, "r");
+        await __doubleNodes(firstNode, lastNode, positionSamples, 7, 3700, "r");
         await __doubleNodes(firstNode, lastNode, positionSamples, 8, 6000, "r");
       }
     })();
@@ -346,8 +346,8 @@ const animateText = async function () {
       const lastNode = getNodes().lastProDescription;
 
       while (true) {
-        await __doubleNodes(firstNode, lastNode, descriptionSamples, 0, 1200, ".");
-        await __doubleNodes(firstNode, lastNode, descriptionSamples, 1, 32200, ".");
+        await __doubleNodes(firstNode, lastNode, descriptionSamples, 0, 1300, ".");
+        await __doubleNodes(firstNode, lastNode, descriptionSamples, 1, 32300, ".");
         await __doubleNodes(firstNode, lastNode, descriptionSamples, 2, 4400, ".");
       }
     })();
