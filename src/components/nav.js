@@ -333,6 +333,9 @@ const navigation = function () {
 
       viewIcon.addEventListener("click", async () => {
         if (isInView) {
+          const alignBackgroundText = (function () {
+            getNodes().backgroundText.classList.add("center");
+          })();
           viewIcon.classList.remove("fa-eye");
           viewIcon.classList.add("fa-eye-low-vision");
           isInView = false;
@@ -356,6 +359,9 @@ const navigation = function () {
         }
 
         if (!isInView) {
+          const alignBackgroundText = (function () {
+            getNodes().backgroundText.classList.remove("center");
+          })();
           viewIcon.classList.remove("fa-eye-low-vision");
           viewIcon.classList.add("fa-eye");
           isInView = true;
