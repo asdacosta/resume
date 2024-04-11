@@ -449,6 +449,7 @@ textarea {
   gap: 0.3rem;
   background-color: rgb(231, 231, 231);
   padding: 0.2rem 0.4rem;
+  margin-bottom: 0.2rem;
   border-radius: 1rem;
   border: 0.1rem solid rgb(155, 154, 154);
   transition: box-shadow 0.2s;
