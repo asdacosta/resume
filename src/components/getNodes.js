@@ -196,6 +196,7 @@ const getNodes = function () {
   const root = document.querySelector("#root");
   const inputs = document.querySelectorAll("input, textarea");
   const resumeH2 = document.querySelectorAll(".resume-cover h2");
+  const allAdded = document.querySelectorAll(".added");
 
   return {
     fieldStatus,
@@ -310,6 +311,7 @@ const getNodes = function () {
     root,
     inputs,
     resumeH2,
+    allAdded,
   };
 };
 
