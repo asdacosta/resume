@@ -16,6 +16,14 @@ function App() {
 
   return (
     <>
+      <div className="background">
+        <span>R</span>
+        <span>É</span>
+        <span>S</span>
+        <span>U</span>
+        <span>M</span>
+        <span>É</span>
+      </div>
       <section className="edit-cover">
         <nav>
           <section className="menu">
