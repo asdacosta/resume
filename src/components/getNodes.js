@@ -86,6 +86,7 @@ const getNodes = function () {
   const layout = document.querySelector(".layout");
   const layoutButtons = document.querySelectorAll(".layout > button");
   const profileUploadBox = document.querySelector(".field-profile label");
+  const resumeHeader = document.querySelector(".resume-header");
   const resumeCover = document.querySelector(".resume-cover");
   const editCover = document.querySelector(".edit-cover");
   const educationParagraph = document.querySelector(".education p");
@@ -191,6 +192,11 @@ const getNodes = function () {
   const downloadBox = document.querySelector(".download");
   const resume = document.querySelector(".resume-cover");
 
+  const body = document.querySelector("body");
+  const root = document.querySelector("#root");
+  const inputs = document.querySelectorAll("input, textarea");
+  const resumeH2 = document.querySelectorAll(".resume-cover h2");
+
   return {
     fieldStatus,
     firstNamesInput,
@@ -271,6 +277,7 @@ const getNodes = function () {
     layout,
     layoutButtons,
     profileUploadBox,
+    resumeHeader,
     resumeCover,
     editCover,
     educationParagraph,
@@ -299,6 +306,10 @@ const getNodes = function () {
     profLastRemoveIcon,
     downloadBox,
     resume,
+    body,
+    root,
+    inputs,
+    resumeH2,
   };
 };
 
