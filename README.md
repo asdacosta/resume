@@ -113,6 +113,10 @@ Developers, users, recruiters.
 - [ ] Add real time feedback when user is typing.
 - [ ] Add audio in Nav to read Resume.
 - [ ] Use correct date input formats (Year for Education, Month-Year for Profession).
+- [ ] Transition input fields section smoothly when Resume is hidden.
+- [ ] Transition layouts smoothly.
+- [ ] Add top-align to Layout in Personalization and make Layout a slider.
+- [ ] Make nav sticky
 
 </details>
 
