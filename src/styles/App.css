@@ -97,7 +97,8 @@ nav {
 }
 
 .layout {
-  grid-template: 2.5rem / repeat(3, 2rem);
+  grid-template: 2.5rem / repeat(2, 2rem);
+  justify-content: space-around;
   border-radius: 0.5rem;
 }
 
