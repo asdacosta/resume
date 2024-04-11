@@ -81,7 +81,7 @@ function App() {
             </p>
             <section>
               <div className="field">
-                <label for="first-names">
+                <label htmlFor="first-names">
                   First Name(s) <span className="required">Required</span>
                 </label>
                 <input
@@ -93,7 +93,7 @@ function App() {
                 />
               </div>
               <div className="field">
-                <label for="last-name">
+                <label htmlFor="last-name">
                   Last Name <span className="required">Required</span>
                 </label>
                 <input
@@ -105,7 +105,7 @@ function App() {
                 />
               </div>
               <div className="field">
-                <label for="mail">
+                <label htmlFor="mail">
                   Email <span className="required">Required</span>
                 </label>
                 <input
@@ -118,7 +118,7 @@ function App() {
                 />
               </div>
               <div className="field">
-                <label for="phone">
+                <label htmlFor="phone">
                   Phone number <span className="required">Required</span>
                 </label>
                 <input
@@ -131,7 +131,7 @@ function App() {
                 />
               </div>
               <div className="field">
-                <label for="country-personal">
+                <label htmlFor="country-personal">
                   Country <span className="optional">Optional</span>
                 </label>
                 <input
@@ -142,7 +142,7 @@ function App() {
                 />
               </div>
               <div className="field">
-                <label for="city-personal">
+                <label htmlFor="city-personal">
                   City <span className="optional">Optional</span>
                 </label>
                 <input
@@ -153,7 +153,7 @@ function App() {
                 />
               </div>
               <div className="field">
-                <label for="address">
+                <label htmlFor="address">
                   Address <span className="optional">Optional</span>
                 </label>
                 <input
@@ -165,7 +165,7 @@ function App() {
                 />
               </div>
               <div className="field-profile">
-                <label for="profile">
+                <label htmlFor="profile">
                   <i className="fa-solid fa-images fa-fade"></i>Upload Picture
                 </label>
                 <input type="file" name="profile" id="profile" accept="image/*" />
@@ -202,13 +202,13 @@ function App() {
             </div>
             <section className="education-fields first">
               <div className="field">
-                <label for="school">
+                <label htmlFor="school">
                   School <span className="required">Required</span>
                 </label>
                 <input type="text" name="school" id="school" maxLength={30} required />
               </div>
               <div className="field">
-                <label for="degree">
+                <label htmlFor="degree">
                   Degree <span className="required">Required</span>
                 </label>
                 <input
@@ -221,7 +221,7 @@ function App() {
                 />
               </div>
               <div className="field">
-                <label for="honors">
+                <label htmlFor="honors">
                   Class Honors <span className="optional">Optional</span>
                 </label>
                 <input
@@ -233,7 +233,7 @@ function App() {
                 />
               </div>
               <div className="field">
-                <label for="start-date-education">
+                <label htmlFor="start-date-education">
                   Start Date <span className="optional">Optional</span>
                 </label>
                 <input
@@ -243,11 +243,11 @@ function App() {
                 />
               </div>
               <div className="field">
-                <label for="end-date-education">End Date</label>
+                <label htmlFor="end-date-education">End Date</label>
                 <input type="date" name="end-date-education" id="end-date-education" />
               </div>
               <div className="field">
-                <label for="country-education">
+                <label htmlFor="country-education">
                   Country <span className="optional">Optional</span>
                 </label>
                 <input
@@ -258,7 +258,7 @@ function App() {
                 />
               </div>
               <div className="field">
-                <label for="city-education">
+                <label htmlFor="city-education">
                   City <span className="optional">Optional</span>
                 </label>
                 <input
@@ -279,13 +279,13 @@ function App() {
             </section>
             <section className="education-fields second">
               <div className="field">
-                <label for="school">
+                <label htmlFor="school">
                   School <span className="required">Required</span>
                 </label>
                 <input type="text" name="school" id="school" maxLength={30} required />
               </div>
               <div className="field">
-                <label for="degree">
+                <label htmlFor="degree">
                   Degree <span className="required">Required</span>
                 </label>
                 <input
@@ -298,7 +298,7 @@ function App() {
                 />
               </div>
               <div className="field">
-                <label for="honors">
+                <label htmlFor="honors">
                   Class Honors <span className="optional">Optional</span>
                 </label>
                 <input
@@ -310,7 +310,7 @@ function App() {
                 />
               </div>
               <div className="field">
-                <label for="start-date-education">
+                <label htmlFor="start-date-education">
                   Start Date <span className="optional">Optional</span>
                 </label>
                 <input
@@ -320,11 +320,11 @@ function App() {
                 />
               </div>
               <div className="field">
-                <label for="end-date-education">End Date</label>
+                <label htmlFor="end-date-education">End Date</label>
                 <input type="date" name="end-date-education" id="end-date-education" />
               </div>
               <div className="field">
-                <label for="country-education">
+                <label htmlFor="country-education">
                   Country <span className="optional">Optional</span>
                 </label>
                 <input
@@ -335,7 +335,7 @@ function App() {
                 />
               </div>
               <div className="field">
-                <label for="city-education">
+                <label htmlFor="city-education">
                   City <span className="optional">Optional</span>
                 </label>
                 <input
@@ -385,13 +385,13 @@ function App() {
             </div>
             <section className="professional-fields first">
               <div className="field">
-                <label for="company">
+                <label htmlFor="company">
                   Company Name <span className="required">Required</span>
                 </label>
                 <input type="text" name="company" id="company" maxLength={30} required />
               </div>
               <div className="field">
-                <label for="position">
+                <label htmlFor="position">
                   Position <span className="required">Required</span>
                 </label>
                 <input
@@ -404,7 +404,7 @@ function App() {
                 />
               </div>
               <div className="field">
-                <label for="start-date-professional">
+                <label htmlFor="start-date-professional">
                   Start Date <span className="optional">Optional</span>
                 </label>
                 <input
@@ -414,7 +414,7 @@ function App() {
                 />
               </div>
               <div className="field">
-                <label for="end-date-professional">End Date</label>
+                <label htmlFor="end-date-professional">End Date</label>
                 <input
                   type="date"
                   name="end-date-professional"
@@ -422,7 +422,7 @@ function App() {
                 />
               </div>
               <div className="field">
-                <label for="country-professional">
+                <label htmlFor="country-professional">
                   Country <span className="optional">Optional</span>
                 </label>
                 <input
@@ -433,7 +433,7 @@ function App() {
                 />
               </div>
               <div className="field">
-                <label for="city-professional">
+                <label htmlFor="city-professional">
                   City <span className="optional">Optional</span>
                 </label>
                 <input
@@ -444,7 +444,7 @@ function App() {
                 />
               </div>
               <div className="field-description">
-                <label for="description">
+                <label htmlFor="description">
                   Description <span className="optional">Optional</span>
                 </label>
                 <textarea
@@ -467,13 +467,13 @@ function App() {
             </section>
             <section className="professional-fields second">
               <div className="field">
-                <label for="company">
+                <label htmlFor="company">
                   Company Name <span className="required">Required</span>
                 </label>
                 <input type="text" name="company" id="company" maxLength={30} required />
               </div>
               <div className="field">
-                <label for="position">
+                <label htmlFor="position">
                   Position <span className="required">Required</span>
                 </label>
                 <input
@@ -486,7 +486,7 @@ function App() {
                 />
               </div>
               <div className="field">
-                <label for="start-date-professional">
+                <label htmlFor="start-date-professional">
                   Start Date <span className="optional">Optional</span>
                 </label>
                 <input
@@ -496,7 +496,7 @@ function App() {
                 />
               </div>
               <div className="field">
-                <label for="end-date-professional">End Date</label>
+                <label htmlFor="end-date-professional">End Date</label>
                 <input
                   type="date"
                   name="end-date-professional"
@@ -504,7 +504,7 @@ function App() {
                 />
               </div>
               <div className="field">
-                <label for="country-professional">
+                <label htmlFor="country-professional">
                   Country <span className="optional">Optional</span>
                 </label>
                 <input
@@ -515,7 +515,7 @@ function App() {
                 />
               </div>
               <div className="field">
-                <label for="city-professional">
+                <label htmlFor="city-professional">
                   City <span className="optional">Optional</span>
                 </label>
                 <input
@@ -526,7 +526,7 @@ function App() {
                 />
               </div>
               <div className="field-description">
-                <label for="description">
+                <label htmlFor="description">
                   Description <span className="optional">Optional</span>
                 </label>
                 <textarea
