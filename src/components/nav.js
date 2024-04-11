@@ -196,6 +196,8 @@ const navigation = function () {
             `linear-gradient(to right, white 50%, ${deepColor} 50%)`;
           getNodes().educationAdd.style.border = `0.1rem solid ${deepColor}`;
           getNodes().professionalAdd.style.border = `0.1rem solid ${deepColor}`;
+          getNodes().menu.style.border = `0.1rem solid ${deepColor}`;
+          getNodes().sampleBar.style.border = `0.1rem solid ${deepColor}`;
           getNodes().sampleBar.style.background = lightColor;
           getNodes().downloadBox.style.background = lightColor;
           getNodes().educationAdd.style.background = lightColor;
