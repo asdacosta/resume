@@ -206,7 +206,7 @@ const animateText = async function () {
       })();
     };
 
-    const animateMailField = (async function () {
+    const animateMailInput = (async function () {
       const node = getNodes().emailInput;
 
       let rounds = 0;
@@ -244,7 +244,7 @@ const animateText = async function () {
 
     // When stopCharIsLastIndex = false, stopChar is useless
 
-    const animatePhoneField = (async function () {
+    const animatePhoneInput = (async function () {
       const node = getNodes().phoneInput;
 
       const __eachSample = async function (
@@ -267,7 +267,7 @@ const animateText = async function () {
       }
     })();
 
-    const animateAddressField = (async function () {
+    const animateAddressInput = (async function () {
       const node = getNodes().addressInput;
 
       const __eachSample = async function (
@@ -292,8 +292,9 @@ const animateText = async function () {
       }
     })();
 
-    const animateDegreeField = (async function () {
-      const node = getNodes().degreeInput;
+    const animateDegreeInputs = (async function () {
+      const firstNode = getNodes().firstEduDegree;
+      const lastNode = getNodes().lastEduDegree;
 
       const __eachSample = async function (
         index,
@@ -302,7 +303,8 @@ const animateText = async function () {
         stopCharIsLastIndex = false,
       ) {
         await new Promise((resolve) => {
-          animateInput(node, degreeSamples, index, stopChar, stopCharIsLastIndex);
+          animateInput(firstNode, degreeSamples, index, stopChar, stopCharIsLastIndex);
+          animateInput(lastNode, degreeSamples, index, stopChar, stopCharIsLastIndex);
           setTimeout(resolve, timer);
         });
       };
@@ -320,7 +322,8 @@ const animateText = async function () {
     })();
 
     const animateHonorsField = (async function () {
-      const node = getNodes().honorsInput;
+      const firstNode = getNodes().firstEduHonors;
+      const lastNode = getNodes().lastEduHonors;
 
       const __eachSample = async function (
         index,
@@ -329,7 +332,8 @@ const animateText = async function () {
         stopCharIsLastIndex = false,
       ) {
         await new Promise((resolve) => {
-          animateInput(node, honorsSamples, index, stopChar, stopCharIsLastIndex);
+          animateInput(firstNode, honorsSamples, index, stopChar, stopCharIsLastIndex);
+          animateInput(lastNode, honorsSamples, index, stopChar, stopCharIsLastIndex);
           setTimeout(resolve, timer);
         });
       };
@@ -344,7 +348,8 @@ const animateText = async function () {
     })();
 
     const animatePositionsField = (async function () {
-      const node = getNodes().positionInput;
+      const firstNode = getNodes().firstProPosition;
+      const lastNode = getNodes().lastProPosition;
 
       const __eachSample = async function (
         index,
@@ -353,7 +358,8 @@ const animateText = async function () {
         stopCharIsLastIndex = false,
       ) {
         await new Promise((resolve) => {
-          animateInput(node, positionSamples, index, stopChar, stopCharIsLastIndex);
+          animateInput(firstNode, positionSamples, index, stopChar, stopCharIsLastIndex);
+          animateInput(lastNode, positionSamples, index, stopChar, stopCharIsLastIndex);
           setTimeout(resolve, timer);
         });
       };
@@ -372,7 +378,8 @@ const animateText = async function () {
     })();
 
     const animateDescriptionField = (async function () {
-      const node = getNodes().descriptionInput;
+      const firstNode = getNodes().firstProDescription;
+      const lastNode = getNodes().lastProDescription;
 
       const __eachSample = async function (
         index,
@@ -381,7 +388,20 @@ const animateText = async function () {
         stopCharIsLastIndex = false,
       ) {
         await new Promise((resolve) => {
-          animateInput(node, descriptionSamples, index, stopChar, stopCharIsLastIndex);
+          animateInput(
+            firstNode,
+            descriptionSamples,
+            index,
+            stopChar,
+            stopCharIsLastIndex,
+          );
+          animateInput(
+            lastNode,
+            descriptionSamples,
+            index,
+            stopChar,
+            stopCharIsLastIndex,
+          );
           setTimeout(resolve, timer);
         });
       };
