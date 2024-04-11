@@ -185,6 +185,30 @@ const navigation = function () {
       })();
 
       const choosePersonalization = (function () {
+        function changePalette(lightColor, deepColor) {
+          getNodes().body.style.background = lightColor;
+          getNodes().root.style.background = lightColor;
+          getNodes().menu.style.background = lightColor;
+          getNodes().dialog.style.background = deepColor;
+          getNodes().layout.querySelector(".left-align").style.background =
+            `linear-gradient(to left, white 50%, ${deepColor} 50%)`;
+          getNodes().layout.querySelector(".right-align").style.background =
+            `linear-gradient(to right, white 50%, ${deepColor} 50%)`;
+          getNodes().sampleBar.style.background = lightColor;
+          getNodes().downloadBox.style.background = lightColor;
+          getNodes().educationAdd.style.background = lightColor;
+          getNodes().professionalAdd.style.background = lightColor;
+          getNodes().resumeHeader.style.background = lightColor;
+          getNodes().resumeFirstProDescription.style.background = lightColor;
+          getNodes().resumelastProDescription.style.background = lightColor;
+          getNodes().inputs.forEach((input) => {
+            input.style.background = lightColor;
+          });
+          getNodes().resumeH2.forEach((header) => {
+            header.style.background = deepColor;
+          });
+        }
+
         const choose = function (nodes) {
           nodes.forEach((button) => {
             button.addEventListener("click", () => {
@@ -200,6 +224,30 @@ const navigation = function () {
                   getNodes().resumeCover.style.flexDirection = "row";
                 } else if (button.classList.contains("right-align")) {
                   getNodes().resumeCover.style.flexDirection = "row-reverse";
+                }
+              }
+
+              if (button.parentNode.classList.contains("palette")) {
+                console.log(button.className);
+                switch (button.className) {
+                  case "grey chosen":
+                    changePalette("rgb(231, 231, 231)", "rgb(155, 154, 154)");
+                    break;
+                  case "yellow chosen":
+                    changePalette("rgb(243, 235, 192)", "rgb(155, 136, 33)");
+                    break;
+                  case "blue chosen":
+                    changePalette("rgb(199, 225, 241)", "rgb(48, 112, 151)");
+                    break;
+                  case "gold chosen":
+                    changePalette("rgb(243, 227, 185)", "rgb(182, 145, 51)");
+                    break;
+                  case "green chosen":
+                    changePalette("rgb(191, 243, 211)", "rgb(53, 145, 88)");
+                    break;
+                  case "violet chosen":
+                    changePalette("rgb(240, 195, 240)", "rgb(145, 53, 145)");
+                    break;
                 }
               }
             });
