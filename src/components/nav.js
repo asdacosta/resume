@@ -201,6 +201,11 @@ const navigation = function () {
           getNodes().resumeHeader.style.background = lightColor;
           getNodes().resumeFirstProDescription.style.background = lightColor;
           getNodes().resumelastProDescription.style.background = lightColor;
+          getNodes().allAdded.forEach((added) => {
+            added.style.background = deepColor;
+            added.querySelector("span:first-child").style.background = lightColor;
+            added.querySelector("span:last-child").style.background = lightColor;
+          });
           getNodes().inputs.forEach((input) => {
             input.style.background = lightColor;
 
