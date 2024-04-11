@@ -142,12 +142,15 @@ const inputFields = function () {
     ) {
       nodeField.querySelector(".add-field").addEventListener("click", () => {
         // Indicate unfilled required inputs and return to stop adding field.
+        const defaultColor = getNodes().root.style.background;
         const firstRequiredInput = nodeField.querySelector("input");
         const secRequiredInput = nodeField.querySelector("div:nth-child(2) input");
         if (firstRequiredInput.value === "" && secRequiredInput.value !== "") {
           firstRequiredInput.style.background = "rgba(236, 164, 164, 0.6)";
+          secRequiredInput.style.background = defaultColor;
           return;
         } else if (firstRequiredInput.value !== "" && secRequiredInput.value === "") {
+          firstRequiredInput.style.background = defaultColor;
           secRequiredInput.style.background = "rgba(236, 164, 164, 0.6)";
           return;
         } else if (firstRequiredInput.value === "" && secRequiredInput.value === "") {
@@ -156,6 +159,9 @@ const inputFields = function () {
           secRequiredInput.style.background = "rgba(236, 164, 164, 0.6)";
           return;
         }
+        // Set back to default color
+        firstRequiredInput.style.background = defaultColor;
+        secRequiredInput.style.background = defaultColor;
 
         let firstFieldFilled = null;
         const updateVariableAndExpandable = (function () {
