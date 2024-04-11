@@ -243,81 +243,71 @@ const animateText = async function () {
     })();
 
     // When stopCharIsLastIndex = false, stopChar is useless
+    const __singleNode = async function (
+      node,
+      samples,
+      index,
+      timer,
+      stopChar,
+      stopCharIsLastIndex = false,
+    ) {
+      await new Promise((resolve) => {
+        animateInput(node, samples, index, stopChar, stopCharIsLastIndex);
+        setTimeout(resolve, timer);
+      });
+    };
 
     const animatePhoneInput = (async function () {
       const node = getNodes().phoneInput;
-
-      const __eachSample = async function (
-        index,
-        timer,
-        stopChar,
-        stopCharIsLastIndex = false,
-      ) {
-        await new Promise((resolve) => {
-          animateInput(node, phoneSamples, index, stopChar, stopCharIsLastIndex);
-          setTimeout(resolve, timer);
-        });
-      };
-      let rounds = 0;
-      while (rounds !== 1) {
-        await __eachSample(0, 2200, "●");
-        await __eachSample(1, 4200, "●");
-        await __eachSample(2, 4000, "●");
-        await __eachSample(3, 5600, "●");
+      while (true) {
+        await __singleNode(node, phoneSamples, 0, 2200, "●");
+        await __singleNode(node, phoneSamples, 1, 4200, "●");
+        await __singleNode(node, phoneSamples, 2, 4000, "●");
+        await __singleNode(node, phoneSamples, 3, 5600, "●");
       }
     })();
 
     const animateAddressInput = (async function () {
       const node = getNodes().addressInput;
-
-      const __eachSample = async function (
-        index,
-        timer,
-        stopChar,
-        stopCharIsLastIndex = false,
-      ) {
-        await new Promise((resolve) => {
-          animateInput(node, addressSamples, index, stopChar, stopCharIsLastIndex);
-          setTimeout(resolve, timer);
-        });
-      };
-      let rounds = 0;
-      while (rounds !== 1) {
-        await __eachSample(0, 2600, "t");
-        await __eachSample(1, 4800, "t");
-        await __eachSample(2, 6400, "t");
-        await __eachSample(3, 4000, "t");
-        await __eachSample(4, 6000, "t");
-        await __eachSample(5, 6000, "t");
+      while (true) {
+        await __singleNode(node, addressSamples, 0, 2600, "t");
+        await __singleNode(node, addressSamples, 1, 4800, "t");
+        await __singleNode(node, addressSamples, 2, 6400, "t");
+        await __singleNode(node, addressSamples, 3, 4000, "t");
+        await __singleNode(node, addressSamples, 4, 6000, "t");
+        await __singleNode(node, addressSamples, 5, 6000, "t");
       }
     })();
 
+    // When stopCharIsLastIndex = false, stopChar is useless
+    const __doubleNodes = async function (
+      firstNode,
+      lastNode,
+      samples,
+      index,
+      timer,
+      stopChar,
+      stopCharIsLastIndex = false,
+    ) {
+      await new Promise((resolve) => {
+        animateInput(firstNode, samples, index, stopChar, stopCharIsLastIndex);
+        animateInput(lastNode, samples, index, stopChar, stopCharIsLastIndex);
+        setTimeout(resolve, timer);
+      });
+    };
     const animateDegreeInputs = (async function () {
       const firstNode = getNodes().firstEduDegree;
       const lastNode = getNodes().lastEduDegree;
 
-      const __eachSample = async function (
-        index,
-        timer,
-        stopChar,
-        stopCharIsLastIndex = false,
-      ) {
-        await new Promise((resolve) => {
-          animateInput(firstNode, degreeSamples, index, stopChar, stopCharIsLastIndex);
-          animateInput(lastNode, degreeSamples, index, stopChar, stopCharIsLastIndex);
-          setTimeout(resolve, timer);
-        });
-      };
-      let rounds = 0;
-      while (rounds !== 1) {
-        await __eachSample(0, 1600, "e");
-        await __eachSample(1, 1800, "e");
-        await __eachSample(2, 6500, "e");
-        await __eachSample(3, 4000, "e");
-        await __eachSample(4, 6000, "e");
-        await __eachSample(5, 4800, "e");
-        await __eachSample(6, 5000, "e");
-        await __eachSample(7, 6200, "e");
+      while (true) {
+        await __doubleNodes(firstNode, lastNode, degreeSamples, 0, 1600, "e");
+        await __doubleNodes(firstNode, lastNode, degreeSamples, 1, 1800, "e");
+        await __doubleNodes(firstNode, lastNode, degreeSamples, 2, 6500, "e");
+        await __doubleNodes(firstNode, lastNode, degreeSamples, 3, 4000, "e");
+        await __doubleNodes(firstNode, lastNode, degreeSamples, 4, 6000, "e");
+        await __doubleNodes(firstNode, lastNode, degreeSamples, 5, 4800, "e");
+        await __doubleNodes(firstNode, lastNode, degreeSamples, 6, 5000, "e");
+        await __doubleNodes(firstNode, lastNode, degreeSamples, 7, 6200, "e");
       }
     })();
 
@@ -325,25 +315,12 @@ const animateText = async function () {
       const firstNode = getNodes().firstEduHonors;
       const lastNode = getNodes().lastEduHonors;
 
-      const __eachSample = async function (
-        index,
-        timer,
-        stopChar,
-        stopCharIsLastIndex = false,
-      ) {
-        await new Promise((resolve) => {
-          animateInput(firstNode, honorsSamples, index, stopChar, stopCharIsLastIndex);
-          animateInput(lastNode, honorsSamples, index, stopChar, stopCharIsLastIndex);
-          setTimeout(resolve, timer);
-        });
-      };
-      let rounds = 0;
-      while (rounds !== 1) {
-        await __eachSample(0, 1800, "s");
-        await __eachSample(1, 5300, "s");
-        await __eachSample(2, 5300, "s");
-        await __eachSample(3, 3600, "s");
-        await __eachSample(4, 5200, "s");
+      while (true) {
+        await __doubleNodes(firstNode, lastNode, honorsSamples, 0, 1800, "s");
+        await __doubleNodes(firstNode, lastNode, honorsSamples, 1, 5300, "s");
+        await __doubleNodes(firstNode, lastNode, honorsSamples, 2, 5300, "s");
+        await __doubleNodes(firstNode, lastNode, honorsSamples, 3, 3600, "s");
+        await __doubleNodes(firstNode, lastNode, honorsSamples, 4, 5200, "s");
       }
     })();
 
@@ -351,29 +328,16 @@ const animateText = async function () {
       const firstNode = getNodes().firstProPosition;
       const lastNode = getNodes().lastProPosition;
 
-      const __eachSample = async function (
-        index,
-        timer,
-        stopChar,
-        stopCharIsLastIndex = false,
-      ) {
-        await new Promise((resolve) => {
-          animateInput(firstNode, positionSamples, index, stopChar, stopCharIsLastIndex);
-          animateInput(lastNode, positionSamples, index, stopChar, stopCharIsLastIndex);
-          setTimeout(resolve, timer);
-        });
-      };
-      let rounds = 0;
-      while (rounds !== 1) {
-        await __eachSample(0, 2500, "r");
-        await __eachSample(1, 4200, "r");
-        await __eachSample(2, 3600, "r");
-        await __eachSample(3, 5000, "r");
-        await __eachSample(4, 3200, "r");
-        await __eachSample(5, 4000, "r");
-        await __eachSample(6, 2800, "r");
-        await __eachSample(7, 3400, "r");
-        await __eachSample(8, 6000, "r");
+      while (true) {
+        await __doubleNodes(firstNode, lastNode, positionSamples, 0, 2500, "r");
+        await __doubleNodes(firstNode, lastNode, positionSamples, 1, 4200, "r");
+        await __doubleNodes(firstNode, lastNode, positionSamples, 2, 3600, "r");
+        await __doubleNodes(firstNode, lastNode, positionSamples, 3, 5000, "r");
+        await __doubleNodes(firstNode, lastNode, positionSamples, 4, 3200, "r");
+        await __doubleNodes(firstNode, lastNode, positionSamples, 5, 4000, "r");
+        await __doubleNodes(firstNode, lastNode, positionSamples, 6, 2800, "r");
+        await __doubleNodes(firstNode, lastNode, positionSamples, 7, 3400, "r");
+        await __doubleNodes(firstNode, lastNode, positionSamples, 8, 6000, "r");
       }
     })();
 
@@ -381,35 +345,10 @@ const animateText = async function () {
       const firstNode = getNodes().firstProDescription;
       const lastNode = getNodes().lastProDescription;
 
-      const __eachSample = async function (
-        index,
-        timer,
-        stopChar,
-        stopCharIsLastIndex = false,
-      ) {
-        await new Promise((resolve) => {
-          animateInput(
-            firstNode,
-            descriptionSamples,
-            index,
-            stopChar,
-            stopCharIsLastIndex,
-          );
-          animateInput(
-            lastNode,
-            descriptionSamples,
-            index,
-            stopChar,
-            stopCharIsLastIndex,
-          );
-          setTimeout(resolve, timer);
-        });
-      };
-      let rounds = 0;
-      while (rounds !== 1) {
-        await __eachSample(0, 1200, ".");
-        await __eachSample(1, 32200, ".");
-        await __eachSample(2, 4400, ".");
+      while (true) {
+        await __doubleNodes(firstNode, lastNode, descriptionSamples, 0, 1200, ".");
+        await __doubleNodes(firstNode, lastNode, descriptionSamples, 1, 32200, ".");
+        await __doubleNodes(firstNode, lastNode, descriptionSamples, 2, 4400, ".");
       }
     })();
   })();
