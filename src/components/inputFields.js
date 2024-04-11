@@ -311,6 +311,13 @@ const inputFields = function () {
 
     const clearField = function (nodeField, nodeAdd) {
       nodeField.querySelector(".clear-field").addEventListener("click", async () => {
+        const setRequiredInputsToDefaultInCaseTheyWereSetToErrorColor = (function () {
+          const defaultColor = getNodes().root.style.background;
+          nodeField.querySelector("input").style.background = defaultColor;
+          nodeField.querySelector("div:nth-child(2) input").style.background =
+            defaultColor;
+        })();
+
         clearFieldInputs(nodeField);
         setAddAndFieldToDefault(nodeAdd, nodeField);
 
