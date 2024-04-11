@@ -205,10 +205,14 @@ const navigation = function () {
             input.style.background = lightColor;
 
             input.addEventListener("mouseover", () => {
-              input.style.outline = `0.15rem solid ${deepColor}`;
+              if (!input.matches(":focus")) {
+                input.style.outline = `0.15rem solid ${deepColor}`;
+              }
             });
             input.addEventListener("mouseout", () => {
-              input.style.outline = "";
+              if (!input.matches(":focus")) {
+                input.style.outline = "";
+              }
             });
             input.addEventListener("focus", () => {
               input.style.outline = `0.15rem solid ${deepColor}`;
