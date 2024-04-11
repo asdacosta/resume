@@ -11,6 +11,7 @@ body {
   display: grid;
   grid-template: 1fr / 1fr minmax(45rem, 1fr);
   justify-content: center;
+  position: relative;
   font-size: 1.1rem;
   font-family: "Raleway", sans-serif;
   font-weight: 500;
@@ -19,6 +20,14 @@ body {
   padding: 2rem 5rem;
   gap: 2rem;
   background-color: rgb(231, 231, 231);
+}
+
+.background {
+  display: flex;
+  position: absolute;
+  margin-top: 22rem;
+  font-size: 14.5rem;
+  opacity: 0.3;
 }
 
 .input-fields {
@@ -30,9 +39,12 @@ body {
 
 nav,
 .input-fields > section {
-  background-color: white;
   border-radius: 1.5rem;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+.input-fields > section {
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .input-fields > section {
@@ -47,12 +59,14 @@ nav,
   height: 100vh;
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }
 
 .edit-cover {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  z-index: 1;
 }
 
 nav {
@@ -61,6 +75,7 @@ nav {
   position: relative;
   gap: 1.5rem;
   padding: 0.5rem 1rem;
+  background-color: white;
 }
 
 .dialog {
@@ -534,7 +549,7 @@ i {
 
 .resume-header {
   flex: 1 3 auto;
-  background-color: rgb(231, 231, 231);
+  background-color: rgba(231, 231, 231, 0.5);
 }
 
 .resume-body {
@@ -711,6 +726,10 @@ i {
   .input-fields {
     padding: 1rem;
   }
+
+  .background {
+    font-size: 12rem;
+  }
 }
 
 @media (max-width: 1450px) {
@@ -733,6 +752,10 @@ i {
 
   .resume-cover {
     gap: 1.5rem;
+  }
+
+  .background {
+    font-size: 9rem;
   }
 }
 
@@ -822,6 +845,15 @@ i {
 
   input {
     font-size: 0.95rem;
+  }
+
+  .background {
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 8rem;
+    line-height: 7.5rem;
+    margin-top: 3.5rem;
   }
 }
 
