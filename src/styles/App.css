@@ -889,6 +889,11 @@ i {
     line-height: 7.5rem;
     margin-top: 3.5rem;
   }
+
+  .background.center {
+    justify-self: center;
+  }
+
   .first-circle {
     width: 15rem;
     height: 15rem;
