@@ -141,6 +141,22 @@ const inputFields = function () {
       isFirstField = false,
     ) {
       nodeField.querySelector(".add-field").addEventListener("click", () => {
+        // Indicate unfilled required inputs and return to stop adding field.
+        const firstRequiredInput = nodeField.querySelector("input");
+        const secRequiredInput = nodeField.querySelector("div:nth-child(2) input");
+        if (firstRequiredInput.value === "" && secRequiredInput.value !== "") {
+          firstRequiredInput.style.background = "rgba(236, 164, 164, 0.6)";
+          return;
+        } else if (firstRequiredInput.value !== "" && secRequiredInput.value === "") {
+          secRequiredInput.style.background = "rgba(236, 164, 164, 0.6)";
+          return;
+        } else if (firstRequiredInput.value === "" && secRequiredInput.value === "") {
+          console.log(nodeField.querySelector("input").value === "");
+          firstRequiredInput.style.background = "rgba(236, 164, 164, 0.6)";
+          secRequiredInput.style.background = "rgba(236, 164, 164, 0.6)";
+          return;
+        }
+
         let firstFieldFilled = null;
         const updateVariableAndExpandable = (function () {
           if (nodeField.classList.contains("education-fields")) {
