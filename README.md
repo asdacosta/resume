@@ -109,6 +109,9 @@ Developers, users, recruiters.
 - [ ] Make download occur once at click.
 - [ ] Downloaded Resume should be visibly the same as on website.
 - [ ] Add languages.
+- [ ] Add real time feedback when user is typing.
+- [ ] Add audio in Nav to read Resume.
+- [ ] Use correct date input formats (Year for Education, Month-Year for Profession).
 
 </details>
 
