@@ -28,18 +28,18 @@ function App() {
             <h2>Personalize</h2>
             <ul>
               <li>
-                Palette <i class="fa-solid fa-angle-right"></i>
+                Palette <i class="fa-solid fa-angle-down"></i>
               </li>
               <div className="palette">
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
+                <button className="grey"></button>
+                <button className="yellow"></button>
+                <button className="blue"></button>
+                <button className="gold"></button>
+                <button className="green"></button>
+                <button className="violet"></button>
               </div>
               <li>
-                Layout <i class="fa-solid fa-angle-right"></i>
+                Layout <i class="fa-solid fa-angle-down"></i>
               </li>
               <div className="layout">
                 <button className="left-align"></button>
