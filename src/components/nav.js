@@ -203,6 +203,19 @@ const navigation = function () {
           getNodes().resumelastProDescription.style.background = lightColor;
           getNodes().inputs.forEach((input) => {
             input.style.background = lightColor;
+
+            input.addEventListener("mouseover", () => {
+              input.style.outline = `0.15rem solid ${deepColor}`;
+            });
+            input.addEventListener("mouseout", () => {
+              input.style.outline = "";
+            });
+            input.addEventListener("focus", () => {
+              input.style.outline = `0.15rem solid ${deepColor}`;
+            });
+            input.addEventListener("blur", () => {
+              input.style.outline = "";
+            });
           });
           getNodes().resumeH2.forEach((header) => {
             header.style.background = deepColor;
