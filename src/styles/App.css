@@ -66,6 +66,7 @@ nav {
 .dialog {
   position: absolute;
   background-color: rgb(155, 154, 154);
+  color: white;
   padding: 1.5rem 1rem;
   border-radius: 1rem;
   top: 3.5rem;
@@ -77,23 +78,27 @@ nav {
 
 .reveal {
   opacity: 1;
-  height: 17rem;
+  height: 18rem;
 }
 
-.dialog .layout,
+.layout,
 .palette {
   display: grid;
   justify-content: center;
   gap: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem;
 }
 
 .palette {
   grid-template: repeat(2, 2rem) / repeat(3, 2rem);
   margin-bottom: 0.5rem;
+  border-radius: 1rem;
 }
 
 .layout {
   grid-template: 2.5rem / repeat(3, 2rem);
+  border-radius: 0.5rem;
 }
 
 .dialog button {
@@ -179,7 +184,11 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
+  cursor: context-menu;
+}
+
+.dialog i {
+  cursor: context-menu;
 }
 
 .dialog h2 {
