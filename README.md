@@ -46,11 +46,11 @@
 
 ## 🌐 Origin
 
-<!-- [The Odin Project](https://www.theodinproject.com/) -->
+[The Odin Project](https://www.theodinproject.com/)
 
 ## 📝 Description
 
-Store all template files.
+First react project that builds interactive Resume web app.
 
 <details>
 <summary>Features</summary>
