@@ -137,6 +137,7 @@ Developers, users, recruiters.
 - [ ] Transition layouts smoothly.
 - [ ] Add top-align to Layout in Personalization and make Layout a slider.
 - [ ] Make nav sticky
+- [ ] Fix inconsistency in placeholder animation cause when tab is changed. (Can restart animation whenever focus on the site changed. Focus also shifts when download button is pressed in phone.)
 
 </details>
 
