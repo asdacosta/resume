@@ -55,13 +55,20 @@ Store all template files.
 <details>
 <summary>Features</summary>
 
-- ###
+- Change of palette and Resume layout in Personalization menu.
+- A bar to clear Resume or reveal a sample.
+- Download Resume
+- Hide Resume to get larger Interface to Input.
+- Real-time feedback of what input is expected (from animated placeholders)
+- Two input fields for respective sections (Education & Profession). More than two can disrupt Resume UI, so it's intentional.
+- Icons that are still visible in dark mode.
+- Appealing UI
 
 </details>
 
 ## 🎯 Relevance
 
-To solidify concepts of `###` in ###.
+To solidify concepts of `React Fundamentals` in JavaScript.
 
 ## 👥 Intended Audience
 
