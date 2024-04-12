@@ -1,6 +1,6 @@
 <div align='center'>
 
-# Template
+# Resume Application
 
 </div>
 <div align='center'>
@@ -96,9 +96,10 @@ Developers, users, recruiters.
 <details>
 <summary>Invert</summary>
 
-| File             | Description                      |
-| ---------------- | -------------------------------- |
-| `src/assets/###` | Photo created by ### on [###](). |
+| File                     | Description                                                          |
+| ------------------------ | -------------------------------------------------------------------- |
+| `src/assets/profile.jpg` | Photo created by Shubham Dhage on [Unsplash](https://unsplash.com/). |
+| `src/assets/unknown.jpg` | Photo created by Stephan Müller on [Pexels](https://pexels.com/).    |
 
 </details>
 
