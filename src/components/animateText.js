@@ -1,4 +1,4 @@
-import { getNodes } from "./getNodes";
+import { getNodes } from "./getNodes.js";
 
 const animateText = async function () {
   // Wait before starting field status animation

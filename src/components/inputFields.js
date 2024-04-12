@@ -1,4 +1,4 @@
-import { getNodes } from "./getNodes";
+import { getNodes } from "./getNodes.js";
 
 const inputFields = function () {
   const stopProfileBlinkingAtHover = (function () {

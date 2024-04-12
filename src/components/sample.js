@@ -1,4 +1,4 @@
-import { getNodes } from "./getNodes";
+import { getNodes } from "./getNodes.js";
 
 function clearSample() {
   // Personal Details

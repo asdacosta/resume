@@ -1,7 +1,7 @@
-import { getNodes } from "./getNodes";
+import { getNodes } from "./getNodes.js";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
-import { clearSample, revealSample } from "./sample";
+import { clearSample, revealSample } from "./sample.js";
 
 const navigation = function () {
   const download = (function () {
