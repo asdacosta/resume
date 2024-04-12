@@ -19,6 +19,8 @@
     <img src="https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=black" alt="Prettier badge">
     <img src="https://img.shields.io/badge/Babel-F7B93E?style=for-the-badge&logo=babel&logoColor=black" alt="Babel badge">
     <img src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white" alt="Jest badge">
+    <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white" alt="React badge">
+    <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite badge">
     <!-- <h4><a href="https://asdacosta.github.io/###/">Live Preview</a></h4> -->
 </div>
 
