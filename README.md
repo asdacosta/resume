@@ -79,15 +79,24 @@ Developers, users, recruiters.
 <details>
 <summary>Invert</summary>
 
-| File              | Description                                                                                                                                                             |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `src/*`           | Source files that are bundled into the output directory `dist/`.                                                                                                        |
-| `src/index.js`    | The main JavaScript entry point that bundling begins.                                                                                                                   |
-| `dist/*`          | Output files from bundling of files in directory `src/`.                                                                                                                |
-| `dist/main.js`    | Main JavaScript output file that contains the bundled JavaScript code. Code is minified and optimized for deployment (Due to mode set to production in webpack config). |
-| `package*`        | Contains details of project and dependencies versions.                                                                                                                  |
-| `algorithm.txt`   | Algorithm for `JavaScript`.                                                                                                                                             |
-| `readme-assets/*` | Live demo and different screen views used in `README.md`.                                                                                                               |
+| File                                 | Description                                                                                                   |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
+| `src/*`                              | Source files that are bundled into the output directory `dist/`.                                              |
+| `src/index.jsx`                      | The main JavaScript entry point that bundling begins.                                                         |
+| `src/App.jsx`                        | Main component where overall structure and other layout components of the app are contained.                  |
+| `src/assets/*`                       | All assets(imgs, icons, vids) used in website.                                                                |
+| `src/components/animateText.js`      | Animates placeholders, required and optional status.                                                          |
+| `src/components/getNodes.js`         | Selects nodes from DOM.                                                                                       |
+| `src/components/sample.js`           | Updates Resume when cleared or revealed in Navigation.                                                        |
+| `src/components/nav.js`              | Responsible for every logic in Nav, including dialog.                                                         |
+| `src/components/responsiveTyping.js` | Adds real-time update of Resume from inputs.                                                                  |
+| `src/components/inputFields.js`      | Responsible for every logic in input fields.                                                                  |
+| `src/styles/App.css`                 | Main stylesheet for entire website.                                                                           |
+| `dist/*`                             | Output files from bundling of files in directory `src/`.                                                      |
+| `dist/main.js`                       | Main JavaScript output file that contains the bundled JavaScript code, minified and optimized for deployment. |
+| `package*`                           | Contains details of project and dependencies versions.                                                        |
+| `algorithm.txt`                      | Algorithm for `JavaScript`.                                                                                   |
+| `readme-assets/*`                    | Live demo and different screen views used in `README.md`.                                                     |
 
 </details>
 
