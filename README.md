@@ -129,6 +129,7 @@ Developers, users, recruiters.
 <details>
 <summary>Invert</summary>
 
+- [ ] Use real components with .jsx extension that return jsx.
 - [ ] Uncomment Skills html, add its input, animated placeholder and make it responsive in Resume.
 - [ ] Make download occur once at click.
 - [ ] Downloaded Resume should be visibly the same as on website.
