@@ -6,12 +6,17 @@ import { inputFields } from "./components/inputFields";
 import { responsiveTyping } from "./components/responsiveTyping";
 // import "./styles/reset.css";
 
+let didInit = false;
+
 function App() {
   useEffect(() => {
-    animateText();
-    navigation();
-    inputFields();
-    responsiveTyping();
+    if (!didInit) {
+      didInit = true;
+      animateText();
+      navigation();
+      inputFields();
+      responsiveTyping();
+    }
   }, []);
 
   return (
