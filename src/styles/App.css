@@ -161,7 +161,7 @@
 
 .dialog.reveal {
   opacity: 1;
-  height: 21.5rem;
+  height: var(--dialog-reveal-height);
   overflow: visible;
   pointer-events: auto;
 }
@@ -278,9 +278,9 @@
   align-items: center;
   flex: 1 1 5rem;
   position: relative;
-  width: 9rem;
-  max-width: 9rem;
-  min-width: 9rem;
+  width: var(--sample-bar-width);
+  max-width: var(--sample-bar-width);
+  min-width: var(--sample-bar-width);
   padding: 0.25rem 0.55rem;
   border: 0.1rem solid var(--theme-accent, rgb(155, 154, 154));
   border-radius: 1rem;
