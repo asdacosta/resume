@@ -1,6 +1,7 @@
 export const PALETTES = [
   {
     id: "slate",
+    legacyClass: "grey",
     name: "Slate",
     light: "#e8eaef",
     accent: "#4a5568",
@@ -9,6 +10,7 @@ export const PALETTES = [
   },
   {
     id: "amber",
+    legacyClass: "yellow",
     name: "Amber",
     light: "#f5ecd4",
     accent: "#9a7b2e",
@@ -17,6 +19,7 @@ export const PALETTES = [
   },
   {
     id: "ocean",
+    legacyClass: "blue",
     name: "Ocean",
     light: "#d4e8f4",
     accent: "#2b6a8f",
@@ -25,6 +28,7 @@ export const PALETTES = [
   },
   {
     id: "bronze",
+    legacyClass: "gold",
     name: "Bronze",
     light: "#f0e4c8",
     accent: "#8b6914",
@@ -33,6 +37,7 @@ export const PALETTES = [
   },
   {
     id: "forest",
+    legacyClass: "green",
     name: "Forest",
     light: "#d4eddf",
     accent: "#2d7a52",
@@ -41,6 +46,7 @@ export const PALETTES = [
   },
   {
     id: "plum",
+    legacyClass: "violet",
     name: "Plum",
     light: "#ead4ea",
     accent: "#7a2d7a",
