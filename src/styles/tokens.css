@@ -25,6 +25,9 @@
   --text-inverse: #f8fafc;
   --danger: #dc4c3f;
   --success: #1d9a5a;
+
+  --dialog-reveal-height: 21.5rem;
+  --sample-bar-width: 9rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
