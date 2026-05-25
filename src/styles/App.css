@@ -88,8 +88,9 @@
 .toolbar {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.65rem 1rem;
+  position: relative;
+  gap: 1.5rem;
+  padding: 0.5rem 1rem;
   background: var(--glass);
   backdrop-filter: blur(16px);
   border: 1px solid var(--glass-border);
@@ -100,165 +101,253 @@
   z-index: 20;
 }
 
-.toolbar__group {
-  position: relative;
-}
-
-.toolbar__menu-btn {
+/* Personalize menu (restored original UI + transitions) */
+.menu {
+  align-self: stretch;
   display: flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.45rem 0.65rem;
-  border-radius: var(--radius-sm);
-  background: var(--theme-light);
-  color: var(--theme-ink);
-  border: 1px solid color-mix(in srgb, var(--theme-accent) 25%, transparent);
+  position: relative;
+  gap: 0.2rem;
+  padding: 0 0.3rem;
+  border: 0.1rem solid var(--theme-accent, rgb(155, 154, 154));
+  border-radius: 0.5rem;
+  background-color: var(--theme-light, rgb(231, 231, 231));
+  cursor: pointer;
+  z-index: 6;
 }
 
-.toolbar__caret {
-  transition: transform var(--duration-normal) var(--ease-out);
-}
-
-.toolbar__caret--open {
-  transform: rotate(180deg);
-}
-
-.toolbar__panel {
+.menu > div {
   position: absolute;
-  top: calc(100% + 0.5rem);
+  height: 100%;
+  width: 100%;
+  border-radius: 0.5rem;
   left: 0;
-  width: min(18rem, 85vw);
-  padding: 1rem;
-  background: color-mix(in srgb, var(--theme-accent) 92%, #0f172a);
-  color: var(--text-inverse);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
-  opacity: 0;
-  transform: translateY(-0.5rem) scale(0.98);
-  pointer-events: none;
-  transition:
-    opacity var(--duration-normal) var(--ease-out),
-    transform var(--duration-normal) var(--ease-out);
+  z-index: 2;
 }
 
-.toolbar__panel--open {
+.menu__caret {
+  font-size: 1.2rem;
+  transition: transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.menu__caret--open {
+  transform: translateY(0.5rem);
+}
+
+.menu__eye {
+  font-size: 0.6rem;
+  transition: transform 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+.dialog {
+  position: absolute;
+  top: 3.5rem;
+  left: 0;
+  width: 12.5rem;
+  color: white;
+  padding: 1.5rem 1rem 1.25rem;
+  border-radius: 1rem;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  z-index: 5;
+  box-sizing: border-box;
+  transition:
+    height 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+    opacity 0.6s ease-in-out;
+  pointer-events: none;
+}
+
+.dialog.reveal {
   opacity: 1;
-  transform: translateY(0) scale(1);
+  height: 21.5rem;
+  overflow: visible;
   pointer-events: auto;
 }
 
-.toolbar__panel-title {
-  margin: 0 0 0.75rem;
+.dialog h2 {
+  margin: 0 0 1rem;
+  padding: 0;
+  font-size: 1.3rem;
   font-family: var(--font-display);
-  font-size: 1.15rem;
 }
 
-.toolbar__accordion {
+.dialog ul {
   display: flex;
-  width: 100%;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dialog li {
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.4rem 0;
-  color: inherit;
   font-weight: 600;
 }
 
-.toolbar__palette {
+.dialog li i {
+  font-size: 1rem;
+}
+
+.layout,
+.palette {
   display: grid;
-  grid-template-columns: repeat(3, 2.25rem);
-  gap: 0.45rem;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.7);
   padding: 0.5rem;
+}
+
+.palette {
+  grid-template: repeat(2, 2rem) / repeat(3, 2rem);
   margin-bottom: 0.5rem;
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-sm);
+  border-radius: 1rem;
 }
 
-.toolbar__swatch {
-  width: 2.25rem;
-  height: 2.25rem;
-  border-radius: 999px;
-  border: 2px solid rgba(255, 255, 255, 0.35);
+.layout {
+  grid-template: 2.5rem / repeat(2, 2rem);
+  justify-content: space-around;
+  border-radius: 0.5rem;
 }
 
-.toolbar__swatch--active {
-  transform: scale(1.12);
-  border-color: #fff;
+.dialog button {
+  border: 0.1rem solid rgb(63, 63, 63);
+  padding: 0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
 }
 
-.toolbar__layout {
+.dialog button.chosen {
+  transform: scale(1.15);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+  border: 0.15rem solid rgb(63, 63, 63);
+  pointer-events: none;
+}
+
+.dialog button:hover:not(.chosen) {
+  transform: scale(1.1);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.palette > button {
+  border-radius: 1rem;
+}
+
+.palette > .grey {
+  background: linear-gradient(to right, rgb(233, 231, 231) 50%, rgb(155, 154, 154) 50%);
+}
+
+.palette > .yellow {
+  background: linear-gradient(to right, #e4e9b9 50%, #b9ce43 50%);
+}
+
+.palette > .blue {
+  background: linear-gradient(to right, #b7cbdd 50%, #427eac 50%);
+}
+
+.palette > .gold {
+  background: linear-gradient(to right, rgb(230, 217, 202) 50%, rgb(192, 144, 81) 50%);
+}
+
+.palette > .green {
+  background: linear-gradient(to right, #c3dbcc 50%, rgb(63, 158, 103) 50%);
+}
+
+.palette > .violet {
+  background: linear-gradient(to right, #e9c6e9 50%, #b639ab 50%);
+}
+
+.layout > button {
+  border-radius: 0.3rem;
+  min-height: 2.5rem;
+}
+
+.layout > button:hover:not(.chosen) {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Clear / Sample toggle (knob slides inside track via flex) */
+.sample-bar {
   display: flex;
-  gap: 0.5rem;
-  padding: 0.5rem;
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-sm);
-}
-
-.toolbar__layout-btn {
-  flex: 1;
-  padding: 0.35rem;
-  border-radius: var(--radius-sm);
-  border: 2px solid transparent;
-}
-
-.toolbar__layout-btn--active {
-  border-color: #fff;
-}
-
-.toolbar__layout-preview {
-  display: block;
-  height: 2rem;
-  border-radius: 0.25rem;
-  background: linear-gradient(
-    to right,
-    #fff 38%,
-    color-mix(in srgb, var(--theme-accent) 80%, #000) 38%
-  );
-}
-
-.toolbar__layout-preview--right {
-  background: linear-gradient(
-    to left,
-    #fff 38%,
-    color-mix(in srgb, var(--theme-accent) 80%, #000) 38%
-  );
-}
-
-.toolbar__sample {
-  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 0.5rem;
+  flex: 1 1 5rem;
+  position: relative;
+  width: 9rem;
+  max-width: 9rem;
+  min-width: 9rem;
+  padding: 0.25rem 0.55rem;
+  border: 0.1rem solid var(--theme-accent, rgb(155, 154, 154));
+  border-radius: 1rem;
+  background-color: var(--theme-light, rgb(231, 231, 231));
+  cursor: pointer;
   margin-left: auto;
-  padding: 0.35rem 0.5rem 0.35rem 0.85rem;
-  background: var(--theme-light);
-  border: 1px solid color-mix(in srgb, var(--theme-accent) 20%, transparent);
-  border-radius: 999px;
-  min-width: 7.5rem;
   font-weight: 600;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
-.toolbar__sample-knob {
-  width: 1.35rem;
-  height: 1.35rem;
-  border-radius: 50%;
-  background: var(--theme-accent);
+.sample-bar--knob-left {
+  flex-direction: row-reverse;
+}
+
+.sample-bar__text {
+  flex: 1;
+  text-align: left;
+  padding: 0 0.15rem;
+  transition: opacity 0.5s ease-in-out;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.sample-bar--knob-left .sample-bar__text {
+  text-align: right;
+}
+
+.hideSampleText {
+  opacity: 0;
+}
+
+.sample-bar__knob {
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  line-height: 1;
+  transition: transform 0.5s ease-in-out;
+  pointer-events: none;
+}
+
+.download {
   margin-left: auto;
-  transition: transform var(--duration-normal) var(--ease-out);
+  padding: 0.2rem;
+  border-radius: 1rem;
 }
 
-.toolbar__sample-knob--left {
-  transform: translateX(-4.5rem);
-}
-
-.toolbar__action {
+.download__btn,
+.view__btn {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 2.5rem;
   height: 2.5rem;
-  border-radius: 999px;
-  background: var(--theme-light);
-  color: var(--theme-ink);
-  border: 1px solid color-mix(in srgb, var(--theme-accent) 20%, transparent);
+  border-radius: 1rem;
+  color: var(--theme-ink, #1a202c);
+}
+
+.download__btn i {
+  transition: transform 0.7s ease-in-out;
+}
+
+.download__btn--loading i.rotate {
+  transform: rotateX(180deg);
+}
+
+.view {
+  width: 2.5rem;
 }
 
 .editor {
@@ -559,9 +648,11 @@
     grid-template-columns: 1fr;
   }
 
-  .toolbar__sample {
+  .sample-bar {
     flex: 1 1 100%;
-    justify-content: space-between;
+    width: 100%;
+    max-width: 10rem;
+    min-width: 8.5rem;
   }
 
   .resume-preview {
