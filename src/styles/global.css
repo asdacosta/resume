@@ -12,6 +12,14 @@ html {
   html {
     scroll-behavior: auto;
   }
+
+  .dialog,
+  .menu__caret,
+  .menu__eye,
+  .sample-bar__knob,
+  .sample-bar__text {
+    transition: none;
+  }
 }
 
 body {
