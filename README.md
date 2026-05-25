@@ -1,149 +1,169 @@
-<div align='center'>
+# Résumé — Interactive Resume Builder
 
-# Resume App
+A premium, real-time resume builder with live preview, theme personalization, and one-click PDF export. Built with React and Vite for a fast, accessible editing experience.
 
-</div>
-<div align='center'>
-    <h3>💻 Technologies</h3>
-    <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux badge">
-    <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="VS Code badge">
-    <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git badge">
-    <img src="https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=webpack&logoColor=black" alt="Webpack badge">
-    <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js badge">
-    <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="npm badge">
-    <img src="https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white" alt="ESLint badge">
-    <img src="https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=black" alt="Prettier badge">
-    <img src="https://img.shields.io/badge/Babel-F7B93E?style=for-the-badge&logo=babel&logoColor=black" alt="Babel badge">
-    <img src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white" alt="Jest badge">
-    <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white" alt="React badge">
-    <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite badge">
-    <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel badge">
-    <h4><a href="https://resume-nu-lake.vercel.app/">Live Preview</a></h4>
-</div>
+**[Live preview](https://resume-nu-lake.vercel.app/)**
 
-**Demo:**
+## Demo
 
-![Live Demo](./readme-assets/live.gif)
+![Application walkthrough — personalization, education entries, and preview focus mode](./docs/media/live.gif)
 
-<details>
+| Desktop (1440px) | Mobile (390px) |
+| --- | --- |
+| ![Desktop layout with editor and live preview](./docs/media/desktop.png) | ![Mobile stacked layout](./docs/media/mobile.png) |
 
-**<summary>Screen views</summary>**
+## Features
 
-**Desktop View:**
+- **Live preview** — Every field updates the resume instantly.
+- **Six color palettes** — Curated light/accent pairs with cohesive editor theming.
+- **Layout control** — Sidebar left or right on the resume preview.
+- **Structured sections** — Personal info, education (up to 2 entries), and professional experience (up to 2 entries).
+- **Sample / clear toggle** — Load demo content or reset to placeholders.
+- **Focus mode** — Hide the preview for a distraction-free editing surface.
+- **PDF export** — Download the preview as a print-ready PDF (lazy-loaded bundle).
+- **Animated placeholders** — Guided typing hints on key fields (respects `prefers-reduced-motion`).
+- **Sticky toolbar** — Personalization, sample toggle, download, and preview controls stay reachable while scrolling.
 
-<img src="./readme-assets/desktop.png" alt="desktop view">
-<br>
+## Tech stack
 
-**Tablet View:**
+| Layer | Technology |
+| --- | --- |
+| UI | React 18, CSS custom properties |
+| Build | Vite 5 |
+| PDF | html2canvas + jsPDF (code-split chunk) |
+| Media tooling | Playwright / browser capture + ImageScript (GIF) |
 
-<img src="./readme-assets/tablet.png" alt="desktop view">
-<br>
+## Getting started
 
-**Mobile View:**
+### Prerequisites
 
-<img src="./readme-assets/mobile.png" alt="desktop view">
+- Node.js 18+
+- npm 9+
 
-</details>
+### Install
 
-## 🌐 Origin
+```bash
+git clone https://github.com/asdacosta/resume.git
+cd resume
+npm install
+```
 
-[The Odin Project](https://www.theodinproject.com/)
+### Development
 
-## 📝 Description
+```bash
+npm run dev
+```
 
-First react project that builds interactive Resume web app.
+Open the URL shown in the terminal (default `http://localhost:5173`).
 
-<details>
-<summary>Features</summary>
+### Production build
 
-- Change of palette and Resume layout in Personalization menu.
-- A bar to clear Resume or reveal a sample.
-- Download Resume
-- Hide Resume to get larger Interface to Input.
-- Real-time feedback of what input is expected (from animated placeholders)
-- Two input fields for respective sections (Education & Profession). More than two can disrupt Resume UI, so it's intentional.
-- Icons that are still visible in dark mode.
-- Appealing UI
+```bash
+npm run build
+npm run preview
+```
 
-</details>
+### Lint
 
-## 🎯 Relevance
+```bash
+npm run lint
+```
 
-To solidify concepts of `React Fundamentals` in JavaScript.
+### Regenerate README media
 
-## 👥 Intended Audience
+After UI changes, rebuild and capture fresh assets:
 
-Developers, users, and non-developers.
+```bash
+npm run build
+npm run preview
+# In another terminal:
+npm run capture:media   # requires Playwright Chromium
+node scripts/make-gif.mjs
+```
 
-> [!NOTE]
-> Users can install all dependencies using `package.json` file via:
->
-> ```bash
-> npm install
-> ```
+Screenshots and `live.gif` are stored in `docs/media/`.
 
-## 📂 Files
+## Scripts
 
-<details>
-<summary>Invert</summary>
+| Script | Description |
+| --- | --- |
+| `npm run dev` | Start Vite dev server with HMR |
+| `npm run build` | Production build to `dist/` |
+| `npm run preview` | Serve production build locally |
+| `npm run lint` | ESLint for JS/JSX |
+| `npm run capture:media` | Automated desktop/mobile screenshots (Playwright) |
 
-| File                                 | Description                                                                                                   |
-| ------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
-| `src/*`                              | Source files that are bundled into the output directory `dist/`.                                              |
-| `src/index.jsx`                      | The main JavaScript entry point that bundling begins.                                                         |
-| `src/App.jsx`                        | Main component where overall structure and other layout components of the app are contained.                  |
-| `src/assets/*`                       | All assets(imgs, icons, vids) used in website.                                                                |
-| `src/components/animateText.js`      | Animates placeholders, required and optional status.                                                          |
-| `src/components/getNodes.js`         | Selects nodes from DOM.                                                                                       |
-| `src/components/sample.js`           | Updates Resume when cleared or revealed in Navigation.                                                        |
-| `src/components/nav.js`              | Responsible for every logic in Nav, including dialog.                                                         |
-| `src/components/responsiveTyping.js` | Adds real-time update of Resume from inputs.                                                                  |
-| `src/components/inputFields.js`      | Responsible for every logic in input fields.                                                                  |
-| `src/styles/App.css`                 | Main stylesheet for entire website.                                                                           |
-| `dist/*`                             | Output files from bundling of files in directory `src/`.                                                      |
-| `dist/main.js`                       | Main JavaScript output file that contains the bundled JavaScript code, minified and optimized for deployment. |
-| `package*`                           | Contains details of project and dependencies versions.                                                        |
-| `algorithm.txt`                      | Algorithm for `JavaScript`.                                                                                   |
-| `readme-assets/*`                    | Live demo and different screen views used in `README.md`.                                                     |
+## Project structure
 
-</details>
+```
+resume/
+├── docs/media/           # README screenshots and demo GIF
+├── scripts/              # Media capture and GIF assembly
+├── src/
+│   ├── components/       # UI (editor, resume preview, toolbar, icons)
+│   ├── context/          # ResumeProvider — shared app state
+│   ├── data/             # Palettes and sample/empty templates
+│   ├── hooks/            # Placeholder animation, reduced motion
+│   ├── styles/           # Design tokens, global, and app CSS
+│   └── utils/            # Formatters and PDF export
+├── index.html
+├── package.json
+└── vite.config.js
+```
 
-## ©️ Credit
+## Architecture
 
-<details>
-<summary>Invert</summary>
+The app uses a **single React context** (`ResumeProvider`) instead of imperative DOM scripts. State drives both the editor and preview; there is no `querySelector` coupling.
 
-| File                     | Description                                                          |
-| ------------------------ | -------------------------------------------------------------------- |
-| `src/assets/profile.jpg` | Photo created by Shubham Dhage on [Unsplash](https://unsplash.com/). |
-| `src/assets/unknown.jpg` | Photo created by Stephan Müller on [Pexels](https://pexels.com/).    |
+```
+Toolbar / EditorPanel ──► ResumeContext ──► ResumePreview
+                              │
+                              ├── palette + layout
+                              ├── personal / education / professional
+                              └── visibility + sample mode
+```
 
-</details>
+**PDF export** is dynamically imported so the main bundle stays smaller until the user downloads.
 
-## 🔄 Improvements
+## Responsive behavior
 
-<details>
-<summary>Invert</summary>
+| Breakpoint | Behavior |
+| --- | --- |
+| ≥ 1200px | Side-by-side editor and sticky preview |
+| &lt; 1200px | Stacked layout; preview below editor |
+| &lt; 720px | Single-column forms; compact toolbar |
+| &lt; 480px | Reduced type scale and avatar size |
 
-- [ ] Use real components with .jsx extension that return jsx.
-- [ ] Uncomment Skills html, add its input, animated placeholder and make it responsive in Resume.
-- [ ] Make download occur once at click.
-- [ ] Downloaded Resume should be visibly the same as on website.
-- [ ] Add languages.
-- [ ] Add night mode.
-- [ ] Add real time feedback when user is typing.
-- [ ] Add audio in Nav to read Resume.
-- [ ] Use correct date input formats (Year for Education, Month-Year for Profession).
-- [ ] Transition input fields section smoothly when Resume is hidden.
-- [ ] Transition layouts smoothly.
-- [ ] Add top-align to Layout in Personalization and make Layout a slider.
-- [ ] Make nav sticky
-- [ ] Fix inconsistency in placeholder animation cause when tab is changed. (Can restart animation whenever focus on the site changed. Focus also shifts when download button is pressed in phone.)
+## Accessibility
 
-</details>
+- Semantic landmarks (`header`, `main`, `aside`, `section`)
+- Visible `:focus-visible` outlines on interactive controls
+- `aria-expanded`, `aria-pressed`, and descriptive `aria-label`s on toolbar actions
+- Form labels tied to inputs with `htmlFor` / `id`
+- `prefers-reduced-motion` disables placeholder animations
+- Keyboard-operable buttons (no div-click handlers)
 
-## 👤 Curator
+## Performance
 
-1. [Abraham Da Costa Silvanus](https://github.com/asdacosta)
+- Vite production build with manual chunk for PDF dependencies
+- Dynamic `import()` for PDF generation on download only
+- CSS variables for theming (no per-keystroke style recalculation)
+- Lightweight inline SVG icons (no icon font CDN)
 
-**[🞁 Top](#resume-app)**
+## Deployment
+
+The project is configured for static hosting (e.g. Vercel):
+
+```bash
+npm run build
+```
+
+Deploy the `dist/` folder. The live demo is hosted on Vercel.
+
+## Origin
+
+Inspired by [The Odin Project](https://www.theodinproject.com/) React curriculum — reimagined as a production-quality portfolio piece.
+
+## Author
+
+[Abraham Da Costa Silvanus](https://github.com/asdacosta)
