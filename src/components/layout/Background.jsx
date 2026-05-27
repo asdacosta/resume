@@ -4,14 +4,8 @@ export function Background() {
   const { resumeVisible } = useResume();
 
   return (
-    <div
-      className={`ambient ${resumeVisible ? "" : "ambient--centered"}`}
-      aria-hidden="true"
-    >
-      <div className="ambient__orb ambient__orb--1" />
-      <div className="ambient__orb ambient__orb--2" />
-      <div className="ambient__orb ambient__orb--3" />
-      <div className="ambient__wordmark">
+    <div aria-hidden="true">
+      <div className={`background ${resumeVisible ? "" : "background--center"}`}>
         <span>R</span>
         <span>É</span>
         <span>S</span>
@@ -19,6 +13,9 @@ export function Background() {
         <span>M</span>
         <span>É</span>
       </div>
+      <div className="first-circle" />
+      <div className="sec-circle" />
+      <div className="last-circle" />
     </div>
   );
 }

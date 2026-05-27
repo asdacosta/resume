@@ -17,8 +17,13 @@ html {
   .menu__caret,
   .menu__eye,
   .sample-bar__knob,
-  .sample-bar__text {
-    transition: none;
+  .sample-bar__text,
+  .background span,
+  .first-circle,
+  .sec-circle,
+  .last-circle {
+    transition: none !important;
+    animation: none !important;
   }
 }
 
